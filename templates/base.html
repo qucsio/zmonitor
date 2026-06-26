@@ -13,12 +13,18 @@
       <a class="navbar-brand" href="/">Arb Scanner</a>
       <div class="navbar-nav">
         <a class="nav-link" href="/dashboard/">Dashboard</a>
+        <a class="nav-link" href="/markets/">Markets</a>
         <a class="nav-link" href="/health/">Health</a>
         <a class="nav-link" href="/admin/">Admin</a>
       </div>
     </div>
   </nav>
   <main class="container-fluid py-4">
+    {% if messages %}
+      {% for m in messages %}
+        <div class="alert alert-{{ m.tags|default:'info' }}">{{ m }}</div>
+      {% endfor %}
+    {% endif %}
     {% block content %}{% endblock %}
   </main>
 </body>

@@ -11,7 +11,7 @@ PostgreSQL is **not** a realtime message bus.
 ## Stages status
 - [x] Stage 0 — Project skeleton (Docker Compose, Django, Postgres, Redis, health page)
 - [x] Stage 1 — `api_probe` management command (saves real API samples)
-- [ ] Stage 2 — Discovery
+- [x] Stage 2 — Discovery (Polymarket + Kalshi, idempotent upsert, markets UI)
 - [ ] Stage 3 — Normalization
 - [ ] Stage 4 — Matching
 - [ ] Stage 5 — Orderbook REST polling

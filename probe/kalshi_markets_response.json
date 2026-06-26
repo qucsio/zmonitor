@@ -1,0 +1,4630 @@
+{
+  "cursor": "CgwI9dL70QYQ8O_vrAMSL0tYTVZFQ1JPU1NDQVRFR09SWS1TMjAyNjgzM0RGQzY4NzdBLTYxMTg2MjQxMjUx",
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.647621Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26URUESP,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,no,yes",
+        "Associated Markets": "KXWCBTTS-26JUN26URUESP-BTTS,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26NZLBEL-6,KXWCTOTAL-26JUN26URUESP-6",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026EF424B16D86"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026EF424B16D86",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26URUESP",
+          "market_ticker": "KXWCBTTS-26JUN26URUESP-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-6",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Both Teams To Score,yes Belgium,yes Spain,no Over 5.5 goals scored,yes Over 5.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026EF424B16D86-34C8D18E059",
+      "title": "yes Both Teams To Score,yes Belgium,yes Spain,no Over 5.5 goals scored,yes Over 5.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes Belgium,yes Spain,no Over 5.5 goals scored,yes Over 5.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.63842Z",
+      "custom_strike": {
+        "Associated Events": "KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP,KXWCTOTAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes",
+        "Associated Markets": "KXWCTOTAL-26JUN26EGYIRI-2,KXWCTOTAL-26JUN26NZLBEL-2,KXWCTOTAL-26JUN26URUESP-1,KXWCTOTAL-26JUN27PANENG-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202630E5587053A"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202630E5587053A",
+      "expected_expiration_time": "2026-06-28T01:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27PANENG",
+          "market_ticker": "KXWCTOTAL-26JUN27PANENG-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202630E5587053A-AFBDEC94B1F",
+      "title": "yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.628736Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26CPVKSA,KXWCBTTS-26JUN26URUESP,KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26NZLBEL,KXWCGOAL-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,no,no,yes,no",
+        "Associated Markets": "KXWCBTTS-26JUN26CPVKSA-BTTS,KXWCBTTS-26JUN26URUESP-BTTS,KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1,KXWCTOTAL-26JUN26CPVKSA-6,KXWCTOTAL-26JUN26EGYIRI-4,KXWCTOTAL-26JUN26NZLBEL-2,KXWCTOTAL-26JUN26URUESP-6",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026CCFF677306C"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026CCFF677306C",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26CPVKSA",
+          "market_ticker": "KXWCBTTS-26JUN26CPVKSA-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCBTTS-26JUN26URUESP",
+          "market_ticker": "KXWCBTTS-26JUN26URUESP-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26URUESP",
+          "market_ticker": "KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-6",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored,no Over 5.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026CCFF677306C-958FC461985",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored,no Over 5.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored,no Over 5.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-29T23:07:00Z",
+      "created_time": "2026-06-26T21:04:54.628496Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBKS-26JUN261840CINPIT,KXMLBKS-26JUN261840CINPIT,KXMLBKS-26JUN261840HOUDET,KXMLBKS-26JUN261905WSHBAL,KXMLBKS-26JUN261905WSHBAL,KXMLBKS-26JUN261907TEXTOR,KXMLBKS-26JUN261907TEXTOR,KXMLBTOTAL-26JUN261840CINPIT",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBKS-26JUN261840CINPIT-CINAABBOTT41-3,KXMLBKS-26JUN261840CINPIT-PITPSKENES30-5,KXMLBKS-26JUN261840HOUDET-HOUSARRIGHETTI41-3,KXMLBKS-26JUN261905WSHBAL-BALTROGERS28-3,KXMLBKS-26JUN261905WSHBAL-WSHAALVAREZ54-3,KXMLBKS-26JUN261907TEXTOR-TEXNEOVALDI17-3,KXMLBKS-26JUN261907TEXTOR-TORPCORBIN46-2,KXMLBTOTAL-26JUN261840CINPIT-4",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F09A386CD5D"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F09A386CD5D",
+      "expected_expiration_time": "2026-06-27T02:07:00Z",
+      "expiration_time": "2026-06-29T23:07:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-29T23:07:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBKS-26JUN261840CINPIT",
+          "market_ticker": "KXMLBKS-26JUN261840CINPIT-CINAABBOTT41-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261840CINPIT",
+          "market_ticker": "KXMLBKS-26JUN261840CINPIT-PITPSKENES30-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261840HOUDET",
+          "market_ticker": "KXMLBKS-26JUN261840HOUDET-HOUSARRIGHETTI41-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261905WSHBAL",
+          "market_ticker": "KXMLBKS-26JUN261905WSHBAL-BALTROGERS28-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261905WSHBAL",
+          "market_ticker": "KXMLBKS-26JUN261905WSHBAL-WSHAALVAREZ54-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBKS-26JUN261907TEXTOR-TEXNEOVALDI17-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBKS-26JUN261907TEXTOR-TORPCORBIN46-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840CINPIT",
+          "market_ticker": "KXMLBTOTAL-26JUN261840CINPIT-4",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Andrew Abbott: 3+,yes Paul Skenes: 5+,yes Spencer Arrighetti: 3+,yes Trevor Rogers: 3+,yes Andrew Alvarez: 3+,yes Nathan Eovaldi: 3+,yes Patrick Corbin: 2+,yes Over 3.5 runs scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F09A386CD5D-4063CFA04C6",
+      "title": "yes Andrew Abbott: 3+,yes Paul Skenes: 5+,yes Spencer Arrighetti: 3+,yes Trevor Rogers: 3+,yes Andrew Alvarez: 3+,yes Nathan Eovaldi: 3+,yes Patrick Corbin: 2+,yes Over 3.5 runs scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Andrew Abbott: 3+,yes Paul Skenes: 5+,yes Spencer Arrighetti: 3+,yes Trevor Rogers: 3+,yes Andrew Alvarez: 3+,yes Nathan Eovaldi: 3+,yes Patrick Corbin: 2+,yes Over 3.5 runs scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.6274Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1HTOTAL-26JUN26URUESP,KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26NZLBEL,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,no,no,no,no",
+        "Associated Markets": "KXWC1HTOTAL-26JUN26URUESP-1,KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26NZLBEL-BEL,KXWCTOTAL-26JUN26CPVKSA-4,KXWCTOTAL-26JUN26EGYIRI-4,KXWCTOTAL-26JUN26NZLBEL-4,KXWCTOTAL-26JUN26URUESP-5",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265EE81478AEF"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265EE81478AEF",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1HTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWC1HTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-5",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 0.5 1H goals scored,yes Cape Verde,yes Belgium,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 4.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265EE81478AEF-A2BF2D85DFE",
+      "title": "yes Over 0.5 1H goals scored,yes Cape Verde,yes Belgium,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 4.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 0.5 1H goals scored,yes Cape Verde,yes Belgium,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 3.5 goals scored,no Over 4.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.623717Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG,KXWCGOAL-26JUN26CPVKSA,KXWCGOAL-26JUN26URUESP,KXWCGOAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG,KXWCGOAL-26JUN26CPVKSA-CPVDLIVRA14-1,KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1,KXWCGOAL-26JUN27PANENG-ENGHKANE9-1",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S2026BB247E7FAC0"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S2026BB247E7FAC0",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCGOAL-26JUN26CPVKSA-CPVDLIVRA14-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26URUESP",
+          "market_ticker": "KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27PANENG",
+          "market_ticker": "KXWCGOAL-26JUN27PANENG-ENGHKANE9-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Belgium,yes Spain,yes England,yes Dailon Livramento: 1+,yes Lamine Yamal: 1+,yes Harry Kane: 1+",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S2026BB247E7FAC0-C48CC998589",
+      "title": "yes Belgium,yes Spain,yes England,yes Dailon Livramento: 1+,yes Lamine Yamal: 1+,yes Harry Kane: 1+",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Belgium,yes Spain,yes England,yes Dailon Livramento: 1+,yes Lamine Yamal: 1+,yes Harry Kane: 1+"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.617771Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261945CHCMIL,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,no,yes,yes,yes",
+        "Associated Markets": "KXMLBGAME-26JUN261945CHCMIL-MIL,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26CPVKSA-4,KXWCTOTAL-26JUN26EGYIRI-2,KXWCTOTAL-26JUN26NZLBEL-3,KXWCTOTAL-26JUN26URUESP-2",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S20268B2F094F87B"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S20268B2F094F87B",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBGAME-26JUN261945CHCMIL-MIL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Milwaukee,yes Belgium,yes Spain,no Over 3.5 goals scored,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S20268B2F094F87B-6CF0CF2B486",
+      "title": "yes Milwaukee,yes Belgium,yes Spain,no Over 3.5 goals scored,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Milwaukee,yes Belgium,yes Spain,no Over 3.5 goals scored,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.577756Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26SENIRQ,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26CPVKSA-KSA,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26SENIRQ-IRQ,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202662E88BFF408"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202662E88BFF408",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-KSA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26SENIRQ",
+          "market_ticker": "KXWCGAME-26JUN26SENIRQ-IRQ",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Saudi Arabia,yes Egypt,yes Belgium,yes Iraq,yes Spain,yes England",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202662E88BFF408-A345414DDBC",
+      "title": "yes Saudi Arabia,yes Egypt,yes Belgium,yes Iraq,yes Spain,yes England",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Saudi Arabia,yes Egypt,yes Belgium,yes Iraq,yes Spain,yes England"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-29T23:45:00Z",
+      "created_time": "2026-06-26T21:04:54.562884Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261907TEXTOR,KXMLBGAME-26JUN261945CHCMIL,KXMLBSPREAD-26JUN261840CINPIT",
+        "Associated Market Sides": "yes,yes,no",
+        "Associated Markets": "KXMLBGAME-26JUN261907TEXTOR-TOR,KXMLBGAME-26JUN261945CHCMIL-MIL,KXMLBSPREAD-26JUN261840CINPIT-PIT2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C5C88BF5302"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C5C88BF5302",
+      "expected_expiration_time": "2026-06-27T02:45:00Z",
+      "expiration_time": "2026-06-29T23:45:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-29T23:45:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBGAME-26JUN261907TEXTOR-TOR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBGAME-26JUN261945CHCMIL-MIL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBSPREAD-26JUN261840CINPIT",
+          "market_ticker": "KXMLBSPREAD-26JUN261840CINPIT-PIT2",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.6090",
+      "no_sub_title": "yes Toronto,yes Milwaukee,no Pittsburgh wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C5C88BF5302-4D793C31779",
+      "title": "yes Toronto,yes Milwaukee,no Pittsburgh wins by over 1.5 runs",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.3910",
+      "yes_ask_size_fp": "12000.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Toronto,yes Milwaukee,no Pittsburgh wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-12T02:00:00Z",
+      "created_time": "2026-06-26T21:04:54.54939Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN27COLPOR,KXWCGAME-26JUN27CROGHA,KXWCGAME-26JUN27JORARG,KXWCGAME-26JUN27PANENG,KXWCSPREAD-26JUN26CPVKSA,KXWCSPREAD-26JUN26EGYIRI,KXWCSPREAD-26JUN26NZLBEL,KXWCSPREAD-26JUN26URUESP,KXWCSPREAD-26JUN27CODUZB,KXWCSPREAD-26JUN27COLPOR,KXWCSPREAD-26JUN27CROGHA,KXWCSPREAD-26JUN27DZAAUT,KXWCTOTAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,no,no,no,yes,no,no,no,no,no",
+        "Associated Markets": "KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN27COLPOR-POR,KXWCGAME-26JUN27CROGHA-CRO,KXWCGAME-26JUN27JORARG-ARG,KXWCGAME-26JUN27PANENG-ENG,KXWCSPREAD-26JUN26CPVKSA-CPV2,KXWCSPREAD-26JUN26EGYIRI-EGY2,KXWCSPREAD-26JUN26NZLBEL-BEL3,KXWCSPREAD-26JUN26URUESP-ESP2,KXWCSPREAD-26JUN27CODUZB-COD2,KXWCSPREAD-26JUN27COLPOR-POR2,KXWCSPREAD-26JUN27CROGHA-CRO2,KXWCSPREAD-26JUN27DZAAUT-AUT2,KXWCTOTAL-26JUN27PANENG-4",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S2026FAE86CAFB7E"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAE86CAFB7E",
+      "expected_expiration_time": "2026-06-28T06:00:00Z",
+      "expiration_time": "2026-07-12T02:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-12T02:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27COLPOR",
+          "market_ticker": "KXWCGAME-26JUN27COLPOR-POR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CROGHA",
+          "market_ticker": "KXWCGAME-26JUN27CROGHA-CRO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27JORARG",
+          "market_ticker": "KXWCGAME-26JUN27JORARG-ARG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26CPVKSA",
+          "market_ticker": "KXWCSPREAD-26JUN26CPVKSA-CPV2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26EGYIRI",
+          "market_ticker": "KXWCSPREAD-26JUN26EGYIRI-EGY2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26NZLBEL",
+          "market_ticker": "KXWCSPREAD-26JUN26NZLBEL-BEL3",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26URUESP",
+          "market_ticker": "KXWCSPREAD-26JUN26URUESP-ESP2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN27CODUZB",
+          "market_ticker": "KXWCSPREAD-26JUN27CODUZB-COD2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN27COLPOR",
+          "market_ticker": "KXWCSPREAD-26JUN27COLPOR-POR2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN27CROGHA",
+          "market_ticker": "KXWCSPREAD-26JUN27CROGHA-CRO2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN27DZAAUT",
+          "market_ticker": "KXWCSPREAD-26JUN27DZAAUT-AUT2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27PANENG",
+          "market_ticker": "KXWCTOTAL-26JUN27PANENG-4",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Belgium,yes Portugal,yes Croatia,yes Argentina,yes England,no Cape Verde wins by more than 1.5 goals,no Egypt wins by more than 1.5 goals,no Belgium wins by more than 2.5 goals,yes Spain wins by more than 1.5 goals,no Congo DR wins by more than 1.5 goals,no Portugal wins by more than 1.5 goals,no Croatia wins by more than 1.5 goals,no Austria wins by more than 1.5 goals,no Over 3.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S2026FAE86CAFB7E-94FA3D3A171",
+      "title": "yes Belgium,yes Portugal,yes Croatia,yes Argentina,yes England,no Cape Verde wins by more than 1.5 goals,no Egypt wins by more than 1.5 goals,no Belgium wins by more than 2.5 goals,yes Spain wins by more than 1.5 goals,no Congo DR wins by more than 1.5 goals,no Portugal wins by more than 1.5 goals,no Croatia wins by more than 1.5 goals,no Austria wins by more than 1.5 goals,no Over 3.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Belgium,yes Portugal,yes Croatia,yes Argentina,yes England,no Cape Verde wins by more than 1.5 goals,no Egypt wins by more than 1.5 goals,no Belgium wins by more than 2.5 goals,yes Spain wins by more than 1.5 goals,no Congo DR wins by more than 1.5 goals,no Portugal wins by more than 1.5 goals,no Croatia wins by more than 1.5 goals,no Austria wins by more than 1.5 goals,no Over 3.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-12T02:00:00Z",
+      "created_time": "2026-06-26T21:04:54.52689Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27CODUZB,KXWCGAME-26JUN27COLPOR,KXWCGAME-26JUN27DZAAUT,KXWCGAME-26JUN27JORARG,KXWCGAME-26JUN27PANENG,KXWCTOTAL-26JUN26CPVKSA",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27CODUZB-COD,KXWCGAME-26JUN27COLPOR-POR,KXWCGAME-26JUN27DZAAUT-AUT,KXWCGAME-26JUN27JORARG-ARG,KXWCGAME-26JUN27PANENG-ENG,KXWCTOTAL-26JUN26CPVKSA-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BE16A251BF5"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BE16A251BF5",
+      "expected_expiration_time": "2026-06-28T05:00:00Z",
+      "expiration_time": "2026-07-12T02:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-12T02:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CODUZB",
+          "market_ticker": "KXWCGAME-26JUN27CODUZB-COD",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27COLPOR",
+          "market_ticker": "KXWCGAME-26JUN27COLPOR-POR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27DZAAUT",
+          "market_ticker": "KXWCGAME-26JUN27DZAAUT-AUT",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27JORARG",
+          "market_ticker": "KXWCGAME-26JUN27JORARG-ARG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Austria,yes Argentina,yes England,yes Over 0.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BE16A251BF5-8B3B6A26FC5",
+      "title": "yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Austria,yes Argentina,yes England,yes Over 0.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Austria,yes Argentina,yes England,yes Over 0.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-29T23:45:00Z",
+      "created_time": "2026-06-26T21:04:54.504313Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261840CINPIT,KXMLBGAME-26JUN261907TEXTOR,KXMLBGAME-26JUN261910AZTB,KXMLBGAME-26JUN261945CHCMIL,KXMLBTOTAL-26JUN261840CINPIT,KXMLBTOTAL-26JUN261840HOUDET,KXMLBTOTAL-26JUN261910NYYBOS,KXMLBTOTAL-26JUN261910SEACLE,KXMLBTOTAL-26JUN261940KCCWS,KXMLBTOTAL-26JUN261945CHCMIL",
+        "Associated Market Sides": "yes,yes,yes,yes,no,no,no,no,no,no",
+        "Associated Markets": "KXMLBGAME-26JUN261840CINPIT-PIT,KXMLBGAME-26JUN261907TEXTOR-TOR,KXMLBGAME-26JUN261910AZTB-TB,KXMLBGAME-26JUN261945CHCMIL-MIL,KXMLBTOTAL-26JUN261840CINPIT-11,KXMLBTOTAL-26JUN261840HOUDET-9,KXMLBTOTAL-26JUN261910NYYBOS-12,KXMLBTOTAL-26JUN261910SEACLE-10,KXMLBTOTAL-26JUN261940KCCWS-13,KXMLBTOTAL-26JUN261945CHCMIL-11",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D4D5DC2780B"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D4D5DC2780B",
+      "expected_expiration_time": "2026-06-27T02:45:00Z",
+      "expiration_time": "2026-06-29T23:45:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-29T23:45:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261840CINPIT",
+          "market_ticker": "KXMLBGAME-26JUN261840CINPIT-PIT",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBGAME-26JUN261907TEXTOR-TOR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261910AZTB",
+          "market_ticker": "KXMLBGAME-26JUN261910AZTB-TB",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBGAME-26JUN261945CHCMIL-MIL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840CINPIT",
+          "market_ticker": "KXMLBTOTAL-26JUN261840CINPIT-11",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840HOUDET",
+          "market_ticker": "KXMLBTOTAL-26JUN261840HOUDET-9",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910NYYBOS",
+          "market_ticker": "KXMLBTOTAL-26JUN261910NYYBOS-12",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910SEACLE",
+          "market_ticker": "KXMLBTOTAL-26JUN261910SEACLE-10",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261940KCCWS",
+          "market_ticker": "KXMLBTOTAL-26JUN261940KCCWS-13",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBTOTAL-26JUN261945CHCMIL-11",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Pittsburgh,yes Toronto,yes Tampa Bay,yes Milwaukee,no Over 10.5 runs scored,no Over 8.5 runs scored,no Over 11.5 runs scored,no Over 9.5 runs scored,no Over 12.5 runs scored,no Over 10.5 runs scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D4D5DC2780B-034CFB152F7",
+      "title": "yes Pittsburgh,yes Toronto,yes Tampa Bay,yes Milwaukee,no Over 10.5 runs scored,no Over 8.5 runs scored,no Over 11.5 runs scored,no Over 9.5 runs scored,no Over 12.5 runs scored,no Over 10.5 runs scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Pittsburgh,yes Toronto,yes Tampa Bay,yes Milwaukee,no Over 10.5 runs scored,no Over 8.5 runs scored,no Over 11.5 runs scored,no Over 9.5 runs scored,no Over 12.5 runs scored,no Over 10.5 runs scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-28T01:00:00Z",
+      "created_time": "2026-06-26T21:04:54.490337Z",
+      "custom_strike": {
+        "Associated Events": "KXWCADVANCE-26JUN28RSACAN,KXWCADVANCE-26JUN29BRAJPN,KXWCADVANCE-26JUN29NEDMAR,KXWCGOAL-26JUN27JORARG,KXWCGOAL-26JUN27PANENG,KXWCTOTAL-26JUN27CROGHA,KXWCTOTAL-26JUN27JORARG,KXWCTOTAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCADVANCE-26JUN28RSACAN-CAN,KXWCADVANCE-26JUN29BRAJPN-BRA,KXWCADVANCE-26JUN29NEDMAR-MAR,KXWCGOAL-26JUN27JORARG-ARGLMESSI10-2,KXWCGOAL-26JUN27PANENG-ENGHKANE9-1,KXWCTOTAL-26JUN27CROGHA-2,KXWCTOTAL-26JUN27JORARG-3,KXWCTOTAL-26JUN27PANENG-3",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S202682F9D2782B2"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S202682F9D2782B2",
+      "expected_expiration_time": "2026-06-30T04:00:00Z",
+      "expiration_time": "2026-07-28T01:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-28T01:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCADVANCE-26JUN28RSACAN",
+          "market_ticker": "KXWCADVANCE-26JUN28RSACAN-CAN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCADVANCE-26JUN29BRAJPN",
+          "market_ticker": "KXWCADVANCE-26JUN29BRAJPN-BRA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCADVANCE-26JUN29NEDMAR",
+          "market_ticker": "KXWCADVANCE-26JUN29NEDMAR-MAR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27JORARG",
+          "market_ticker": "KXWCGOAL-26JUN27JORARG-ARGLMESSI10-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27PANENG",
+          "market_ticker": "KXWCGOAL-26JUN27PANENG-ENGHKANE9-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27CROGHA",
+          "market_ticker": "KXWCTOTAL-26JUN27CROGHA-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27JORARG",
+          "market_ticker": "KXWCTOTAL-26JUN27JORARG-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27PANENG",
+          "market_ticker": "KXWCTOTAL-26JUN27PANENG-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Canada advances,yes Brazil advances,yes Morocco advances,yes Lionel Messi: 2+,yes Harry Kane: 1+,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S202682F9D2782B2-6976A1196FD",
+      "title": "yes Canada advances,yes Brazil advances,yes Morocco advances,yes Lionel Messi: 2+,yes Harry Kane: 1+,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Canada advances,yes Brazil advances,yes Morocco advances,yes Lionel Messi: 2+,yes Harry Kane: 1+,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.489332Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWNBAGAME-26JUN26ATLGS,KXWNBAGAME-26JUN26PDXCHI,KXWNBAGAME-26JUN26WSHCONN",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWNBAGAME-26JUN26ATLGS-GS,KXWNBAGAME-26JUN26PDXCHI-CHI,KXWNBAGAME-26JUN26WSHCONN-WSH",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S2026934BB78EBDA"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S2026934BB78EBDA",
+      "expected_expiration_time": "2026-06-27T06:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWNBAGAME-26JUN26ATLGS",
+          "market_ticker": "KXWNBAGAME-26JUN26ATLGS-GS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWNBAGAME-26JUN26PDXCHI",
+          "market_ticker": "KXWNBAGAME-26JUN26PDXCHI-CHI",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWNBAGAME-26JUN26WSHCONN",
+          "market_ticker": "KXWNBAGAME-26JUN26WSHCONN-WSH",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Cape Verde,yes Belgium,yes Spain,yes Golden State,yes Chicago,yes Washington",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S2026934BB78EBDA-76DEF719ADA",
+      "title": "yes Cape Verde,yes Belgium,yes Spain,yes Golden State,yes Chicago,yes Washington",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Cape Verde,yes Belgium,yes Spain,yes Golden State,yes Chicago,yes Washington"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.475468Z",
+      "custom_strike": {
+        "Associated Events": "KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "no,yes",
+        "Associated Markets": "KXWCTOTAL-26JUN26CPVKSA-3,KXWCTOTAL-26JUN26NZLBEL-2",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S2026B088649B191"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B088649B191",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-3",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "no Over 2.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S2026B088649B191-3D6C8725530",
+      "title": "no Over 2.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "no Over 2.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-29T23:10:00Z",
+      "created_time": "2026-06-26T21:04:54.474122Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBHIT-26JUN261840CINPIT,KXMLBHIT-26JUN261840HOUDET,KXMLBHIT-26JUN261905WSHBAL,KXMLBHIT-26JUN261907TEXTOR,KXMLBHIT-26JUN261910AZTB,KXMLBHIT-26JUN261910NYYBOS,KXMLBHIT-26JUN261910PHINYM,KXMLBHIT-26JUN261910PHINYM",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBHIT-26JUN261840CINPIT-CINEDELACRUZ44-1,KXMLBHIT-26JUN261840HOUDET-HOUCWALKER8-1,KXMLBHIT-26JUN261905WSHBAL-BALGHENDERSON2-1,KXMLBHIT-26JUN261907TEXTOR-TORVGUERRERO27-1,KXMLBHIT-26JUN261910AZTB-AZCCARROLL7-1,KXMLBHIT-26JUN261910NYYBOS-NYYCBELLINGER35-1,KXMLBHIT-26JUN261910PHINYM-NYMJSOTO22-1,KXMLBHIT-26JUN261910PHINYM-PHIBHARPER3-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202694AC4FA1D4B"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202694AC4FA1D4B",
+      "expected_expiration_time": "2026-06-27T02:10:00Z",
+      "expiration_time": "2026-06-29T23:10:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-29T23:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBHIT-26JUN261840CINPIT",
+          "market_ticker": "KXMLBHIT-26JUN261840CINPIT-CINEDELACRUZ44-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261840HOUDET",
+          "market_ticker": "KXMLBHIT-26JUN261840HOUDET-HOUCWALKER8-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261905WSHBAL",
+          "market_ticker": "KXMLBHIT-26JUN261905WSHBAL-BALGHENDERSON2-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBHIT-26JUN261907TEXTOR-TORVGUERRERO27-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910AZTB",
+          "market_ticker": "KXMLBHIT-26JUN261910AZTB-AZCCARROLL7-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910NYYBOS",
+          "market_ticker": "KXMLBHIT-26JUN261910NYYBOS-NYYCBELLINGER35-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910PHINYM",
+          "market_ticker": "KXMLBHIT-26JUN261910PHINYM-NYMJSOTO22-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910PHINYM",
+          "market_ticker": "KXMLBHIT-26JUN261910PHINYM-PHIBHARPER3-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Elly De La Cruz: 1+,yes Christian Walker: 1+,yes Gunnar Henderson: 1+,yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Cody Bellinger: 1+,yes Juan Soto: 1+,yes Bryce Harper: 1+",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202694AC4FA1D4B-A92A9DF8EE4",
+      "title": "yes Elly De La Cruz: 1+,yes Christian Walker: 1+,yes Gunnar Henderson: 1+,yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Cody Bellinger: 1+,yes Juan Soto: 1+,yes Bryce Harper: 1+",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Elly De La Cruz: 1+,yes Christian Walker: 1+,yes Gunnar Henderson: 1+,yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Cody Bellinger: 1+,yes Juan Soto: 1+,yes Bryce Harper: 1+"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-30T02:15:00Z",
+      "created_time": "2026-06-26T21:04:54.466749Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261840HOUDET,KXMLBGAME-26JUN261905WSHBAL,KXMLBGAME-26JUN261907TEXTOR,KXMLBGAME-26JUN261910AZTB,KXMLBGAME-26JUN261940KCCWS,KXMLBGAME-26JUN261945CHCMIL,KXMLBGAME-26JUN262010COLMIN,KXMLBGAME-26JUN262215ATLSF",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBGAME-26JUN261840HOUDET-DET,KXMLBGAME-26JUN261905WSHBAL-WSH,KXMLBGAME-26JUN261907TEXTOR-TOR,KXMLBGAME-26JUN261910AZTB-TB,KXMLBGAME-26JUN261940KCCWS-CWS,KXMLBGAME-26JUN261945CHCMIL-MIL,KXMLBGAME-26JUN262010COLMIN-MIN,KXMLBGAME-26JUN262215ATLSF-ATL",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265575EB51D2A"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265575EB51D2A",
+      "expected_expiration_time": "2026-06-27T05:15:00Z",
+      "expiration_time": "2026-06-30T02:15:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-30T02:15:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261840HOUDET",
+          "market_ticker": "KXMLBGAME-26JUN261840HOUDET-DET",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261905WSHBAL",
+          "market_ticker": "KXMLBGAME-26JUN261905WSHBAL-WSH",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBGAME-26JUN261907TEXTOR-TOR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261910AZTB",
+          "market_ticker": "KXMLBGAME-26JUN261910AZTB-TB",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261940KCCWS",
+          "market_ticker": "KXMLBGAME-26JUN261940KCCWS-CWS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBGAME-26JUN261945CHCMIL-MIL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262010COLMIN",
+          "market_ticker": "KXMLBGAME-26JUN262010COLMIN-MIN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262215ATLSF",
+          "market_ticker": "KXMLBGAME-26JUN262215ATLSF-ATL",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.9830",
+      "no_sub_title": "yes Detroit,yes Washington,yes Toronto,yes Tampa Bay,yes Chicago WS,yes Milwaukee,yes Minnesota,yes Atlanta",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20265575EB51D2A-1E6545CCF3F",
+      "title": "yes Detroit,yes Washington,yes Toronto,yes Tampa Bay,yes Chicago WS,yes Milwaukee,yes Minnesota,yes Atlanta",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0170",
+      "yes_ask_size_fp": "22000.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Detroit,yes Washington,yes Toronto,yes Tampa Bay,yes Chicago WS,yes Milwaukee,yes Minnesota,yes Atlanta"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.451828Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCSPREAD-26JUN26CPVKSA,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,no,no,yes,no,yes",
+        "Associated Markets": "KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCSPREAD-26JUN26CPVKSA-KSA2,KXWCTOTAL-26JUN26CPVKSA-5,KXWCTOTAL-26JUN26EGYIRI-1,KXWCTOTAL-26JUN26NZLBEL-5,KXWCTOTAL-26JUN26URUESP-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269C3A49E5853"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269C3A49E5853",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26CPVKSA",
+          "market_ticker": "KXWCSPREAD-26JUN26CPVKSA-KSA2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Belgium,yes Spain,no Saudi Arabia wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 0.5 goals scored,no Over 4.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269C3A49E5853-249A810DA8E",
+      "title": "yes Belgium,yes Spain,no Saudi Arabia wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 0.5 goals scored,no Over 4.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Belgium,yes Spain,no Saudi Arabia wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 0.5 goals scored,no Over 4.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-13T10:00:00Z",
+      "created_time": "2026-06-26T21:04:54.45074Z",
+      "custom_strike": {
+        "Associated Events": "KXATPMATCH-26JUN29BAUFON,KXATPMATCH-26JUN29CILMED,KXATPMATCH-26JUN29DEJHIJ,KXATPMATCH-26JUN29MEDOFN,KXATPMATCH-26JUN29MOCBAS,KXATPMATCH-26JUN29NAKPIN,KXATPMATCH-26JUN29RINTAR,KXATPMATCH-26JUN29STRBAE,KXATPMATCH-26JUN29SVRTIE,KXATPMATCH-26JUN29VALMEJ,KXATPMATCH-26JUN29VUKBRO,KXATPMATCH-26JUN29ZHENOR",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXATPMATCH-26JUN29BAUFON-FON,KXATPMATCH-26JUN29CILMED-MED,KXATPMATCH-26JUN29DEJHIJ-HIJ,KXATPMATCH-26JUN29MEDOFN-MED,KXATPMATCH-26JUN29MOCBAS-MOC,KXATPMATCH-26JUN29NAKPIN-NAK,KXATPMATCH-26JUN29RINTAR-TAR,KXATPMATCH-26JUN29STRBAE-STR,KXATPMATCH-26JUN29SVRTIE-TIE,KXATPMATCH-26JUN29VALMEJ-VAL,KXATPMATCH-26JUN29VUKBRO-BRO,KXATPMATCH-26JUN29ZHENOR-NOR",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202677F96A98191"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202677F96A98191",
+      "expected_expiration_time": "2026-06-29T13:00:00Z",
+      "expiration_time": "2026-07-13T10:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-13T10:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXATPMATCH-26JUN29BAUFON",
+          "market_ticker": "KXATPMATCH-26JUN29BAUFON-FON",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29CILMED",
+          "market_ticker": "KXATPMATCH-26JUN29CILMED-MED",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29DEJHIJ",
+          "market_ticker": "KXATPMATCH-26JUN29DEJHIJ-HIJ",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29MEDOFN",
+          "market_ticker": "KXATPMATCH-26JUN29MEDOFN-MED",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29MOCBAS",
+          "market_ticker": "KXATPMATCH-26JUN29MOCBAS-MOC",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29NAKPIN",
+          "market_ticker": "KXATPMATCH-26JUN29NAKPIN-NAK",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29RINTAR",
+          "market_ticker": "KXATPMATCH-26JUN29RINTAR-TAR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29STRBAE",
+          "market_ticker": "KXATPMATCH-26JUN29STRBAE-STR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29SVRTIE",
+          "market_ticker": "KXATPMATCH-26JUN29SVRTIE-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29VALMEJ",
+          "market_ticker": "KXATPMATCH-26JUN29VALMEJ-VAL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29VUKBRO",
+          "market_ticker": "KXATPMATCH-26JUN29VUKBRO-BRO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXATPMATCH-26JUN29ZHENOR",
+          "market_ticker": "KXATPMATCH-26JUN29ZHENOR-NOR",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Joao Fonseca,yes Daniil Medvedev,yes Rinky Hijikata,yes Hamad Medjedovic,yes Shintaro Mochizuki,yes Brandon Nakashima,yes Oliver Tarvet,yes Jan-Lennard Struff,yes Learner Tien,yes Adolfo Daniel Vallejo,yes Jenson Brooksby,yes Cameron Norrie",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202677F96A98191-10DD2CF1BF9",
+      "title": "yes Joao Fonseca,yes Daniil Medvedev,yes Rinky Hijikata,yes Hamad Medjedovic,yes Shintaro Mochizuki,yes Brandon Nakashima,yes Oliver Tarvet,yes Jan-Lennard Struff,yes Learner Tien,yes Adolfo Daniel Vallejo,yes Jenson Brooksby,yes Cameron Norrie",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Joao Fonseca,yes Daniil Medvedev,yes Rinky Hijikata,yes Hamad Medjedovic,yes Shintaro Mochizuki,yes Brandon Nakashima,yes Oliver Tarvet,yes Jan-Lennard Struff,yes Learner Tien,yes Adolfo Daniel Vallejo,yes Jenson Brooksby,yes Cameron Norrie"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.449735Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1H-26JUN26NZLBEL,KXWC1H-26JUN26URUESP,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWC1H-26JUN26NZLBEL-BEL,KXWC1H-26JUN26URUESP-ESP,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26NZLBEL-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523A8FED78D"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523A8FED78D",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1H-26JUN26NZLBEL",
+          "market_ticker": "KXWC1H-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWC1H-26JUN26URUESP",
+          "market_ticker": "KXWC1H-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Belgium wins 1st Half,yes Spain wins 1st Half,yes Belgium,yes Spain,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523A8FED78D-BA1322D1B66",
+      "title": "yes Belgium wins 1st Half,yes Spain wins 1st Half,yes Belgium,yes Spain,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Belgium wins 1st Half,yes Spain wins 1st Half,yes Belgium,yes Spain,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.436058Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261940KCCWS,KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBGAME-26JUN261940KCCWS-CWS,KXWCGAME-26JUN26CPVKSA-KSA,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26URUESP-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269EE02AAC193"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269EE02AAC193",
+      "expected_expiration_time": "2026-06-27T06:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261940KCCWS",
+          "market_ticker": "KXMLBGAME-26JUN261940KCCWS-CWS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-KSA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Chicago WS,yes Saudi Arabia,yes Egypt,yes Spain,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20269EE02AAC193-8BECEC34D3B",
+      "title": "yes Chicago WS,yes Saudi Arabia,yes Egypt,yes Spain,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Chicago WS,yes Saudi Arabia,yes Egypt,yes Spain,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.427594Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1H-26JUN26CPVKSA,KXWC1H-26JUN26URUESP,KXWCCORNERS-26JUN26URUESP,KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWC1H-26JUN26CPVKSA-TIE,KXWC1H-26JUN26URUESP-TIE,KXWCCORNERS-26JUN26URUESP-8,KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26NZLBEL-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202653FCFB088F9"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202653FCFB088F9",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1H-26JUN26CPVKSA",
+          "market_ticker": "KXWC1H-26JUN26CPVKSA-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWC1H-26JUN26URUESP",
+          "market_ticker": "KXWC1H-26JUN26URUESP-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCCORNERS-26JUN26URUESP",
+          "market_ticker": "KXWCCORNERS-26JUN26URUESP-8",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Tie 1st Half,yes Tie 1st Half,yes 8+ corners,yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202653FCFB088F9-D132DCF2C24",
+      "title": "yes Tie 1st Half,yes Tie 1st Half,yes 8+ corners,yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Tie 1st Half,yes Tie 1st Half,yes 8+ corners,yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.405692Z",
+      "custom_strike": {
+        "Associated Events": "KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "no,no,yes,yes",
+        "Associated Markets": "KXWCTOTAL-26JUN26CPVKSA-6,KXWCTOTAL-26JUN26EGYIRI-6,KXWCTOTAL-26JUN26NZLBEL-1,KXWCTOTAL-26JUN26URUESP-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264B8671B8C94"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264B8671B8C94",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "no Over 5.5 goals scored,no Over 5.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264B8671B8C94-802C094B7D1",
+      "title": "no Over 5.5 goals scored,no Over 5.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "no Over 5.5 goals scored,no Over 5.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.372007Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26NZLBEL,KXWCSPREAD-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26NZLBEL-BEL,KXWCSPREAD-26JUN26URUESP-ESP2,KXWCTOTAL-26JUN26CPVKSA-2,KXWCTOTAL-26JUN26NZLBEL-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260E577B41C5E"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260E577B41C5E",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26URUESP",
+          "market_ticker": "KXWCSPREAD-26JUN26URUESP-ESP2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Belgium,yes Spain wins by more than 1.5 goals,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260E577B41C5E-51E318634CD",
+      "title": "yes Belgium,yes Spain wins by more than 1.5 goals,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Belgium,yes Spain wins by more than 1.5 goals,yes Over 1.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.350362Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261910PHINYM,KXMLBGAME-26JUN261945CHCMIL,KXMLBGAME-26JUN262015MIASTL,KXMLBGAME-26JUN262145LADSD,KXMLBKS-26JUN261945CHCMIL,KXMLBKS-26JUN262145LADSD,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,no",
+        "Associated Markets": "KXMLBGAME-26JUN261910PHINYM-PHI,KXMLBGAME-26JUN261945CHCMIL-MIL,KXMLBGAME-26JUN262015MIASTL-MIA,KXMLBGAME-26JUN262145LADSD-LAD,KXMLBKS-26JUN261945CHCMIL-MILJMISIOROWSKI32-8,KXMLBKS-26JUN262145LADSD-LADRSASAKI11-5,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26NZLBEL-4",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D46FF1FD947"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D46FF1FD947",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261910PHINYM",
+          "market_ticker": "KXMLBGAME-26JUN261910PHINYM-PHI",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBGAME-26JUN261945CHCMIL-MIL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262015MIASTL",
+          "market_ticker": "KXMLBGAME-26JUN262015MIASTL-MIA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262145LADSD",
+          "market_ticker": "KXMLBGAME-26JUN262145LADSD-LAD",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBKS-26JUN261945CHCMIL-MILJMISIOROWSKI32-8",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26JUN262145LADSD",
+          "market_ticker": "KXMLBKS-26JUN262145LADSD-LADRSASAKI11-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-4",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Philadelphia,yes Milwaukee,yes Miami,yes Los Angeles D,yes Jacob Misiorowski: 8+,yes Roki Sasaki: 5+,yes Spain,no Over 3.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026D46FF1FD947-5FD91148935",
+      "title": "yes Philadelphia,yes Milwaukee,yes Miami,yes Los Angeles D,yes Jacob Misiorowski: 8+,yes Roki Sasaki: 5+,yes Spain,no Over 3.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Philadelphia,yes Milwaukee,yes Miami,yes Los Angeles D,yes Jacob Misiorowski: 8+,yes Roki Sasaki: 5+,yes Spain,no Over 3.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.336449Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1H-26JUN26CPVKSA,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,no",
+        "Associated Markets": "KXWC1H-26JUN26CPVKSA-TIE,KXWCTOTAL-26JUN26NZLBEL-5",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026896152C887F"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026896152C887F",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1H-26JUN26CPVKSA",
+          "market_ticker": "KXWC1H-26JUN26CPVKSA-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-5",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Tie 1st Half,no Over 4.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026896152C887F-E5BD1981FBC",
+      "title": "yes Tie 1st Half,no Over 4.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Tie 1st Half,no Over 4.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.334144Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,no,no,no",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG,KXWCTOTAL-26JUN26EGYIRI-4,KXWCTOTAL-26JUN26NZLBEL-5,KXWCTOTAL-26JUN26URUESP-5",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E0DC431EC"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E0DC431EC",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-5",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Belgium,yes Spain,yes England,no Over 3.5 goals scored,no Over 4.5 goals scored,no Over 4.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E0DC431EC-E8EE490EB84",
+      "title": "yes Egypt,yes Belgium,yes Spain,yes England,no Over 3.5 goals scored,no Over 4.5 goals scored,no Over 4.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Belgium,yes Spain,yes England,no Over 3.5 goals scored,no Over 4.5 goals scored,no Over 4.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.294782Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26EGYIRI,KXWCCORNERS-26JUN26CPVKSA,KXWCCORNERS-26JUN26EGYIRI,KXWCCORNERS-26JUN26NZLBEL,KXWCCORNERS-26JUN26URUESP,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCBTTS-26JUN26EGYIRI-BTTS,KXWCCORNERS-26JUN26CPVKSA-7,KXWCCORNERS-26JUN26EGYIRI-6,KXWCCORNERS-26JUN26NZLBEL-8,KXWCCORNERS-26JUN26URUESP-8,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650F43BD0EE6"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650F43BD0EE6",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26EGYIRI",
+          "market_ticker": "KXWCBTTS-26JUN26EGYIRI-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCCORNERS-26JUN26CPVKSA",
+          "market_ticker": "KXWCCORNERS-26JUN26CPVKSA-7",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCCORNERS-26JUN26EGYIRI",
+          "market_ticker": "KXWCCORNERS-26JUN26EGYIRI-6",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCCORNERS-26JUN26NZLBEL",
+          "market_ticker": "KXWCCORNERS-26JUN26NZLBEL-8",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCCORNERS-26JUN26URUESP",
+          "market_ticker": "KXWCCORNERS-26JUN26URUESP-8",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Both Teams To Score,yes 7+ corners,yes 6+ corners,yes 8+ corners,yes 8+ corners,yes Egypt,yes Belgium,yes Spain",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650F43BD0EE6-E7C71A56407",
+      "title": "yes Both Teams To Score,yes 7+ corners,yes 6+ corners,yes 8+ corners,yes 8+ corners,yes Egypt,yes Belgium,yes Spain",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes 7+ corners,yes 6+ corners,yes 8+ corners,yes 8+ corners,yes Egypt,yes Belgium,yes Spain"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T00:00:00Z",
+      "created_time": "2026-06-26T21:04:54.237957Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1H-26JUN26URUESP,KXWC1HTOTAL-26JUN26URUESP,KXWCBTTS-26JUN26URUESP,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWC1H-26JUN26URUESP-TIE,KXWC1HTOTAL-26JUN26URUESP-1,KXWCBTTS-26JUN26URUESP-BTTS,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26URUESP-4",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523DCDBA20B"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523DCDBA20B",
+      "expected_expiration_time": "2026-06-27T04:00:00Z",
+      "expiration_time": "2026-07-11T00:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T00:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1H-26JUN26URUESP",
+          "market_ticker": "KXWC1H-26JUN26URUESP-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWC1HTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWC1HTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCBTTS-26JUN26URUESP",
+          "market_ticker": "KXWCBTTS-26JUN26URUESP-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-4",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Tie 1st Half,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Spain,yes Over 3.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026523DCDBA20B-01AA0178CC6",
+      "title": "yes Tie 1st Half,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Spain,yes Over 3.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Tie 1st Half,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Spain,yes Over 3.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.201383Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG,KXWCTOTAL-26JUN26EGYIRI-1,KXWCTOTAL-26JUN26URUESP-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B6F7752A738"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B6F7752A738",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Belgium,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B6F7752A738-4FDD1D6340D",
+      "title": "yes Egypt,yes Belgium,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Belgium,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.163883Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26URUESP,KXWCSPREAD-26JUN26NZLBEL,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26URUESP,KXWCTOTAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,no,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26URUESP-ESP,KXWCSPREAD-26JUN26NZLBEL-BEL3,KXWCTOTAL-26JUN26EGYIRI-2,KXWCTOTAL-26JUN26URUESP-3,KXWCTOTAL-26JUN27PANENG-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20267874A0B55B7"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20267874A0B55B7",
+      "expected_expiration_time": "2026-06-28T01:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26NZLBEL",
+          "market_ticker": "KXWCSPREAD-26JUN26NZLBEL-BEL3",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27PANENG",
+          "market_ticker": "KXWCTOTAL-26JUN27PANENG-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Spain,no Belgium wins by more than 2.5 goals,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20267874A0B55B7-FD1DC1BC7DF",
+      "title": "yes Spain,no Belgium wins by more than 2.5 goals,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Spain,no Belgium wins by more than 2.5 goals,yes Over 1.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-30T01:38:00Z",
+      "created_time": "2026-06-26T21:04:54.161869Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBGAME-26JUN261910SEACLE,KXMLBGAME-26JUN262015MIASTL,KXMLBGAME-26JUN262138ATHLAA",
+        "Associated Market Sides": "yes,yes,yes",
+        "Associated Markets": "KXMLBGAME-26JUN261910SEACLE-SEA,KXMLBGAME-26JUN262015MIASTL-MIA,KXMLBGAME-26JUN262138ATHLAA-ATH",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S202684D569FFEE5"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S202684D569FFEE5",
+      "expected_expiration_time": "2026-06-27T04:38:00Z",
+      "expiration_time": "2026-06-30T01:38:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-30T01:38:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26JUN261910SEACLE",
+          "market_ticker": "KXMLBGAME-26JUN261910SEACLE-SEA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262015MIASTL",
+          "market_ticker": "KXMLBGAME-26JUN262015MIASTL-MIA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBGAME-26JUN262138ATHLAA",
+          "market_ticker": "KXMLBGAME-26JUN262138ATHLAA-ATH",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.8610",
+      "no_sub_title": "yes Seattle,yes Miami,yes A's",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S202684D569FFEE5-36F87542CB0",
+      "title": "yes Seattle,yes Miami,yes A's",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.1390",
+      "yes_ask_size_fp": "727.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Seattle,yes Miami,yes A's"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.136575Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCSPREAD-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes",
+        "Associated Markets": "KXWCBTTS-26JUN26CPVKSA-BTTS,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCSPREAD-26JUN26URUESP-ESP2",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S202638A57B2D1E4"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S202638A57B2D1E4",
+      "expected_expiration_time": "2026-06-27T06:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26CPVKSA",
+          "market_ticker": "KXWCBTTS-26JUN26CPVKSA-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26URUESP",
+          "market_ticker": "KXWCSPREAD-26JUN26URUESP-ESP2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.8950",
+      "no_sub_title": "yes Both Teams To Score,yes Egypt,yes Belgium,yes Spain wins by more than 1.5 goals",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S202638A57B2D1E4-DE3FD9DC2CD",
+      "title": "yes Both Teams To Score,yes Egypt,yes Belgium,yes Spain wins by more than 1.5 goals",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.1050",
+      "yes_ask_size_fp": "22000.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes Egypt,yes Belgium,yes Spain wins by more than 1.5 goals"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.123381Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1HTOTAL-26JUN26URUESP,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes",
+        "Associated Markets": "KXWC1HTOTAL-26JUN26URUESP-1,KXWCTOTAL-26JUN26EGYIRI-1,KXWCTOTAL-26JUN26NZLBEL-3,KXWCTOTAL-26JUN26URUESP-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262529EECC79D"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262529EECC79D",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1HTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWC1HTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 0.5 1H goals scored,yes Over 0.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262529EECC79D-9A1421FD136",
+      "title": "yes Over 0.5 1H goals scored,yes Over 0.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 0.5 1H goals scored,yes Over 0.5 goals scored,yes Over 2.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.104069Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1H-26JUN26EGYIRI,KXWC1H-26JUN27CROGHA,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWC1H-26JUN26EGYIRI-TIE,KXWC1H-26JUN27CROGHA-TIE,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650DEA2341E8"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650DEA2341E8",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1H-26JUN26EGYIRI",
+          "market_ticker": "KXWC1H-26JUN26EGYIRI-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWC1H-26JUN27CROGHA",
+          "market_ticker": "KXWC1H-26JUN27CROGHA-TIE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Tie 1st Half,yes Tie 1st Half,yes Belgium,yes Spain,yes England",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202650DEA2341E8-3970E949C3C",
+      "title": "yes Tie 1st Half,yes Tie 1st Half,yes Belgium,yes Spain,yes England",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Tie 1st Half,yes Tie 1st Half,yes Belgium,yes Spain,yes England"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T00:00:00Z",
+      "created_time": "2026-06-26T21:04:54.103223Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,no",
+        "Associated Markets": "KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26CPVKSA-1,KXWCTOTAL-26JUN26URUESP-4",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C291CF3629E"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C291CF3629E",
+      "expected_expiration_time": "2026-06-27T04:00:00Z",
+      "expiration_time": "2026-07-11T00:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T00:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-4",
+          "side": "no"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Spain,yes Over 0.5 goals scored,no Over 3.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026C291CF3629E-9EB6ECBC39E",
+      "title": "yes Spain,yes Over 0.5 goals scored,no Over 3.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Spain,yes Over 0.5 goals scored,no Over 3.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-16T00:00:00Z",
+      "created_time": "2026-06-26T21:04:54.070584Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUL01USABIH,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27CODUZB,KXWCGAME-26JUN27COLPOR,KXWCGAME-26JUN27CROGHA,KXWCGAME-26JUN27JORARG,KXWCGAME-26JUN27PANENG,KXWCGAME-26JUN28RSACAN,KXWCGAME-26JUN29BRAJPN,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP,KXWCTOTAL-26JUN27CROGHA,KXWCTOTAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUL01USABIH-USA,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27CODUZB-COD,KXWCGAME-26JUN27COLPOR-POR,KXWCGAME-26JUN27CROGHA-CRO,KXWCGAME-26JUN27JORARG-ARG,KXWCGAME-26JUN27PANENG-ENG,KXWCGAME-26JUN28RSACAN-CAN,KXWCGAME-26JUN29BRAJPN-BRA,KXWCTOTAL-26JUN26CPVKSA-1,KXWCTOTAL-26JUN26EGYIRI-1,KXWCTOTAL-26JUN26NZLBEL-2,KXWCTOTAL-26JUN26URUESP-2,KXWCTOTAL-26JUN27CROGHA-1,KXWCTOTAL-26JUN27PANENG-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260B9E148698F"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260B9E148698F",
+      "expected_expiration_time": "2026-07-02T03:00:00Z",
+      "expiration_time": "2026-07-16T00:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-16T00:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUL01USABIH",
+          "market_ticker": "KXWCGAME-26JUL01USABIH-USA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CODUZB",
+          "market_ticker": "KXWCGAME-26JUN27CODUZB-COD",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27COLPOR",
+          "market_ticker": "KXWCGAME-26JUN27COLPOR-POR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CROGHA",
+          "market_ticker": "KXWCGAME-26JUN27CROGHA-CRO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27JORARG",
+          "market_ticker": "KXWCGAME-26JUN27JORARG-ARG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN28RSACAN",
+          "market_ticker": "KXWCGAME-26JUN28RSACAN-CAN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN29BRAJPN",
+          "market_ticker": "KXWCGAME-26JUN29BRAJPN-BRA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27CROGHA",
+          "market_ticker": "KXWCTOTAL-26JUN27CROGHA-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27PANENG",
+          "market_ticker": "KXWCTOTAL-26JUN27PANENG-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Reg Time: USA,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Croatia,yes Argentina,yes England,yes Reg Time: Canada,yes Reg Time: Brazil,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260B9E148698F-116AFAE62C8",
+      "title": "yes Reg Time: USA,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Croatia,yes Argentina,yes England,yes Reg Time: Canada,yes Reg Time: Brazil,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Reg Time: USA,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Portugal,yes Croatia,yes Argentina,yes England,yes Reg Time: Canada,yes Reg Time: Brazil,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:54.063211Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,no,yes,yes",
+        "Associated Markets": "KXWCBTTS-26JUN26NZLBEL-BTTS,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26CPVKSA-5,KXWCTOTAL-26JUN26EGYIRI-2,KXWCTOTAL-26JUN26URUESP-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C290BE2FDD"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C290BE2FDD",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26NZLBEL",
+          "market_ticker": "KXWCBTTS-26JUN26NZLBEL-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Both Teams To Score,yes Spain,no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:54Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C290BE2FDD-6BC356D91B5",
+      "title": "yes Both Teams To Score,yes Spain,no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes Spain,no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-06-29T23:10:00Z",
+      "created_time": "2026-06-26T21:04:54.038551Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBHIT-26JUN261907TEXTOR,KXMLBHIT-26JUN261910AZTB,KXMLBHIT-26JUN261910AZTB,KXMLBHIT-26JUN261910AZTB,KXMLBHIT-26JUN261910AZTB,KXMLBHIT-26JUN261910PHINYM,KXMLBHIT-26JUN261910PHINYM",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBHIT-26JUN261907TEXTOR-TORVGUERRERO27-1,KXMLBHIT-26JUN261910AZTB-AZCCARROLL7-1,KXMLBHIT-26JUN261910AZTB-AZKMARTE4-1,KXMLBHIT-26JUN261910AZTB-TBJARANDA8-1,KXMLBHIT-26JUN261910AZTB-TBYDIAZ2-1,KXMLBHIT-26JUN261910PHINYM-PHIBHARPER3-1,KXMLBHIT-26JUN261910PHINYM-PHITTURNER7-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260EB3D14D8C0"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260EB3D14D8C0",
+      "expected_expiration_time": "2026-06-27T02:10:00Z",
+      "expiration_time": "2026-06-29T23:10:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-06-29T23:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBHIT-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBHIT-26JUN261907TEXTOR-TORVGUERRERO27-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910AZTB",
+          "market_ticker": "KXMLBHIT-26JUN261910AZTB-AZCCARROLL7-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910AZTB",
+          "market_ticker": "KXMLBHIT-26JUN261910AZTB-AZKMARTE4-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910AZTB",
+          "market_ticker": "KXMLBHIT-26JUN261910AZTB-TBJARANDA8-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910AZTB",
+          "market_ticker": "KXMLBHIT-26JUN261910AZTB-TBYDIAZ2-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910PHINYM",
+          "market_ticker": "KXMLBHIT-26JUN261910PHINYM-PHIBHARPER3-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26JUN261910PHINYM",
+          "market_ticker": "KXMLBHIT-26JUN261910PHINYM-PHITTURNER7-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Ketel Marte: 1+,yes Jonathan Aranda: 1+,yes Yandy Díaz: 1+,yes Bryce Harper: 1+,yes Trea Turner: 1+",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260EB3D14D8C0-A17218747E3",
+      "title": "yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Ketel Marte: 1+,yes Jonathan Aranda: 1+,yes Yandy Díaz: 1+,yes Bryce Harper: 1+,yes Trea Turner: 1+",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Vladimir Guerrero Jr.: 1+,yes Corbin Carroll: 1+,yes Ketel Marte: 1+,yes Jonathan Aranda: 1+,yes Yandy Díaz: 1+,yes Bryce Harper: 1+,yes Trea Turner: 1+"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:54.019734Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26SENIRQ,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP,KXWCTOTAL-26JUN27CROGHA",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26SENIRQ-SEN,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG,KXWCTOTAL-26JUN26CPVKSA-1,KXWCTOTAL-26JUN26EGYIRI-1,KXWCTOTAL-26JUN26NZLBEL-1,KXWCTOTAL-26JUN26URUESP-2,KXWCTOTAL-26JUN27CROGHA-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F07EF9DD124"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F07EF9DD124",
+      "expected_expiration_time": "2026-06-28T01:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26SENIRQ",
+          "market_ticker": "KXWCGAME-26JUN26SENIRQ-SEN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27CROGHA",
+          "market_ticker": "KXWCTOTAL-26JUN27CROGHA-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Belgium,yes Senegal,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026F07EF9DD124-76EB22A398F",
+      "title": "yes Egypt,yes Belgium,yes Senegal,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Belgium,yes Senegal,yes Spain,yes England,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 0.5 goals scored,yes Over 1.5 goals scored,yes Over 0.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-12T02:00:00Z",
+      "created_time": "2026-06-26T21:04:54.009199Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27COLPOR,KXWCGAME-26JUN27DZAAUT,KXWCGAME-26JUN27JORARG,KXWCGOAL-26JUN26EGYIRI,KXWCGOAL-26JUN26URUESP,KXWCGOAL-26JUN27COLPOR,KXWCGOAL-26JUN27JORARG,KXWCGOAL-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27COLPOR-POR,KXWCGAME-26JUN27DZAAUT-AUT,KXWCGAME-26JUN27JORARG-ARG,KXWCGOAL-26JUN26EGYIRI-EGYMSALAH11-1,KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1,KXWCGOAL-26JUN27COLPOR-PORCRIS7-1,KXWCGOAL-26JUN27JORARG-ARGLMESSI10-1,KXWCGOAL-26JUN27PANENG-ENGHKANE9-1",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S20261F3FE0E08FC"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S20261F3FE0E08FC",
+      "expected_expiration_time": "2026-06-28T05:00:00Z",
+      "expiration_time": "2026-07-12T02:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-12T02:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27COLPOR",
+          "market_ticker": "KXWCGAME-26JUN27COLPOR-POR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27DZAAUT",
+          "market_ticker": "KXWCGAME-26JUN27DZAAUT-AUT",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27JORARG",
+          "market_ticker": "KXWCGAME-26JUN27JORARG-ARG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCGOAL-26JUN26EGYIRI-EGYMSALAH11-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26URUESP",
+          "market_ticker": "KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27COLPOR",
+          "market_ticker": "KXWCGOAL-26JUN27COLPOR-PORCRIS7-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27JORARG",
+          "market_ticker": "KXWCGOAL-26JUN27JORARG-ARGLMESSI10-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN27PANENG",
+          "market_ticker": "KXWCGOAL-26JUN27PANENG-ENGHKANE9-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Spain,yes Portugal,yes Austria,yes Argentina,yes Mohamed Salah: 1+,yes Lamine Yamal: 1+,yes Cristiano Ronaldo: 1+,yes Lionel Messi: 1+,yes Harry Kane: 1+",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S20261F3FE0E08FC-D232E9FCD1E",
+      "title": "yes Egypt,yes Spain,yes Portugal,yes Austria,yes Argentina,yes Mohamed Salah: 1+,yes Lamine Yamal: 1+,yes Cristiano Ronaldo: 1+,yes Lionel Messi: 1+,yes Harry Kane: 1+",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Spain,yes Portugal,yes Austria,yes Argentina,yes Mohamed Salah: 1+,yes Lamine Yamal: 1+,yes Cristiano Ronaldo: 1+,yes Lionel Messi: 1+,yes Harry Kane: 1+"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-12T02:00:00Z",
+      "created_time": "2026-06-26T21:04:53.991103Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN27JORARG,KXWCTOTAL-26JUN27COLPOR,KXWCTOTAL-26JUN27DZAAUT",
+        "Associated Market Sides": "yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN27JORARG-ARG,KXWCTOTAL-26JUN27COLPOR-2,KXWCTOTAL-26JUN27DZAAUT-1",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202658A8162DE70"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202658A8162DE70",
+      "expected_expiration_time": "2026-06-28T06:00:00Z",
+      "expiration_time": "2026-07-12T02:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-12T02:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27JORARG",
+          "market_ticker": "KXWCGAME-26JUN27JORARG-ARG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27COLPOR",
+          "market_ticker": "KXWCTOTAL-26JUN27COLPOR-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN27DZAAUT",
+          "market_ticker": "KXWCTOTAL-26JUN27DZAAUT-1",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Egypt,yes Belgium,yes Argentina,yes Over 1.5 goals scored,yes Over 0.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202658A8162DE70-0345DB49901",
+      "title": "yes Egypt,yes Belgium,yes Argentina,yes Over 1.5 goals scored,yes Over 0.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Egypt,yes Belgium,yes Argentina,yes Over 1.5 goals scored,yes Over 0.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:53.986352Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26URUESP,KXWCSPREAD-26JUN26CPVKSA,KXWCSPREAD-26JUN26EGYIRI,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI",
+        "Associated Market Sides": "yes,no,no,no,yes",
+        "Associated Markets": "KXWCGAME-26JUN26URUESP-ESP,KXWCSPREAD-26JUN26CPVKSA-CPV2,KXWCSPREAD-26JUN26EGYIRI-IRI2,KXWCTOTAL-26JUN26CPVKSA-5,KXWCTOTAL-26JUN26EGYIRI-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264E4FE9ABA65"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264E4FE9ABA65",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26CPVKSA",
+          "market_ticker": "KXWCSPREAD-26JUN26CPVKSA-CPV2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCSPREAD-26JUN26EGYIRI",
+          "market_ticker": "KXWCSPREAD-26JUN26EGYIRI-IRI2",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Spain,no Cape Verde wins by more than 1.5 goals,no Iran wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264E4FE9ABA65-6122D4D6E60",
+      "title": "yes Spain,no Cape Verde wins by more than 1.5 goals,no Iran wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Spain,no Cape Verde wins by more than 1.5 goals,no Iran wins by more than 1.5 goals,no Over 4.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T00:00:00Z",
+      "created_time": "2026-06-26T21:04:53.968006Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBTOTAL-26JUN261840CINPIT,KXMLBTOTAL-26JUN261840HOUDET,KXMLBTOTAL-26JUN261907TEXTOR,KXMLBTOTAL-26JUN261910PHINYM,KXMLBTOTAL-26JUN261945CHCMIL,KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBTOTAL-26JUN261840CINPIT-4,KXMLBTOTAL-26JUN261840HOUDET-3,KXMLBTOTAL-26JUN261907TEXTOR-3,KXMLBTOTAL-26JUN261910PHINYM-5,KXMLBTOTAL-26JUN261945CHCMIL-5,KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26URUESP-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202656360526694"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202656360526694",
+      "expected_expiration_time": "2026-06-27T04:00:00Z",
+      "expiration_time": "2026-07-11T00:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T00:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840CINPIT",
+          "market_ticker": "KXMLBTOTAL-26JUN261840CINPIT-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840HOUDET",
+          "market_ticker": "KXMLBTOTAL-26JUN261840HOUDET-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBTOTAL-26JUN261907TEXTOR-3",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910PHINYM",
+          "market_ticker": "KXMLBTOTAL-26JUN261910PHINYM-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBTOTAL-26JUN261945CHCMIL-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 3.5 runs scored,yes Over 2.5 runs scored,yes Over 2.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Spain,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202656360526694-66059577BA5",
+      "title": "yes Over 3.5 runs scored,yes Over 2.5 runs scored,yes Over 2.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Spain,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 3.5 runs scored,yes Over 2.5 runs scored,yes Over 2.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Spain,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:53.942671Z",
+      "custom_strike": {
+        "Associated Events": "KXMLBTOTAL-26JUN261840CINPIT,KXMLBTOTAL-26JUN261840HOUDET,KXMLBTOTAL-26JUN261905WSHBAL,KXMLBTOTAL-26JUN261907TEXTOR,KXMLBTOTAL-26JUN261910AZTB,KXMLBTOTAL-26JUN261910NYYBOS,KXMLBTOTAL-26JUN261910PHINYM,KXMLBTOTAL-26JUN261910SEACLE,KXMLBTOTAL-26JUN261940KCCWS,KXMLBTOTAL-26JUN261945CHCMIL,KXMLBTOTAL-26JUN262010COLMIN,KXMLBTOTAL-26JUN262015MIASTL,KXMLBTOTAL-26JUN262138ATHLAA,KXMLBTOTAL-26JUN262145LADSD,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWNBAGAME-26JUN26PDXCHI",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXMLBTOTAL-26JUN261840CINPIT-4,KXMLBTOTAL-26JUN261840HOUDET-5,KXMLBTOTAL-26JUN261905WSHBAL-6,KXMLBTOTAL-26JUN261907TEXTOR-5,KXMLBTOTAL-26JUN261910AZTB-5,KXMLBTOTAL-26JUN261910NYYBOS-5,KXMLBTOTAL-26JUN261910PHINYM-5,KXMLBTOTAL-26JUN261910SEACLE-4,KXMLBTOTAL-26JUN261940KCCWS-5,KXMLBTOTAL-26JUN261945CHCMIL-4,KXMLBTOTAL-26JUN262010COLMIN-5,KXMLBTOTAL-26JUN262015MIASTL-4,KXMLBTOTAL-26JUN262138ATHLAA-5,KXMLBTOTAL-26JUN262145LADSD-4,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWNBAGAME-26JUN26PDXCHI-CHI",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20266D1BFDB8973"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20266D1BFDB8973",
+      "expected_expiration_time": "2026-06-27T06:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840CINPIT",
+          "market_ticker": "KXMLBTOTAL-26JUN261840CINPIT-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261840HOUDET",
+          "market_ticker": "KXMLBTOTAL-26JUN261840HOUDET-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261905WSHBAL",
+          "market_ticker": "KXMLBTOTAL-26JUN261905WSHBAL-6",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261907TEXTOR",
+          "market_ticker": "KXMLBTOTAL-26JUN261907TEXTOR-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910AZTB",
+          "market_ticker": "KXMLBTOTAL-26JUN261910AZTB-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910NYYBOS",
+          "market_ticker": "KXMLBTOTAL-26JUN261910NYYBOS-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910PHINYM",
+          "market_ticker": "KXMLBTOTAL-26JUN261910PHINYM-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261910SEACLE",
+          "market_ticker": "KXMLBTOTAL-26JUN261910SEACLE-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261940KCCWS",
+          "market_ticker": "KXMLBTOTAL-26JUN261940KCCWS-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN261945CHCMIL",
+          "market_ticker": "KXMLBTOTAL-26JUN261945CHCMIL-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN262010COLMIN",
+          "market_ticker": "KXMLBTOTAL-26JUN262010COLMIN-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN262015MIASTL",
+          "market_ticker": "KXMLBTOTAL-26JUN262015MIASTL-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN262138ATHLAA",
+          "market_ticker": "KXMLBTOTAL-26JUN262138ATHLAA-5",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBTOTAL-26JUN262145LADSD",
+          "market_ticker": "KXMLBTOTAL-26JUN262145LADSD-4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWNBAGAME-26JUN26PDXCHI",
+          "market_ticker": "KXWNBAGAME-26JUN26PDXCHI-CHI",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 5.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Belgium,yes Spain,yes Chicago",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20266D1BFDB8973-9845FE5F43C",
+      "title": "yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 5.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Belgium,yes Spain,yes Chicago",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 5.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Over 4.5 runs scored,yes Over 3.5 runs scored,yes Belgium,yes Spain,yes Chicago"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:53.941625Z",
+      "custom_strike": {
+        "Associated Events": "KXWCBTTS-26JUN26CPVKSA,KXWCBTTS-26JUN26URUESP,KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26NZLBEL,KXWCGOAL-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,no,no,yes",
+        "Associated Markets": "KXWCBTTS-26JUN26CPVKSA-BTTS,KXWCBTTS-26JUN26URUESP-BTTS,KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1,KXWCTOTAL-26JUN26CPVKSA-6,KXWCTOTAL-26JUN26EGYIRI-4,KXWCTOTAL-26JUN26NZLBEL-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B9FF201D7A5"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B9FF201D7A5",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCBTTS-26JUN26CPVKSA",
+          "market_ticker": "KXWCBTTS-26JUN26CPVKSA-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCBTTS-26JUN26URUESP",
+          "market_ticker": "KXWCBTTS-26JUN26URUESP-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGOAL-26JUN26URUESP",
+          "market_ticker": "KXWCGOAL-26JUN26URUESP-ESPLYAMAL10-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-4",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B9FF201D7A5-4BFA4D0C9D4",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Cape Verde,yes Belgium,yes Lamine Yamal: 1+,no Over 5.5 goals scored,no Over 3.5 goals scored,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:53.924054Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCTCORNERS-26JUN26URUESP,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCTCORNERS-26JUN26URUESP-URU4,KXWCTOTAL-26JUN26EGYIRI-2,KXWCTOTAL-26JUN26URUESP-3",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261B7A7508430"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261B7A7508430",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTCORNERS-26JUN26URUESP",
+          "market_ticker": "KXWCTCORNERS-26JUN26URUESP-URU4",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-2",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-3",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Uruguay: 4+,yes Over 1.5 goals scored,yes Over 2.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261B7A7508430-C0162A57179",
+      "title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Uruguay: 4+,yes Over 1.5 goals scored,yes Over 2.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Uruguay: 4+,yes Over 1.5 goals scored,yes Over 2.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-12T02:00:00Z",
+      "created_time": "2026-06-26T21:04:53.920827Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26CPVKSA,KXWCGAME-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27CODUZB,KXWCGAME-26JUN27COLPOR,KXWCGAME-26JUN27CROGHA,KXWCGAME-26JUN27DZAAUT,KXWCGAME-26JUN27PANENG",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWCGAME-26JUN26CPVKSA-CPV,KXWCGAME-26JUN26EGYIRI-EGY,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27CODUZB-COD,KXWCGAME-26JUN27COLPOR-COL,KXWCGAME-26JUN27CROGHA-CRO,KXWCGAME-26JUN27DZAAUT-DZA,KXWCGAME-26JUN27PANENG-ENG",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C8CAD7DCAD"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C8CAD7DCAD",
+      "expected_expiration_time": "2026-06-28T05:00:00Z",
+      "expiration_time": "2026-07-12T02:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-12T02:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26CPVKSA",
+          "market_ticker": "KXWCGAME-26JUN26CPVKSA-CPV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26EGYIRI",
+          "market_ticker": "KXWCGAME-26JUN26EGYIRI-EGY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CODUZB",
+          "market_ticker": "KXWCGAME-26JUN27CODUZB-COD",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27COLPOR",
+          "market_ticker": "KXWCGAME-26JUN27COLPOR-COL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27CROGHA",
+          "market_ticker": "KXWCGAME-26JUN27CROGHA-CRO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27DZAAUT",
+          "market_ticker": "KXWCGAME-26JUN27DZAAUT-DZA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Colombia,yes Croatia,yes Algeria,yes England",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20260C8CAD7DCAD-84E170387AC",
+      "title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Colombia,yes Croatia,yes Algeria,yes England",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Cape Verde,yes Egypt,yes Belgium,yes Spain,yes Congo DR,yes Colombia,yes Croatia,yes Algeria,yes England"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T21:00:00Z",
+      "created_time": "2026-06-26T21:04:53.914211Z",
+      "custom_strike": {
+        "Associated Events": "KXWC1HTOTAL-26JUN26NZLBEL,KXWC1HTOTAL-26JUN26URUESP,KXWCBTTS-26JUN26CPVKSA,KXWCBTTS-26JUN26EGYIRI,KXWCGAME-26JUN26NZLBEL,KXWCGAME-26JUN26URUESP,KXWCGAME-26JUN27PANENG,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes",
+        "Associated Markets": "KXWC1HTOTAL-26JUN26NZLBEL-1,KXWC1HTOTAL-26JUN26URUESP-1,KXWCBTTS-26JUN26CPVKSA-BTTS,KXWCBTTS-26JUN26EGYIRI-BTTS,KXWCGAME-26JUN26NZLBEL-BEL,KXWCGAME-26JUN26URUESP-ESP,KXWCGAME-26JUN27PANENG-ENG,KXWCTOTAL-26JUN26URUESP-2",
+        "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BD37FBB6261"
+      },
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BD37FBB6261",
+      "expected_expiration_time": "2026-06-28T00:00:00Z",
+      "expiration_time": "2026-07-11T21:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T21:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWC1HTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWC1HTOTAL-26JUN26NZLBEL-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWC1HTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWC1HTOTAL-26JUN26URUESP-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCBTTS-26JUN26CPVKSA",
+          "market_ticker": "KXWCBTTS-26JUN26CPVKSA-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCBTTS-26JUN26EGYIRI",
+          "market_ticker": "KXWCBTTS-26JUN26EGYIRI-BTTS",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26NZLBEL",
+          "market_ticker": "KXWCGAME-26JUN26NZLBEL-BEL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCGAME-26JUN27PANENG",
+          "market_ticker": "KXWCGAME-26JUN27PANENG-ENG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Over 0.5 1H goals scored,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Both Teams To Score,yes Belgium,yes Spain,yes England,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026BD37FBB6261-E2AC6E9A962",
+      "title": "yes Over 0.5 1H goals scored,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Both Teams To Score,yes Belgium,yes Spain,yes England,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Over 0.5 1H goals scored,yes Over 0.5 1H goals scored,yes Both Teams To Score,yes Both Teams To Score,yes Belgium,yes Spain,yes England,yes Over 1.5 goals scored"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-07-11T03:00:00Z",
+      "created_time": "2026-06-26T21:04:53.899414Z",
+      "custom_strike": {
+        "Associated Events": "KXWCGAME-26JUN26URUESP,KXWCTOTAL-26JUN26CPVKSA,KXWCTOTAL-26JUN26EGYIRI,KXWCTOTAL-26JUN26NZLBEL,KXWCTOTAL-26JUN26URUESP",
+        "Associated Market Sides": "yes,no,no,no,yes",
+        "Associated Markets": "KXWCGAME-26JUN26URUESP-ESP,KXWCTOTAL-26JUN26CPVKSA-6,KXWCTOTAL-26JUN26EGYIRI-5,KXWCTOTAL-26JUN26NZLBEL-6,KXWCTOTAL-26JUN26URUESP-2",
+        "Multivariate Event Ticker": "KXMVECROSSCATEGORY-S2026833DFC6877A"
+      },
+      "event_ticker": "KXMVECROSSCATEGORY-S2026833DFC6877A",
+      "expected_expiration_time": "2026-06-27T07:00:00Z",
+      "expiration_time": "2026-07-11T03:00:00Z",
+      "expiration_value": "",
+      "fractional_trading_enabled": true,
+      "is_provisional": true,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-07-11T03:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXWCGAME-26JUN26URUESP",
+          "market_ticker": "KXWCGAME-26JUN26URUESP-ESP",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26CPVKSA",
+          "market_ticker": "KXWCTOTAL-26JUN26CPVKSA-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26EGYIRI",
+          "market_ticker": "KXWCTOTAL-26JUN26EGYIRI-5",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26NZLBEL",
+          "market_ticker": "KXWCTOTAL-26JUN26NZLBEL-6",
+          "side": "no"
+        },
+        {
+          "event_ticker": "KXWCTOTAL-26JUN26URUESP",
+          "market_ticker": "KXWCTOTAL-26JUN26URUESP-2",
+          "side": "yes"
+        }
+      ],
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "1.0000",
+      "no_sub_title": "yes Spain,no Over 5.5 goals scored,no Over 4.5 goals scored,no Over 5.5 goals scored,yes Over 1.5 goals scored",
+      "notional_value_dollars": "1.0000",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-06-26T21:04:53Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "deci_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0010"
+        }
+      ],
+      "response_price_units": "usd_cent",
+      "result": "",
+      "rules_primary": "",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 5,
+      "status": "active",
+      "strike_type": "custom",
+      "ticker": "KXMVECROSSCATEGORY-S2026833DFC6877A-61186241251",
+      "title": "yes Spain,no Over 5.5 goals scored,no Over 4.5 goals scored,no Over 5.5 goals scored,yes Over 1.5 goals scored",
+      "updated_time": "2026-06-26T21:04:54.786265Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "yes Spain,no Over 5.5 goals scored,no Over 4.5 goals scored,no Over 5.5 goals scored,yes Over 1.5 goals scored"
+    }
+  ]
+}

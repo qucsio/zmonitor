@@ -2,9 +2,12 @@ import time
 
 import redis
 from django.conf import settings
+from django.contrib import messages
+from django.core.paginator import Paginator
 from django.db import connection
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
 from . import models
 
@@ -65,5 +68,61 @@ def dashboard(request):
             "open_opportunities": models.OpportunityEvent.objects.filter(status="open").count(),
         },
         "last_discovery": models.DiscoveryRun.objects.order_by("-started_at").first(),
+        "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:10],
     }
     return render(request, "scanner/dashboard.html", ctx)
+
+
+def markets(request):
+    qs = models.RawMarket.objects.all().order_by("-last_seen_at")
+
+    venue = request.GET.get("venue") or ""
+    status = request.GET.get("status") or ""
+    matching_status = request.GET.get("matching_status") or ""
+    enable_ob = request.GET.get("enable_orderbook") or ""
+    search = request.GET.get("q") or ""
+
+    if venue:
+        qs = qs.filter(venue=venue)
+    if status:
+        qs = qs.filter(status=status)
+    if matching_status:
+        qs = qs.filter(matching_status=matching_status)
+    if enable_ob in ("true", "false"):
+        qs = qs.filter(enable_orderbook=(enable_ob == "true"))
+    if search:
+        qs = qs.filter(title__icontains=search) | qs.filter(question__icontains=search)
+
+    paginator = Paginator(qs, 50)
+    page = paginator.get_page(request.GET.get("page"))
+    return render(request, "scanner/markets.html", {
+        "page": page,
+        "filters": {"venue": venue, "status": status, "matching_status": matching_status,
+                    "enable_orderbook": enable_ob, "q": search},
+        "matching_states": ["pending", "normalized", "matched", "rejected", "needs_review", "ignored"],
+        "total": paginator.count,
+    })
+
+
+def market_detail(request, pk):
+    market = get_object_or_404(models.RawMarket, pk=pk)
+    return render(request, "scanner/market_detail.html", {
+        "market": market,
+        "outcomes": market.outcomes.all(),
+        "normalized": getattr(market, "normalized", None),
+    })
+
+
+@require_POST
+def run_discovery_view(request):
+    from .tasks import discover_venue
+
+    venue = request.POST.get("venue", "all")
+    venues = ["polymarket", "kalshi"] if venue == "all" else [venue]
+    for v in venues:
+        try:
+            discover_venue.delay(v)
+        except Exception:  # noqa: BLE001  (broker down -> run inline)
+            discover_venue.run(v)
+    messages.success(request, f"Discovery queued for: {', '.join(venues)}")
+    return redirect("dashboard")

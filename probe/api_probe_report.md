@@ -1,0 +1,17 @@
+# API Probe Report
+
+## Polymarket
+- events: OK (200, 326ms), count=20
+  - fields: ['active', 'archived', 'automaticallyActive', 'closed', 'commentCount', 'competitive', 'createdAt', 'creationDate', 'cumulativeMarkets', 'cyom', 'deploying', 'description', 'enableNegRisk', 'enableOrderBook', 'endDate', 'estimateValue', 'eventMetadata', 'featured', 'gmpChartMode', 'icon', 'id', 'image', 'liquidity', 'liquidityClob', 'markets', 'negRisk', 'negRiskAugmented', 'new', 'openInterest', 'pendingDeployment', 'requiresTranslation', 'resolutionSource', 'restricted', 'showAllOutcomes', 'showMarketImages', 'slug', 'startDate', 'tags', 'ticker', 'title', 'updatedAt', 'volume', 'volume1mo', 'volume1wk', 'volume1yr', 'volume24hr']
+- markets: OK (200), count=50
+  - fields: ['acceptingOrders', 'acceptingOrdersTimestamp', 'active', 'approved', 'archived', 'automaticallyActive', 'bestAsk', 'bestBid', 'clearBookOnStart', 'clobTokenIds', 'closed', 'comboStatus', 'competitive', 'conditionId', 'createdAt', 'customLiveness', 'cyom', 'deploying', 'deployingTimestamp', 'description', 'enableOrderBook', 'endDate', 'endDateIso', 'events', 'featured', 'feeSchedule', 'feeType', 'feesEnabled', 'funded', 'groupItemThreshold', 'groupItemTitle', 'hasReviewedDates', 'holdingRewardsEnabled', 'icon', 'id', 'image', 'lastTradePrice', 'liquidity', 'liquidityClob', 'liquidityNum', 'makerBaseFee', 'manualActivation', 'marketMakerAddress', 'negRisk', 'negRiskOther', 'negRiskRequestID', 'new', 'oneDayPriceChange', 'oneMonthPriceChange', 'oneYearPriceChange', 'orderMinSize', 'orderPriceMinTickSize', 'outcomePrices', 'outcomes', 'pagerDutyNotificationEnabled', 'pendingDeployment', 'question', 'questionID', 'ready', 'requiresTranslation', 'resolutionSource', 'resolvedBy', 'restricted', 'rewardsMaxSpread', 'rewardsMinSize', 'rfqEnabled', 'seriesColor', 'showGmpOutcome', 'showGmpSeries', 'slug', 'spread', 'startDate', 'startDateIso', 'submitted_by', 'takerBaseFee', 'umaBond', 'umaResolutionStatuses', 'umaReward', 'updatedAt', 'volume', 'volume1mo', 'volume1moClob', 'volume1wk', 'volume1wkClob', 'volume1yr', 'volume1yrClob', 'volume24hr', 'volume24hrClob', 'volumeClob', 'volumeNum']
+  - usable clobTokenIds found: 10
+- book: OK, fields: ['asks', 'asset_id', 'bids', 'hash', 'last_trade_price', 'market', 'min_order_size', 'neg_risk', 'tick_size', 'timestamp']
+
+## Kalshi
+- auth configured: True
+- exchange/status: OK, fields: ['exchange_active', 'trading_active']
+- portfolio/balance: OK, fields: ['balance', 'balance_breakdown', 'balance_dollars', 'portfolio_value', 'updated_ts']
+- markets: OK, count=50
+  - fields: ['can_close_early', 'close_time', 'created_time', 'custom_strike', 'event_ticker', 'expected_expiration_time', 'expiration_time', 'expiration_value', 'fractional_trading_enabled', 'is_provisional', 'last_price_dollars', 'latest_expiration_time', 'liquidity_dollars', 'market_type', 'mve_collection_ticker', 'mve_selected_legs', 'no_ask_dollars', 'no_bid_dollars', 'no_sub_title', 'notional_value_dollars', 'open_interest_fp', 'open_time', 'previous_price_dollars', 'previous_yes_ask_dollars', 'previous_yes_bid_dollars', 'price_level_structure', 'price_ranges', 'response_price_units', 'result', 'rules_primary', 'rules_secondary', 'settlement_timer_seconds', 'status', 'strike_type', 'ticker', 'title', 'updated_time', 'volume_24h_fp', 'volume_fp', 'yes_ask_dollars', 'yes_ask_size_fp', 'yes_bid_dollars', 'yes_bid_size_fp', 'yes_sub_title']
+- orderbook (KXMVESPORTSMULTIGAMEEXTENDED-S2026EF424B16D86-34C8D18E059): OK, fields: ['orderbook_fp']

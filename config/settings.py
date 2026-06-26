@@ -99,6 +99,13 @@ CELERY_RESULT_BACKEND = REDIS_URL
 CELERY_TASK_DEFAULT_QUEUE = "discovery"
 CELERY_TIMEZONE = "UTC"
 
+CELERY_BEAT_SCHEDULE = {
+    "discovery-all": {
+        "task": "scanner.tasks.discover_all",
+        "schedule": float(env_int("DISCOVERY_INTERVAL_SEC", 300)),
+    },
+}
+
 # ---- Scanner config ----
 SCANNER = {
     "DISCOVERY_INTERVAL_SEC": env_int("DISCOVERY_INTERVAL_SEC", 300),

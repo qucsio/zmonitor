@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Markets{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Markets <span class="text-muted fs-6">({{ total }})</span></h1>
+
+<form class="row g-2 mb-3" method="get">
+  <div class="col-auto">
+    <select name="venue" class="form-select form-select-sm">
+      <option value="">All venues</option>
+      <option value="polymarket" {% if filters.venue == 'polymarket' %}selected{% endif %}>Polymarket</option>
+      <option value="kalshi" {% if filters.venue == 'kalshi' %}selected{% endif %}>Kalshi</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <select name="matching_status" class="form-select form-select-sm">
+      <option value="">All matching states</option>
+      {% for s in matching_states %}
+      <option value="{{ s }}" {% if filters.matching_status == s %}selected{% endif %}>{{ s }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-auto">
+    <select name="enable_orderbook" class="form-select form-select-sm">
+      <option value="">Orderbook: any</option>
+      <option value="true" {% if filters.enable_orderbook == 'true' %}selected{% endif %}>Enabled</option>
+      <option value="false" {% if filters.enable_orderbook == 'false' %}selected{% endif %}>Disabled</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <input type="text" name="q" value="{{ filters.q }}" placeholder="search title/question"
+           class="form-control form-control-sm" style="width:240px">
+  </div>
+  <div class="col-auto"><button class="btn btn-sm btn-secondary">Filter</button></div>
+</form>
+
+<table class="table table-sm table-striped bg-white align-middle">
+  <thead><tr>
+    <th>Venue</th><th>Title / Question</th><th>Event</th><th>Status</th>
+    <th>OB</th><th>Acc.</th><th>Matching</th><th>Close</th><th>Last seen</th>
+  </tr></thead>
+  <tbody>
+  {% for m in page %}
+    <tr>
+      <td><span class="badge bg-secondary">{{ m.venue }}</span></td>
+      <td><a href="/markets/{{ m.id }}/">{{ m.title|default:m.question|truncatechars:80 }}</a></td>
+      <td class="small text-muted">{{ m.venue_event_id|default:"—"|truncatechars:24 }}</td>
+      <td>{{ m.status|default:"—" }}</td>
+      <td>{% if m.enable_orderbook %}✅{% else %}—{% endif %}</td>
+      <td>{% if m.accepting_orders %}✅{% else %}—{% endif %}</td>
+      <td><span class="badge bg-info text-dark">{{ m.matching_status }}</span></td>
+      <td class="small">{{ m.close_time|date:"Y-m-d H:i"|default:"—" }}</td>
+      <td class="small text-muted">{{ m.last_seen_at|date:"m-d H:i" }}</td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="9" class="text-muted">No markets. Run discovery.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% if page.has_other_pages %}
+<nav>
+  <ul class="pagination pagination-sm">
+    {% if page.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ page.previous_page_number }}&venue={{ filters.venue }}&matching_status={{ filters.matching_status }}&enable_orderbook={{ filters.enable_orderbook }}&q={{ filters.q }}">Prev</a></li>
+    {% endif %}
+    <li class="page-item disabled"><span class="page-link">{{ page.number }} / {{ page.paginator.num_pages }}</span></li>
+    {% if page.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ page.next_page_number }}&venue={{ filters.venue }}&matching_status={{ filters.matching_status }}&enable_orderbook={{ filters.enable_orderbook }}&q={{ filters.q }}">Next</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock %}
