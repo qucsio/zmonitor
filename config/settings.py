@@ -109,6 +109,19 @@ CELERY_BEAT_SCHEDULE = {
 # ---- Scanner config ----
 SCANNER = {
     "DISCOVERY_INTERVAL_SEC": env_int("DISCOVERY_INTERVAL_SEC", 300),
+    "DISCOVERY_MAX_PAGES": env_int("DISCOVERY_MAX_PAGES", 40),
+    "DISCOVERY_PAGE_THROTTLE_MS": env_int("DISCOVERY_PAGE_THROTTLE_MS", 250),
+    # Polymarket tag slugs to keep (substring match against event tag slugs/labels)
+    "DISCOVERY_PM_TAGS": [t.strip().lower() for t in os.getenv(
+        "DISCOVERY_PM_TAGS",
+        "sports,esports,csgo,cs2,counter-strike,dota,lol,league-of-legends,"
+        "valorant,rocket-league,overwatch,nba,nfl,nhl,mlb,soccer,football,"
+        "tennis,ufc,mma,boxing,f1,formula-1",
+    ).split(",") if t.strip()],
+    # Kalshi event categories to keep (case-insensitive substring match)
+    "DISCOVERY_KALSHI_CATEGORIES": [c.strip().lower() for c in os.getenv(
+        "DISCOVERY_KALSHI_CATEGORIES", "sports,esports",
+    ).split(",") if c.strip()],
     "MATCHING_INTERVAL_SEC": env_int("MATCHING_INTERVAL_SEC", 30),
     "ORDERBOOK_MODE": os.getenv("ORDERBOOK_MODE", "rest"),
     "ORDERBOOK_REFRESH_SEC": env_int("ORDERBOOK_REFRESH_SEC", 1),
