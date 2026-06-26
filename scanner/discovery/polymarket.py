@@ -34,20 +34,6 @@ def _is_usable(m):
     )
 
 
-def _event_matches(ev):
-    wanted = settings.SCANNER["DISCOVERY_PM_TAGS"]
-    if not wanted:
-        return True
-    tags = ev.get("tags") or []
-    for t in tags:
-        slug = (t.get("slug") or "").lower()
-        label = (t.get("label") or "").lower()
-        for w in wanted:
-            if w in slug or w in label:
-                return True
-    return False
-
-
 def _save_event(ev):
     tags = ev.get("tags") or []
     upsert_event(
@@ -105,36 +91,44 @@ def _save_market(m, venue_event_id):
     return created
 
 
-def discover(page_size=100):
-    """Events-driven discovery filtered to configured sports/esports tags."""
-    max_pages = settings.SCANNER["DISCOVERY_MAX_PAGES"]
-    throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
-    seen = new = updated = 0
+def _discover_tag(tag_slug, page_size, max_pages, throttle, counters):
     offset = 0
-
     for _ in range(max_pages):
-        r = pm_client.get_events(limit=page_size, offset=offset, closed=False)
+        r = pm_client.get_events(limit=page_size, offset=offset, closed=False, params={
+            "tag_slug": tag_slug, "active": "true", "related_tags": "true",
+        })
         if not r.ok:
-            logger.warning("polymarket events fetch failed: %s", r.error)
+            if r.status_code != 422:  # 422 = offset too deep; just stop this tag
+                logger.warning("polymarket events fetch failed (%s): %s", tag_slug, r.error)
             break
         events = r.data if isinstance(r.data, list) else r.data.get("data", [])
         if not events:
             break
         for ev in events:
-            if not isinstance(ev, dict) or not _event_matches(ev):
+            if not isinstance(ev, dict):
                 continue
             _save_event(ev)
             for m in ev.get("markets") or []:
                 if not isinstance(m, dict) or not _is_usable(m):
                     continue
-                seen += 1
+                counters["markets_seen"] += 1
                 if _save_market(m, ev.get("id")):
-                    new += 1
+                    counters["markets_new"] += 1
                 else:
-                    updated += 1
+                    counters["markets_updated"] += 1
         if len(events) < page_size:
             break
         offset += page_size
         if throttle:
             time.sleep(throttle)
-    return {"markets_seen": seen, "markets_new": new, "markets_updated": updated}
+
+
+def discover(page_size=100):
+    """Server-side filtered discovery: one pass per configured tag_slug."""
+    max_pages = settings.SCANNER["DISCOVERY_MAX_PAGES"]
+    throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
+    tags = settings.SCANNER["DISCOVERY_PM_TAGS"]
+    counters = {"markets_seen": 0, "markets_new": 0, "markets_updated": 0}
+    for tag in tags:
+        _discover_tag(tag, page_size, max_pages, throttle, counters)
+    return counters

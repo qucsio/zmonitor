@@ -89,6 +89,15 @@ def get_events(limit=100, cursor=None, status="open", params=None):
     return _get("/events", params=q)
 
 
+def get_series(category=None, tags=None):
+    q = {}
+    if category:
+        q["category"] = category
+    if tags:
+        q["tags"] = tags
+    return _get("/series", params=q or None)
+
+
 def get_orderbook(ticker, depth=None):
     q = {}
     if depth:

@@ -114,9 +114,8 @@ SCANNER = {
     # Polymarket tag slugs to keep (substring match against event tag slugs/labels)
     "DISCOVERY_PM_TAGS": [t.strip().lower() for t in os.getenv(
         "DISCOVERY_PM_TAGS",
-        "sports,esports,csgo,cs2,counter-strike,dota,lol,league-of-legends,"
-        "valorant,rocket-league,overwatch,nba,nfl,nhl,mlb,soccer,football,"
-        "tennis,ufc,mma,boxing,f1,formula-1",
+        "esports,csgo,cs2,counter-strike,dota,league-of-legends,valorant,"
+        "rocket-league,overwatch,nba,nfl,nhl,mlb,soccer,tennis,ufc,mma,boxing,f1",
     ).split(",") if t.strip()],
     # Kalshi event categories to keep (case-insensitive substring match)
     "DISCOVERY_KALSHI_CATEGORIES": [c.strip().lower() for c in os.getenv(
