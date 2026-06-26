@@ -30,9 +30,9 @@ docker compose exec web python manage.py api_probe
 ```
 
 Then open:
-- http://localhost:8000/            dashboard
-- http://localhost:8000/health/     health page
-- http://localhost:8000/admin/      Django admin
+- http://localhost:8005/            dashboard
+- http://localhost:8005/health/     health page
+- http://localhost:8005/admin/      Django admin
 
 ## api_probe
 Calls the real Polymarket (Gamma + CLOB) and Kalshi endpoints, saves responses
