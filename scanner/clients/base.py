@@ -26,7 +26,8 @@ def request(method, url, *, venue, log=True, **kwargs):
     ok = False
     try:
         timeout = kwargs.pop("timeout", 30.0)
-        resp = httpx.request(method, url, timeout=timeout, **kwargs)
+        proxy = kwargs.pop("proxy", None) or None
+        resp = httpx.request(method, url, timeout=timeout, proxy=proxy, **kwargs)
         status_code = resp.status_code
         ok = resp.is_success
         try:

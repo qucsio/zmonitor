@@ -58,7 +58,8 @@ def _path(endpoint):
 def _get(endpoint, params=None):
     base = _cfg("KALSHI_API_BASE")
     headers = _sign("GET", _path(endpoint))
-    return request("GET", f"{base}{endpoint}", venue="kalshi", params=params, headers=headers)
+    return request("GET", f"{base}{endpoint}", venue="kalshi", params=params,
+                   headers=headers, proxy=_cfg("KALSHI_PROXY_URL"))
 
 
 def get_limits():
