@@ -1,0 +1,87 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: arb
+      POSTGRES_PASSWORD: arb
+      POSTGRES_DB: arbscanner
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arb -d arbscanner"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    command: >
+      sh -c "python manage.py makemigrations scanner &&
+             python manage.py migrate &&
+             python manage.py collectstatic --noinput || true;
+             gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+    volumes:
+      - .:/app
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker-discovery:
+    build: .
+    command: celery -A config worker -Q discovery -n discovery@%h --concurrency=2
+    volumes:
+      - .:/app
+    env_file: .env
+    depends_on:
+      - web
+      - redis
+
+  worker-matching:
+    build: .
+    command: celery -A config worker -Q matching -n matching@%h --concurrency=2
+    volumes:
+      - .:/app
+    env_file: .env
+    depends_on:
+      - web
+      - redis
+
+  worker-orderbook:
+    build: .
+    command: python manage.py run_orderbook_loop
+    volumes:
+      - .:/app
+    env_file: .env
+    depends_on:
+      - web
+      - redis
+
+  celery-beat:
+    build: .
+    command: celery -A config beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - .:/app
+    env_file: .env
+    depends_on:
+      - web
+      - redis
+
+volumes:
+  pgdata:

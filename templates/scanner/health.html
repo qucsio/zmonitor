@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Health{% endblock %}
+{% block content %}
+<h1 class="h3 mb-4">System Health</h1>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Overall</h5>
+        <span class="badge {% if payload.status == 'ok' %}bg-success{% else %}bg-danger{% endif %} fs-6">
+          {{ payload.status|upper }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">PostgreSQL</h5>
+        <span class="badge {% if payload.postgres.ok %}bg-success{% else %}bg-danger{% endif %}">
+          {% if payload.postgres.ok %}OK{% else %}DOWN{% endif %}
+        </span>
+        {% if payload.postgres.error %}<div class="text-danger small mt-2">{{ payload.postgres.error }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Redis</h5>
+        <span class="badge {% if payload.redis.ok %}bg-success{% else %}bg-danger{% endif %}">
+          {% if payload.redis.ok %}OK{% else %}DOWN{% endif %}
+        </span>
+        {% if payload.redis.ok %}<div class="small text-muted mt-2">{{ payload.redis.latency_ms }} ms</div>{% endif %}
+        {% if payload.redis.error %}<div class="text-danger small mt-2">{{ payload.redis.error }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="h5 mt-4">Last API errors</h2>
+<table class="table table-sm table-striped bg-white">
+  <thead><tr><th>Time</th><th>Venue</th><th>Endpoint</th><th>Code</th><th>Error</th></tr></thead>
+  <tbody>
+    {% for e in last_errors %}
+    <tr>
+      <td>{{ e.created_at }}</td><td>{{ e.venue }}</td><td>{{ e.endpoint }}</td>
+      <td>{{ e.status_code }}</td><td class="small">{{ e.error_text }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5" class="text-muted">No errors logged.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

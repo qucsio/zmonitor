@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1 class="h3 mb-4">Dashboard</h1>
+<div class="row g-3">
+  {% for label, value in counters.items %}
+  <div class="col-md-3 col-sm-6">
+    <div class="card text-center">
+      <div class="card-body">
+        <div class="display-6">{{ value }}</div>
+        <div class="text-muted small">{{ label }}</div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<p class="mt-4 text-muted">
+  Last discovery:
+  {% if last_discovery %}{{ last_discovery.venue }} — {{ last_discovery.started_at }} ({{ last_discovery.status }}){% else %}never{% endif %}
+</p>
+{% endblock %}

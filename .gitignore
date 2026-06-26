@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+staticfiles/
+samples/*.json
+samples/*.jsonl
+samples/api_probe_report.md
+.venv/
+venv/
