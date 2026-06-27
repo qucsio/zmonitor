@@ -36,6 +36,14 @@ def _selected_series():
             if isinstance(s, dict) and s.get("ticker") and _series_matches(s, wanted)]
 
 
+def _series_of(event_ticker, selected):
+    """A Kalshi event_ticker is '<SERIES>-<...>'; series tickers may contain dashes."""
+    for st in selected:
+        if event_ticker == st or event_ticker.startswith(st + "-"):
+            return True
+    return False
+
+
 def _save_event(ev):
     upsert_event(VENUE_KALSHI, ev.get("event_ticker"), {
         "title": ev.get("title") or ev.get("sub_title"),
@@ -80,47 +88,54 @@ def _save_market(m, event_ticker):
     return created
 
 
-def _discover_series(series_ticker, page_size, max_pages, throttle, counters):
-    cursor = None
-    for _ in range(max_pages):
-        r = kalshi_client.get_events(limit=page_size, cursor=cursor, status="open", params={
-            "series_ticker": series_ticker, "with_nested_markets": "true",
-        })
-        if not r.ok or not isinstance(r.data, dict):
-            logger.warning("kalshi events fetch failed (%s): %s", series_ticker, r.error)
-            break
-        events = r.data.get("events", [])
-        if not events:
-            break
-        for ev in events:
-            if not isinstance(ev, dict):
-                continue
-            _save_event(ev)
-            for m in ev.get("markets") or []:
-                if not isinstance(m, dict) or not m.get("ticker"):
-                    continue
-                counters["markets_seen"] += 1
-                if _save_market(m, ev.get("event_ticker")):
-                    counters["markets_new"] += 1
-                else:
-                    counters["markets_updated"] += 1
-        cursor = r.data.get("cursor")
-        if not cursor:
-            break
-        if throttle:
-            time.sleep(throttle)
+def _save_event_stub(event_ticker, seen_events):
+    if event_ticker in seen_events:
+        return
+    seen_events.add(event_ticker)
+    upsert_event(VENUE_KALSHI, event_ticker, {
+        "title": event_ticker,
+        "sport": event_ticker.split("-", 1)[0],
+        "raw_json": {"event_ticker": event_ticker},
+    })
 
 
-def discover(page_size=200):
-    """Server-side filtered discovery: select sports/esports series, then their events."""
-    max_pages = settings.SCANNER["DISCOVERY_MAX_PAGES"]
+def discover(page_size=1000):
+    """Flat scan of open markets, filtered client-side to selected sports/esports series.
+    Far fewer requests than per-series fetching (Kalshi has hundreds of sports series)."""
+    max_pages = max(settings.SCANNER["DISCOVERY_MAX_PAGES"], 100)
     throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
     counters = {"markets_seen": 0, "markets_new": 0, "markets_updated": 0}
 
-    series = _selected_series()
-    logger.info("kalshi: %d series selected for discovery", len(series))
-    for st in series:
-        _discover_series(st, page_size, max_pages, throttle, counters)
+    selected = _selected_series()
+    logger.info("kalshi: %d series selected for discovery", len(selected))
+    if not selected:
+        return counters
+
+    seen_events = set()
+    cursor = None
+    for _ in range(max_pages):
+        r = kalshi_client.get_markets(limit=page_size, cursor=cursor, status="open")
+        if not r.ok or not isinstance(r.data, dict):
+            logger.warning("kalshi markets fetch failed: %s", r.error)
+            break
+        markets = r.data.get("markets", [])
+        if not markets:
+            break
+        for m in markets:
+            if not isinstance(m, dict) or not m.get("ticker"):
+                continue
+            event_ticker = m.get("event_ticker") or ""
+            if not _series_of(event_ticker, selected):
+                continue
+            _save_event_stub(event_ticker, seen_events)
+            counters["markets_seen"] += 1
+            if _save_market(m, event_ticker):
+                counters["markets_new"] += 1
+            else:
+                counters["markets_updated"] += 1
+        cursor = r.data.get("cursor")
+        if not cursor:
+            break
         if throttle:
             time.sleep(throttle)
     return counters
