@@ -47,7 +47,16 @@ def upsert_market(venue, venue_market_id, defaults):
     return obj, created
 
 
+def _clip(value, n=255):
+    if isinstance(value, str) and len(value) > n:
+        return value[:n]
+    return value
+
+
 def upsert_outcome(market, outcome_side, defaults):
+    defaults = dict(defaults)
+    defaults["token_id"] = _clip(defaults.get("token_id"))
+    defaults["ticker"] = _clip(defaults.get("ticker"))
     obj, _ = MarketOutcome.objects.update_or_create(
         market=market, outcome_side=outcome_side, defaults=defaults
     )

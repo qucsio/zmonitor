@@ -76,7 +76,7 @@ class MarketOutcome(models.Model):
 
     venue = models.CharField(max_length=32)
     outcome_side = models.CharField(max_length=16)  # yes / no
-    outcome_name = models.CharField(max_length=255, null=True, blank=True)
+    outcome_name = models.TextField(null=True, blank=True)
 
     token_id = models.CharField(max_length=255, null=True, blank=True)  # Polymarket
     ticker = models.CharField(max_length=255, null=True, blank=True)    # Kalshi
