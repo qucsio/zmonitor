@@ -15,33 +15,43 @@ CLOSED_STATES = {"closed", "settled", "finalized", "determined"}
 
 
 def _series_matches(s, wanted):
-    if not wanted:
+    """Exact category match; esports (no distinct category) caught by keyword."""
+    cat = (s.get("category") or "").strip().lower()
+    if cat and cat in wanted:
         return True
-    haystack = " ".join(filter(None, [
-        s.get("category"), s.get("ticker"), s.get("title"),
-        " ".join(s.get("tags") or []) if isinstance(s.get("tags"), list) else s.get("tags"),
-    ])).lower()
-    return any(w in haystack for w in wanted)
+    hay = " ".join(filter(None, [s.get("ticker"), s.get("title")])).lower()
+    return any(w in hay for w in wanted if w != "sports")
 
 
 def _selected_series():
-    """One /series call, filter client-side by configured categories/keywords."""
+    """One /series call; return the set of series tickers in wanted categories."""
     wanted = settings.SCANNER["DISCOVERY_KALSHI_CATEGORIES"]
     r = kalshi_client.get_series()
     if not r.ok or not isinstance(r.data, dict):
         logger.warning("kalshi series fetch failed: %s", r.error)
-        return []
+        return set()
     series = r.data.get("series") or r.data.get("series_list") or []
-    return [s.get("ticker") for s in series
-            if isinstance(s, dict) and s.get("ticker") and _series_matches(s, wanted)]
+    return {s.get("ticker") for s in series
+            if isinstance(s, dict) and s.get("ticker") and _series_matches(s, wanted)}
 
 
 def _series_of(event_ticker, selected):
-    """A Kalshi event_ticker is '<SERIES>-<...>'; series tickers may contain dashes."""
     for st in selected:
         if event_ticker == st or event_ticker.startswith(st + "-"):
             return True
     return False
+
+
+def _event_matches(ev, wanted, selected):
+    cat = (ev.get("category") or "").strip().lower()
+    if cat and cat in wanted:
+        return True
+    if _series_of(ev.get("event_ticker") or "", selected):
+        return True
+    hay = " ".join(filter(None, [
+        ev.get("event_ticker"), ev.get("title"), ev.get("series_ticker"),
+    ])).lower()
+    return any(w in hay for w in wanted if w != "sports")
 
 
 def _save_event(ev):
@@ -88,48 +98,40 @@ def _save_market(m, event_ticker):
     return created
 
 
-def _save_event_stub(event_ticker, seen_events):
-    if event_ticker in seen_events:
-        return
-    seen_events.add(event_ticker)
-    upsert_event(VENUE_KALSHI, event_ticker, {
-        "title": event_ticker,
-        "sport": event_ticker.split("-", 1)[0],
-        "raw_json": {"event_ticker": event_ticker},
-    })
-
-
-def discover(page_size=1000):
-    """Flat scan of open markets, filtered client-side to selected sports/esports series.
-    Far fewer requests than per-series fetching (Kalshi has hundreds of sports series)."""
-    max_pages = max(settings.SCANNER["DISCOVERY_MAX_PAGES"], 100)
+def discover(page_size=200):
+    """Events-only discovery (lightweight). Markets are fetched lazily at matching time
+    via fetch_markets_for_event(). Counters count EVENTS, not markets."""
+    max_pages = max(settings.SCANNER["DISCOVERY_MAX_PAGES"], 200)
     throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
+    wanted = settings.SCANNER["DISCOVERY_KALSHI_CATEGORIES"]
     counters = {"markets_seen": 0, "markets_new": 0, "markets_updated": 0}
 
     selected = _selected_series()
-    logger.info("kalshi: %d series selected for discovery", len(selected))
-    if not selected:
-        return counters
+    logger.info("kalshi: %d series in wanted categories", len(selected))
 
-    seen_events = set()
     cursor = None
     for _ in range(max_pages):
-        r = kalshi_client.get_markets(limit=page_size, cursor=cursor, status="open")
+        r = kalshi_client.get_events(limit=page_size, cursor=cursor, status="open")
         if not r.ok or not isinstance(r.data, dict):
-            logger.warning("kalshi markets fetch failed: %s", r.error)
+            logger.warning("kalshi events fetch failed: %s", r.error)
             break
-        markets = r.data.get("markets", [])
-        if not markets:
+        events = r.data.get("events", [])
+        if not events:
             break
-        for m in markets:
-            if not isinstance(m, dict) or not m.get("ticker"):
+        for ev in events:
+            if not isinstance(ev, dict) or not ev.get("event_ticker"):
                 continue
-            event_ticker = m.get("event_ticker") or ""
-            if not _series_of(event_ticker, selected):
+            if not _event_matches(ev, wanted, selected):
                 continue
-            _save_event_stub(event_ticker, seen_events)
             counters["markets_seen"] += 1
-            if _save_market(m, event_ticker):
+            _, created = upsert_event(VENUE_KALSHI, ev.get("event_ticker"), {
+                "title": ev.get("title") or ev.get("sub_title"),
+                "category": ev.get("category"),
+                "sport": ev.get("series_ticker"),
+                "status": ev.get("status"),
+                "raw_json": ev,
+            })
+            if created:
                 counters["markets_new"] += 1
             else:
                 counters["markets_updated"] += 1
@@ -139,3 +141,25 @@ def discover(page_size=1000):
         if throttle:
             time.sleep(throttle)
     return counters
+
+
+def fetch_markets_for_event(event_ticker, page_size=1000):
+    """Lazily pull and store all markets of a single Kalshi event. Used by matching.
+    Returns number of markets saved."""
+    saved = 0
+    cursor = None
+    for _ in range(20):
+        r = kalshi_client.get_markets(limit=page_size, cursor=cursor, status="open",
+                                      params={"event_ticker": event_ticker})
+        if not r.ok or not isinstance(r.data, dict):
+            logger.warning("kalshi markets fetch failed (%s): %s", event_ticker, r.error)
+            break
+        markets = r.data.get("markets", [])
+        for m in markets:
+            if isinstance(m, dict) and m.get("ticker"):
+                _save_market(m, event_ticker)
+                saved += 1
+        cursor = r.data.get("cursor")
+        if not cursor:
+            break
+    return saved
