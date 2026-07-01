@@ -113,6 +113,68 @@ def market_detail(request, pk):
     })
 
 
+def pairs(request):
+    qs = models.MatchedPair.objects.select_related(
+        "polymarket_market", "kalshi_market").order_by("-match_score", "-updated_at")
+    status = request.GET.get("status") or ""
+    game = request.GET.get("game") or ""
+    if status:
+        qs = qs.filter(status=status)
+    if game:
+        qs = qs.filter(game=game)
+
+    paginator = Paginator(qs, 50)
+    page = paginator.get_page(request.GET.get("page"))
+    counts = {s: models.MatchedPair.objects.filter(status=s).count()
+              for s in ["matched", "candidate", "needs_review", "rejected", "disabled"]}
+    return render(request, "scanner/pairs.html", {
+        "page": page, "filters": {"status": status, "game": game},
+        "counts": counts, "total": paginator.count,
+        "statuses": ["candidate", "matched", "needs_review", "rejected", "disabled"],
+    })
+
+
+def pair_detail(request, pk):
+    pair = get_object_or_404(
+        models.MatchedPair.objects.select_related("polymarket_market", "kalshi_market"), pk=pk)
+    pm = pair.polymarket_market
+    k = pair.kalshi_market
+    return render(request, "scanner/pair_detail.html", {
+        "pair": pair,
+        "pm": pm, "kalshi": k,
+        "pm_norm": getattr(pm, "normalized", None),
+        "k_norm": getattr(k, "normalized", None),
+        "pm_outcomes": pm.outcomes.all(),
+        "k_outcomes": k.outcomes.all(),
+    })
+
+
+@require_POST
+def pair_action(request, pk, action):
+    pair = get_object_or_404(models.MatchedPair, pk=pk)
+    mapping = {"mark-matched": "matched", "reject": "rejected",
+               "needs-review": "needs_review", "disable": "disabled"}
+    if action in mapping:
+        pair.status = mapping[action]
+        if action == "reject":
+            pair.reject_reason = request.POST.get("reason", "manual")
+        pair.save(update_fields=["status", "reject_reason", "updated_at"])
+        messages.success(request, f"Pair {pk} -> {mapping[action]}")
+    return redirect(request.META.get("HTTP_REFERER", "/pairs/"))
+
+
+@require_POST
+def run_matching_view(request):
+    from .tasks import match_markets_task
+
+    try:
+        match_markets_task.delay()
+    except Exception:  # noqa: BLE001
+        match_markets_task.run()
+    messages.success(request, "Matching queued")
+    return redirect("pairs")
+
+
 @require_POST
 def run_discovery_view(request):
     from .tasks import discover_venue

@@ -34,6 +34,18 @@ def discover_venue(venue):
             "new": run.markets_new, "updated": run.markets_updated}
 
 
+@shared_task(queue="matching")
+def match_markets_task():
+    from scanner.matching import run_matching
+    from scanner.normalize import normalize_pending
+
+    with _redis_lock("lock:match_all", 3600) as acquired:
+        if not acquired:
+            return {"skipped": "matching already running"}
+        normalize_pending(venue=VENUE_POLYMARKET)
+        return run_matching()
+
+
 @shared_task(queue="discovery")
 def discover_all():
     # Lock TTL a bit above the interval; if a previous run is still going, skip.

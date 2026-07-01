@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Pair {{ pair.id }}{% endblock %}
+{% block content %}
+<a href="/pairs/" class="small">&larr; Pairs</a>
+<div class="d-flex justify-content-between align-items-center my-3">
+  <h1 class="h4 mb-0">Pair {{ pair.id }}
+    <span class="badge bg-info text-dark">{{ pair.status }}</span>
+    <span class="text-muted fs-6">score {{ pair.match_score }}</span>
+  </h1>
+  <div>
+    <form method="post" action="/pairs/{{ pair.id }}/mark-matched/" class="d-inline">{% csrf_token %}<button class="btn btn-success btn-sm">Mark matched</button></form>
+    <form method="post" action="/pairs/{{ pair.id }}/needs-review/" class="d-inline">{% csrf_token %}<button class="btn btn-warning btn-sm">Needs review</button></form>
+    <form method="post" action="/pairs/{{ pair.id }}/reject/" class="d-inline">{% csrf_token %}<button class="btn btn-danger btn-sm">Reject</button></form>
+    <form method="post" action="/pairs/{{ pair.id }}/disable/" class="d-inline">{% csrf_token %}<button class="btn btn-outline-dark btn-sm">Disable</button></form>
+  </div>
+</div>
+
+<table class="table table-sm bg-white w-auto">
+  <tr><th>Game</th><td>{{ pair.game }}</td><th>Type</th><td>{{ pair.market_type }}</td><th>Map</th><td>{{ pair.map_number|default:"—" }}</td></tr>
+  <tr><th>Teams</th><td colspan="3">{{ pair.canonical_team_a }} vs {{ pair.canonical_team_b }}</td>
+      <th>Outcome map</th><td>{{ pair.outcome_mapping }}</td></tr>
+  <tr><th>Risk flags</th><td colspan="5" class="text-danger">{{ pair.risk_flags|join:", "|default:"—" }}</td></tr>
+</table>
+
+<div class="row">
+  <div class="col-md-6">
+    <h2 class="h6">Polymarket <a href="/markets/{{ pm.id }}/" class="small">open</a></h2>
+    <table class="table table-sm bg-white">
+      <tr><th>Title</th><td>{{ pm.title }}</td></tr>
+      <tr><th>Question</th><td>{{ pm.question }}</td></tr>
+      <tr><th>Type / Map</th><td>{{ pm_norm.market_type }} / {{ pm_norm.map_number|default:"—" }}</td></tr>
+      <tr><th>Teams</th><td>{{ pm_norm.team_a }} / {{ pm_norm.team_b }}</td></tr>
+      <tr><th>Outcomes</th><td>{% for o in pm_outcomes %}{{ o.outcome_side }}={{ o.outcome_name }} {% endfor %}</td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h2 class="h6">Kalshi <a href="/markets/{{ kalshi.id }}/" class="small">open</a></h2>
+    <table class="table table-sm bg-white">
+      <tr><th>Title</th><td>{{ kalshi.title }}</td></tr>
+      <tr><th>Question</th><td>{{ kalshi.question }}</td></tr>
+      <tr><th>Type / Map</th><td>{{ k_norm.market_type }} / {{ k_norm.map_number|default:"—" }}</td></tr>
+      <tr><th>Teams</th><td>{{ k_norm.team_a }} / {{ k_norm.team_b }}</td></tr>
+      <tr><th>Outcomes</th><td>{% for o in k_outcomes %}{{ o.outcome_side }}={{ o.outcome_name }} {% endfor %}</td></tr>
+    </table>
+  </div>
+</div>
+<p class="text-muted small">Orderbooks & fork table appear here in Stage 5–6.</p>
+{% endblock %}

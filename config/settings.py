@@ -102,7 +102,11 @@ CELERY_TIMEZONE = "UTC"
 CELERY_BEAT_SCHEDULE = {
     "discovery-all": {
         "task": "scanner.tasks.discover_all",
-        "schedule": float(env_int("DISCOVERY_INTERVAL_SEC", 300)),
+        "schedule": float(env_int("DISCOVERY_INTERVAL_SEC", 600)),
+    },
+    "match-all": {
+        "task": "scanner.tasks.match_markets_task",
+        "schedule": float(env_int("MATCHING_INTERVAL_SEC", 30) * 10),
     },
 }
 
@@ -145,8 +149,15 @@ SCANNER = {
     "KALSHI_PRIVATE_KEY_PATH": os.getenv("KALSHI_PRIVATE_KEY_PATH", ""),
     "KALSHI_PROXY_URL": os.getenv("KALSHI_PROXY_URL", "") or None,
     "LLM_MATCHING_ENABLED": env_bool("LLM_MATCHING_ENABLED", False),
-    "LLM_PROVIDER": os.getenv("LLM_PROVIDER", "ollama"),
-    "LLM_MODEL": os.getenv("LLM_MODEL", "qwen2.5:3b"),
+    "LLM_PROVIDER": os.getenv("LLM_PROVIDER", "openai"),
+    "LLM_MODEL": os.getenv("LLM_MODEL", "gpt-4o-mini"),
+    "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY", ""),
+    "OPENAI_BASE_URL": os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"),
+    "OPENAI_PROXY_URL": os.getenv("OPENAI_PROXY_URL", "") or None,
+    # Matching thresholds
+    "MATCH_AUTO_THRESHOLD": env_decimal("MATCH_AUTO_THRESHOLD", "0.95"),
+    "MATCH_REVIEW_THRESHOLD": env_decimal("MATCH_REVIEW_THRESHOLD", "0.85"),
+    "MATCH_TIME_WINDOW_HOURS": env_int("MATCH_TIME_WINDOW_HOURS", 24),
 }
 
 LOGGING = {

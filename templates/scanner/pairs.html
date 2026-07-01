@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Matched pairs{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h3 mb-0">Pairs <span class="text-muted fs-6">({{ total }})</span></h1>
+  <form method="post" action="/matching/run/">{% csrf_token %}
+    <button class="btn btn-primary btn-sm">Run matching now</button>
+  </form>
+</div>
+
+<div class="mb-3">
+  {% for s, c in counts.items %}
+    <a href="?status={{ s }}" class="badge bg-secondary text-decoration-none">{{ s }}: {{ c }}</a>
+  {% endfor %}
+  <a href="/pairs/" class="badge bg-dark text-decoration-none">all</a>
+</div>
+
+<table class="table table-sm table-striped bg-white align-middle">
+  <thead><tr>
+    <th>ID</th><th>Status</th><th>Score</th><th>Game</th><th>Teams</th>
+    <th>Type</th><th>Map</th><th>PM</th><th>Kalshi</th><th>Risk</th><th>Actions</th>
+  </tr></thead>
+  <tbody>
+  {% for p in page %}
+    <tr>
+      <td><a href="/pairs/{{ p.id }}/">{{ p.id }}</a></td>
+      <td><span class="badge bg-{% if p.status == 'matched' %}success{% elif p.status == 'needs_review' %}warning text-dark{% elif p.status == 'rejected' %}danger{% else %}secondary{% endif %}">{{ p.status }}</span></td>
+      <td>{{ p.match_score }}</td>
+      <td>{{ p.game|default:"—" }}</td>
+      <td class="small">{{ p.canonical_team_a }} vs {{ p.canonical_team_b }}</td>
+      <td>{{ p.market_type }}</td>
+      <td>{{ p.map_number|default:"—" }}</td>
+      <td class="small">{{ p.polymarket_market.title|truncatechars:28 }}</td>
+      <td class="small">{{ p.kalshi_market.title|truncatechars:28 }}</td>
+      <td class="small text-danger">{{ p.risk_flags|join:", " }}</td>
+      <td>
+        <form method="post" action="/pairs/{{ p.id }}/mark-matched/" class="d-inline">{% csrf_token %}<button class="btn btn-outline-success btn-sm py-0">✓</button></form>
+        <form method="post" action="/pairs/{{ p.id }}/reject/" class="d-inline">{% csrf_token %}<button class="btn btn-outline-danger btn-sm py-0">✗</button></form>
+        <form method="post" action="/pairs/{{ p.id }}/needs-review/" class="d-inline">{% csrf_token %}<button class="btn btn-outline-warning btn-sm py-0">?</button></form>
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="11" class="text-muted">No pairs yet. Run matching.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% if page.has_other_pages %}
+<nav><ul class="pagination pagination-sm">
+  {% if page.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page.previous_page_number }}&status={{ filters.status }}">Prev</a></li>{% endif %}
+  <li class="page-item disabled"><span class="page-link">{{ page.number }} / {{ page.paginator.num_pages }}</span></li>
+  {% if page.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page.next_page_number }}&status={{ filters.status }}">Next</a></li>{% endif %}
+</ul></nav>
+{% endif %}
+{% endblock %}
