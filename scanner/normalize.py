@@ -67,6 +67,29 @@ def detect_game(*texts):
     return None
 
 
+def kalshi_type_from_ticker(event_ticker, ticker):
+    """Kalshi tickers encode the market type reliably, e.g.
+    KXCS2GAME (match), KXCS2MAP-...-1 (map 1), KXCS2TOTALMAPS (total)."""
+    et = (event_ticker or "").upper()
+    tk = (ticker or "").upper()
+    hay = et + " " + tk
+    map_number = None
+    if "TOTALMAPS" in hay or "TOTAL" in hay:
+        return "total", None
+    if "MAP" in hay:
+        m = re.search(r"-(\d{1,2})(?:-|$)", et) or re.search(r"-(\d{1,2})(?:-|$)", tk)
+        if m:
+            map_number = int(m.group(1))
+        return "map_winner", map_number
+    if "SPREAD" in hay or "WINMARGIN" in hay or "HANDICAP" in hay or "MARGIN" in hay:
+        return "spread", None
+    if "SERIES" in hay:
+        return "series_winner", None
+    if "GAME" in hay or "MATCH" in hay or "MONEYLINE" in hay or "WINNER" in hay or "WINS" in hay:
+        return "match_winner", None
+    return None, None
+
+
 def detect_market_type(text, map_number=None):
     t = (text or "").lower()
     if map_number:
@@ -131,6 +154,15 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
 
     map_number = _map_number(title, question, rules)
     market_type = detect_market_type(" ".join([title, question]), map_number)
+
+    # Kalshi: prefer ticker-encoded type (far more reliable than title text)
+    if market.venue == VENUE_KALSHI:
+        kt, kmap = kalshi_type_from_ticker(market.venue_event_id, market.venue_market_id)
+        if kt:
+            market_type = kt
+        if kmap is not None:
+            map_number = kmap
+
     game = detect_game(title, question, rules, market.venue_event_id or "")
 
     # teams: prefer outcome names (they ARE the teams for winner markets), else title

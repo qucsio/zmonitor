@@ -93,8 +93,7 @@ def _ensure_kalshi_markets(event_ticker, fetched):
     if not RawMarket.objects.filter(venue=VENUE_KALSHI, venue_event_id=event_ticker).exists():
         fetch_markets_for_event(event_ticker)
     for m in RawMarket.objects.filter(venue=VENUE_KALSHI, venue_event_id=event_ticker):
-        if not hasattr(m, "normalized"):
-            normalize_market(m)
+        normalize_market(m)  # update_or_create; refreshes type/map/teams
 
 
 def _status_for(score, hard):
@@ -162,8 +161,8 @@ def run_matching(limit=None, max_event_fetches=200):
         pm_qs = pm_qs[:limit]
 
     fetched = set()
-    stats = {"considered": 0, "pairs": 0, "matched": 0, "needs_review": 0,
-             "candidate": 0, "rejected": 0}
+    stats = {"considered": 0, "with_cand_events": 0, "scored": 0, "below_floor": 0,
+             "pairs": 0, "matched": 0, "needs_review": 0, "candidate": 0, "rejected": 0}
 
     for pm in pm_qs.iterator():
         stats["considered"] += 1
@@ -172,6 +171,7 @@ def run_matching(limit=None, max_event_fetches=200):
             cand_events |= index.get(c, set())
         if not cand_events:
             continue
+        stats["with_cand_events"] += 1
 
         best = None  # (score, k_norm, hard, mapping)
         for et in cand_events:
@@ -179,16 +179,17 @@ def run_matching(limit=None, max_event_fetches=200):
                 _ensure_kalshi_markets(et, fetched)
             for k in NormalizedMarket.objects.filter(
                 venue=VENUE_KALSHI, market__venue_event_id=et,
-                market_type=pm.market_type,
             ):
                 sc, hard, soft, mapping = score_pair(pm, k)
                 if best is None or sc > best[0]:
                     best = (sc, k, hard, mapping)
 
-        if not best or best[0] < settings.SCANNER["MATCH_REVIEW_THRESHOLD"] and best[2]:
+        if best is None:
             continue
+        stats["scored"] += 1
         sc, k_norm, hard, mapping = best
         if sc < Decimal("0.3"):
+            stats["below_floor"] += 1
             continue
         status = _save_pair(pm.market, k_norm.market, pm, k_norm, sc, hard, mapping)
         stats["pairs"] += 1
