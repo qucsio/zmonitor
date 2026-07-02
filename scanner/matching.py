@@ -5,12 +5,33 @@ from decimal import Decimal
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from rapidfuzz import fuzz
 
 from scanner import llm
 from scanner.discovery.kalshi import fetch_markets_for_event
 from scanner.models import (MatchedPair, NormalizedMarket, RawEvent, RawMarket,
                             VENUE_KALSHI, VENUE_POLYMARKET)
-from scanner.normalize import canonical_team, normalize_market, parse_teams
+from scanner.normalize import _fold, canonical_team, normalize_market, parse_teams
+
+TEAM_SIM_THRESHOLD = 0.85
+
+
+def _sim(a, b):
+    if not a or not b:
+        return 0.0
+    return fuzz.token_set_ratio(_fold(a).lower(), _fold(b).lower()) / 100.0
+
+
+def _team_alignment(pm, k):
+    """Return (strength, orientation) where orientation is 'direct' (pm_a~kalshi_yes)
+    or 'swap' (pm_a~kalshi_no). strength = min similarity of the better pairing."""
+    a, b = pm.team_a, pm.team_b
+    ka, kb = k.team_a, k.team_b  # ka is the kalshi YES side
+    direct = min(_sim(a, ka), _sim(b, kb))
+    swap = min(_sim(a, kb), _sim(b, ka))
+    if direct >= swap:
+        return direct, "direct"
+    return swap, "swap"
 
 logger = logging.getLogger("scanner")
 
@@ -41,12 +62,14 @@ def score_pair(pm: NormalizedMarket, k: NormalizedMarket):
     hard, soft = [], []
     score = Decimal("0")
 
-    pm_teams = {pm.canonical_team_a, pm.canonical_team_b} - {None}
-    k_teams = {k.canonical_team_a, k.canonical_team_b} - {None}
-    if pm_teams and pm_teams == k_teams:
+    strength, orientation = _team_alignment(pm, k)
+    one_side = max(_sim(pm.team_a, k.team_a), _sim(pm.team_a, k.team_b),
+                   _sim(pm.team_b, k.team_a), _sim(pm.team_b, k.team_b))
+    if strength >= TEAM_SIM_THRESHOLD:
         score += Decimal("0.6")
-    elif pm_teams & k_teams:
+    elif one_side >= TEAM_SIM_THRESHOLD:
         score += Decimal("0.3")
+        hard.append("different_teams")
 
     if pm.market_type == k.market_type:
         score += Decimal("0.2")
@@ -58,23 +81,15 @@ def score_pair(pm: NormalizedMarket, k: NormalizedMarket):
     else:
         hard.append("different_map_number")
 
-    mapping = _outcome_mapping(pm, k)
-    if mapping:
+    mapping = None
+    if strength >= TEAM_SIM_THRESHOLD:
+        mapping = ({"pm_yes": "kalshi_yes", "pm_no": "kalshi_no"} if orientation == "direct"
+                   else {"pm_yes": "kalshi_no", "pm_no": "kalshi_yes"})
         score += Decimal("0.1")
     else:
         hard.append("outcome_mapping_uncertain")
 
     return min(score, Decimal("1")), hard, soft, mapping
-
-
-def _outcome_mapping(pm, k):
-    if not (pm.canonical_team_a and k.canonical_team_a and k.canonical_team_b):
-        return None
-    if pm.canonical_team_a == k.canonical_team_a and pm.canonical_team_b == k.canonical_team_b:
-        return {"pm_yes": "kalshi_yes", "pm_no": "kalshi_no"}
-    if pm.canonical_team_a == k.canonical_team_b and pm.canonical_team_b == k.canonical_team_a:
-        return {"pm_yes": "kalshi_no", "pm_no": "kalshi_yes"}
-    return None
 
 
 def _llm_ctx(nm: NormalizedMarket):

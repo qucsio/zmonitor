@@ -85,13 +85,13 @@ def kalshi_type_from_ticker(event_ticker, ticker):
     map_number = None
     if "TOTALMAPS" in hay or "TOTAL" in hay:
         return "total", None
+    if "SPREAD" in hay or "WINMARGIN" in hay or "HANDICAP" in hay or "MARGIN" in hay or "HDCP" in hay:
+        return "spread", None
     if "MAP" in hay:
         m = re.search(r"-(\d{1,2})(?:-|$)", et) or re.search(r"-(\d{1,2})(?:-|$)", tk)
         if m:
             map_number = int(m.group(1))
         return "map_winner", map_number
-    if "SPREAD" in hay or "WINMARGIN" in hay or "HANDICAP" in hay or "MARGIN" in hay:
-        return "spread", None
     if "SERIES" in hay:
         return "series_winner", None
     if "GAME" in hay or "MATCH" in hay or "MONEYLINE" in hay or "WINNER" in hay or "WINS" in hay:
@@ -101,14 +101,13 @@ def kalshi_type_from_ticker(event_ticker, ticker):
 
 def detect_market_type(text, map_number=None):
     t = (text or "").lower()
-    if map_number:
-        return "map_winner"
-    if re.search(r"\bmap\b", t):
-        return "map_winner"
-    if any(k in t for k in ("total", "over/under", "over ", "under ", "o/u")):
-        return "total"
-    if any(k in t for k in ("spread", "handicap", "+/-", "cover")):
+    # spread / handicap / total must win BEFORE map (a "Map 3 Handicap" is a spread)
+    if any(k in t for k in ("handicap", "spread", "+/-", "cover")) or re.search(r"\(\s*[+-]\d", t):
         return "spread"
+    if any(k in t for k in ("total", "over/under", "o/u")) or re.search(r"\b(over|under)\s+\d", t):
+        return "total"
+    if map_number or re.search(r"\bmap\b", t):
+        return "map_winner"
     if any(k in t for k in ("series", "best of", "bo3", "bo5", "advance", "win the series")):
         return "series_winner"
     if any(k in t for k in ("win", "winner", "beat", "defeat", "to win")):
