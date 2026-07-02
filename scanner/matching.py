@@ -3,6 +3,7 @@ import logging
 from decimal import Decimal
 
 from django.conf import settings
+from django.db import models
 from django.utils import timezone
 
 from scanner import llm
@@ -154,9 +155,13 @@ def run_matching(limit=None, max_event_fetches=200):
     index = build_kalshi_event_index()
     logger.info("kalshi event index: %d teams", len(index))
 
+    now = timezone.now()
     pm_qs = NormalizedMarket.objects.filter(
         venue=VENUE_POLYMARKET, market_type__in=WINNER_TYPES,
-    ).exclude(canonical_team_a=None).exclude(canonical_team_b=None).order_by("market_id")
+        market__closed=False,
+    ).exclude(canonical_team_a=None).exclude(canonical_team_b=None).filter(
+        models.Q(market__close_time__gte=now) | models.Q(market__close_time__isnull=True)
+    ).order_by("-market_id")
     if limit:
         pm_qs = pm_qs[:limit]
 

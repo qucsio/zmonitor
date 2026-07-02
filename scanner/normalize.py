@@ -1,11 +1,20 @@
 """Deterministic normalization of RawMarket / RawEvent into a common structure."""
 import re
+import unicodedata
 
 import yaml
 from django.conf import settings
 
-from scanner.models import (MarketOutcome, NormalizedMarket, RawMarket,
+from scanner.models import (MarketOutcome, NormalizedMarket, RawEvent, RawMarket,
                             VENUE_KALSHI, VENUE_POLYMARKET)
+
+
+def _fold(s):
+    """Strip accents/diacritics: QUINTESSÊNCIA -> quintessencia."""
+    if not s:
+        return s
+    nfkd = unicodedata.normalize("NFKD", s)
+    return "".join(c for c in nfkd if not unicodedata.combining(c))
 
 # ---------------------------------------------------------------- team aliases
 _ALIAS_MAP = None
@@ -33,11 +42,11 @@ def _load_aliases():
 def canonical_team(name):
     if not name:
         return None
-    key = name.strip().lower()
+    key = _fold(name).strip().lower()
     amap = _load_aliases()
     if key in amap:
         return amap[key]
-    # normalize to a slug-ish canonical
+    # normalize to a slug-ish canonical (accents already folded)
     return re.sub(r"[^a-z0-9]+", "_", key).strip("_") or None
 
 
@@ -143,6 +152,32 @@ def _bo_format(*texts):
 
 
 # ---------------------------------------------------------------- normalize
+_KALSHI_MATCH_RE = re.compile(
+    r"\bin the (.+?)\s+vs\.?\s+(.+?)\s+(?:match|series|game|maps?)\b", re.IGNORECASE)
+
+
+def _kalshi_teams(market, yes_name, title, question):
+    """Both teams live in the event title ('A vs. B'); yes_sub_title says which one
+    the YES side resolves to. Return (team_a=yes_team, team_b=other)."""
+    pa = pb = None
+    m = _KALSHI_MATCH_RE.search(title or "")
+    if m:
+        pa, pb = m.group(1).strip(), m.group(2).strip()
+    if not pa:
+        ev_title = (RawEvent.objects.filter(
+            venue=VENUE_KALSHI, venue_event_id=market.venue_event_id)
+            .values_list("title", flat=True).first())
+        pa, pb = parse_teams(ev_title or "", title or "")
+    if not pa or not pb:
+        # fallback: single team from yes_sub_title
+        return (yes_name if yes_name and yes_name.lower() not in ("yes", "no") else None), None
+
+    # orient so team_a corresponds to the YES side
+    if yes_name and canonical_team(yes_name) == canonical_team(pb):
+        return pb, pa
+    return pa, pb
+
+
 def normalize_market(market: RawMarket) -> NormalizedMarket:
     outcomes = {o.outcome_side: o for o in market.outcomes.all()}
     yes_name = outcomes.get("yes").outcome_name if outcomes.get("yes") else None
@@ -165,13 +200,17 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
 
     game = detect_game(title, question, rules, market.venue_event_id or "")
 
-    # teams: prefer outcome names (they ARE the teams for winner markets), else title
+    # teams
     team_a, team_b = None, None
-    if market_type in ("match_winner", "map_winner", "series_winner"):
-        if yes_name and no_name and yes_name.lower() not in ("yes", "no"):
-            team_a, team_b = yes_name, no_name
-    if not team_a:
-        team_a, team_b = parse_teams(title, question)
+    if market.venue == VENUE_KALSHI:
+        team_a, team_b = _kalshi_teams(market, yes_name, title, question)
+    else:
+        # Polymarket: outcome names ARE the teams for winner markets
+        if market_type in ("match_winner", "map_winner", "series_winner"):
+            if yes_name and no_name and yes_name.lower() not in ("yes", "no"):
+                team_a, team_b = yes_name, no_name
+        if not team_a:
+            team_a, team_b = parse_teams(title, question)
 
     risk_flags = []
     if market_type == "unknown":
