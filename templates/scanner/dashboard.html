@@ -21,8 +21,52 @@
   </div>
   {% endfor %}
 </div>
-<p class="mt-4 text-muted">
-  Last discovery:
-  {% if last_discovery %}{{ last_discovery.venue }} — {{ last_discovery.started_at }} ({{ last_discovery.status }}){% else %}never{% endif %}
-</p>
+<div class="row mt-4 g-3">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <span>Discovery runs</span>
+        <span class="small text-muted">auto-refresh 10s</span>
+      </div>
+      <table class="table table-sm mb-0">
+        <thead><tr><th>Venue</th><th>Status</th><th>Started</th><th>Dur</th><th>seen/new/upd</th></tr></thead>
+        <tbody>
+        {% for r in recent_runs %}
+          <tr>
+            <td>{{ r.venue }}</td>
+            <td>
+              {% if r.finished_at %}<span class="badge bg-{% if r.status == 'ok' %}success{% else %}danger{% endif %}">{{ r.status }}</span>
+              {% else %}<span class="badge bg-primary">running…</span>{% endif %}
+            </td>
+            <td class="small">{{ r.started_at|date:"H:i:s" }}</td>
+            <td class="small">{% if r.finished_at %}{{ r.finished_at|timesince:r.started_at }}{% else %}—{% endif %}</td>
+            <td class="small">{{ r.markets_seen }}/{{ r.markets_new }}/{{ r.markets_updated }}</td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5" class="text-muted">No runs yet.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Matching</div>
+      <div class="card-body">
+        {% if matching_status %}
+          <p class="mb-1">State:
+            {% if matching_status.state == 'running' %}<span class="badge bg-primary">running…</span>
+            {% else %}<span class="badge bg-success">done</span>{% endif %}
+          </p>
+          <p class="small mb-1">Started: {{ matching_status.started }}</p>
+          {% if matching_status.finished %}<p class="small mb-1">Finished: {{ matching_status.finished }}</p>{% endif %}
+          {% if matching_status.stats %}<p class="small mb-0"><code>{{ matching_status.stats }}</code></p>{% endif %}
+        {% else %}
+          <p class="text-muted mb-0">No matching run recorded yet.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>setTimeout(function(){ location.reload(); }, 10000);</script>
 {% endblock %}

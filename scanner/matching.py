@@ -165,8 +165,34 @@ def _save_pair(pm_market, k_market, pm_norm, k_norm, score, hard, mapping):
     return status
 
 
+def _set_status(**fields):
+    import json
+    import redis
+    try:
+        client = redis.from_url(settings.REDIS_URL)
+        prev = client.get("scanner:matching_status")
+        state = json.loads(prev) if prev else {}
+        state.update(fields)
+        client.set("scanner:matching_status", json.dumps(state), ex=86400)
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def get_matching_status():
+    import json
+    import redis
+    try:
+        client = redis.from_url(settings.REDIS_URL)
+        raw = client.get("scanner:matching_status")
+        return json.loads(raw) if raw else None
+    except Exception:  # noqa: BLE001
+        return None
+
+
 def run_matching(limit=None, max_event_fetches=200):
     """Match normalized Polymarket winner-markets against Kalshi via team blocking."""
+    _set_status(state="running", started=timezone.now().isoformat(),
+                finished=None, stats=None)
     index = build_kalshi_event_index()
     logger.info("kalshi event index: %d teams", len(index))
 
@@ -215,4 +241,5 @@ def run_matching(limit=None, max_event_fetches=200):
         stats["pairs"] += 1
         stats[status] = stats.get(status, 0) + 1
 
+    _set_status(state="done", finished=timezone.now().isoformat(), stats=stats)
     return stats

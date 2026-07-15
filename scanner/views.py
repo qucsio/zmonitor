@@ -68,9 +68,18 @@ def dashboard(request):
             "open_opportunities": models.OpportunityEvent.objects.filter(status="open").count(),
         },
         "last_discovery": models.DiscoveryRun.objects.order_by("-started_at").first(),
-        "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:10],
+        "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:8],
+        "matching_status": _matching_status(),
     }
     return render(request, "scanner/dashboard.html", ctx)
+
+
+def _matching_status():
+    try:
+        from .matching import get_matching_status
+        return get_matching_status()
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def markets(request):
@@ -127,8 +136,12 @@ def pairs(request):
         from django.db.models import Q
         from django.utils import timezone
         now = timezone.now()
+        # "active" = both markets still open (not closed) and not past their close time.
+        # Do NOT filter on start_time — in-progress matches have a past start.
         qs = qs.filter(kalshi_market__closed=False, polymarket_market__closed=False).filter(
-            Q(start_time_utc__gte=now) | Q(start_time_utc__isnull=True))
+            Q(kalshi_market__close_time__gte=now) | Q(kalshi_market__close_time__isnull=True)
+        ).filter(
+            Q(polymarket_market__close_time__gte=now) | Q(polymarket_market__close_time__isnull=True))
 
     paginator = Paginator(qs, 50)
     page = paginator.get_page(request.GET.get("page"))

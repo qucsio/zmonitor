@@ -16,7 +16,8 @@ def get_events(limit=50, offset=0, closed=False, params=None):
     q = {"limit": limit, "offset": offset, "closed": str(closed).lower()}
     if params:
         q.update(params)
-    return request("GET", f"{base}/events", venue="polymarket", params=q, proxy=_proxy())
+    return request("GET", f"{base}/events", venue="polymarket", params=q, proxy=_proxy(),
+                   expected_ok=(422,))
 
 
 def get_markets(limit=50, offset=0, closed=False, params=None):

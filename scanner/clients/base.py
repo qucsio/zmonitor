@@ -15,8 +15,9 @@ class ApiResult:
         self.error = error
 
 
-def request(method, url, *, venue, log=True, **kwargs):
-    """Thin httpx wrapper that records latency and logs ApiHealthLog."""
+def request(method, url, *, venue, log=True, expected_ok=(), **kwargs):
+    """Thin httpx wrapper that records latency and logs ApiHealthLog.
+    `expected_ok` = status codes to treat as non-errors (e.g. 422 pagination end)."""
     from scanner.models import ApiHealthLog
 
     t0 = time.time()
@@ -34,8 +35,10 @@ def request(method, url, *, venue, log=True, **kwargs):
             data = resp.json()
         except Exception:  # noqa: BLE001
             data = resp.text
-        if not ok:
+        if not ok and status_code not in expected_ok:
             error = f"HTTP {status_code}: {str(data)[:500]}"
+        elif not ok:
+            ok = True  # expected non-2xx (e.g. pagination boundary) — not a health error
     except Exception as exc:  # noqa: BLE001
         error = str(exc)
         ok = False
