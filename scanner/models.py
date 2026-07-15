@@ -75,9 +75,14 @@ class RawMarket(models.Model):
         """Best-effort human web page for this market/event."""
         rj = self.raw_json or {}
         if self.venue == VENUE_POLYMARKET:
+            # The public URL uses the EVENT slug, not the market slug.
             events = rj.get("events") or []
-            slug = (events[0].get("slug") if events and isinstance(events[0], dict) else None) \
-                or rj.get("slug")
+            slug = events[0].get("slug") if events and isinstance(events[0], dict) else None
+            if not slug and self.venue_event_id:
+                ev = RawEvent.objects.filter(
+                    venue=VENUE_POLYMARKET, venue_event_id=self.venue_event_id).first()
+                if ev and ev.raw_json:
+                    slug = ev.raw_json.get("slug")
             if slug:
                 return f"https://polymarket.com/event/{slug}"
         elif self.venue == VENUE_KALSHI:
