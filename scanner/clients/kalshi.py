@@ -72,7 +72,9 @@ def get_account_limits():
 
 
 def get_markets(limit=100, cursor=None, status="open", params=None):
-    q = {"limit": limit, "status": status}
+    q = {"limit": limit}
+    if status:
+        q["status"] = status
     if cursor:
         q["cursor"] = cursor
     if params:

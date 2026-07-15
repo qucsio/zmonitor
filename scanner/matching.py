@@ -102,14 +102,22 @@ def _llm_ctx(nm: NormalizedMarket):
 
 
 # ------------------------------------------------------------ orchestration
-def _ensure_kalshi_markets(event_ticker, fetched):
-    if event_ticker in fetched:
-        return
-    fetched.add(event_ticker)
-    if not RawMarket.objects.filter(venue=VENUE_KALSHI, venue_event_id=event_ticker).exists():
+def _kalshi_norms_for_event(event_ticker, cache, fetched, max_fetches):
+    """Return (and cache once per run) the list of normalized Kalshi markets for an
+    event, lazily fetching + normalizing on first touch."""
+    if event_ticker in cache:
+        return cache[event_ticker]
+    if event_ticker not in fetched and len(fetched) < max_fetches:
+        fetched.add(event_ticker)
+        # Always (re)fetch within budget so closed/resolved status stays fresh.
         fetch_markets_for_event(event_ticker)
-    for m in RawMarket.objects.filter(venue=VENUE_KALSHI, venue_event_id=event_ticker):
-        normalize_market(m)  # update_or_create; refreshes type/map/teams
+        for m in RawMarket.objects.filter(
+                venue=VENUE_KALSHI, venue_event_id=event_ticker):
+            normalize_market(m)
+    norms = list(NormalizedMarket.objects.filter(
+        venue=VENUE_KALSHI, market__venue_event_id=event_ticker).select_related("market"))
+    cache[event_ticker] = norms
+    return norms
 
 
 def _status_for(score, hard):
@@ -207,6 +215,7 @@ def run_matching(limit=None, max_event_fetches=200):
         pm_qs = pm_qs[:limit]
 
     fetched = set()
+    norm_cache = {}
     stats = {"considered": 0, "with_cand_events": 0, "scored": 0, "below_floor": 0,
              "pairs": 0, "matched": 0, "needs_review": 0, "candidate": 0, "rejected": 0}
 
@@ -221,11 +230,7 @@ def run_matching(limit=None, max_event_fetches=200):
 
         best = None  # (score, k_norm, hard, mapping)
         for et in cand_events:
-            if len(fetched) < max_event_fetches:
-                _ensure_kalshi_markets(et, fetched)
-            for k in NormalizedMarket.objects.filter(
-                venue=VENUE_KALSHI, market__venue_event_id=et,
-            ):
+            for k in _kalshi_norms_for_event(et, norm_cache, fetched, max_event_fetches):
                 sc, hard, soft, mapping = score_pair(pm, k)
                 if best is None or sc > best[0]:
                     best = (sc, k, hard, mapping)
@@ -234,7 +239,10 @@ def run_matching(limit=None, max_event_fetches=200):
             continue
         stats["scored"] += 1
         sc, k_norm, hard, mapping = best
-        if sc < Decimal("0.3"):
+        # Persist only meaningful pairs: skip weak matches that also have hard
+        # conflicts (e.g. one team matches but the opponent differs) — pure noise.
+        review = settings.SCANNER["MATCH_REVIEW_THRESHOLD"]
+        if hard and sc < review:
             stats["below_floor"] += 1
             continue
         status = _save_pair(pm.market, k_norm.market, pm, k_norm, sc, hard, mapping)

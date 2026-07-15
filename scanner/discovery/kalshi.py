@@ -149,7 +149,8 @@ def fetch_markets_for_event(event_ticker, page_size=1000):
     saved = 0
     cursor = None
     for _ in range(20):
-        r = kalshi_client.get_markets(limit=page_size, cursor=cursor, status="open",
+        # status=None -> all statuses, so resolved markets flip closed=True
+        r = kalshi_client.get_markets(limit=page_size, cursor=cursor, status=None,
                                       params={"event_ticker": event_ticker})
         if not r.ok or not isinstance(r.data, dict):
             logger.warning("kalshi markets fetch failed (%s): %s", event_ticker, r.error)

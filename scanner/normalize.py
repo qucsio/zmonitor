@@ -276,7 +276,9 @@ def _confidence(market_type, a, b):
 
 
 def normalize_pending(venue=None, limit=None):
-    qs = RawMarket.objects.filter(matching_status__in=["pending", "normalized"])
+    # include 'matched' so re-runs refresh normalization (e.g. new set_winner rule)
+    qs = RawMarket.objects.filter(
+        matching_status__in=["pending", "normalized", "matched"])
     if venue:
         qs = qs.filter(venue=venue)
     qs = qs.order_by("id")
