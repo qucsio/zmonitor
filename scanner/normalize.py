@@ -65,7 +65,18 @@ GAME_KEYWORDS = {
 
 _VS_SPLIT = re.compile(r"\s+(?:vs\.?|v\.?|@|versus)\s+", re.IGNORECASE)
 _MAP_RE = re.compile(r"\bmap\s*(\d+)\b", re.IGNORECASE)
+_SET_RE = re.compile(r"\bset\s*(\d+)\b", re.IGNORECASE)
 _BO_RE = re.compile(r"\b(?:bo|best[\s-]*of[\s-]*)(\d+)\b", re.IGNORECASE)
+
+
+def _set_number(*texts):
+    for text in texts:
+        if not text:
+            continue
+        m = _SET_RE.search(text)
+        if m:
+            return int(m.group(1))
+    return None
 
 
 def detect_game(*texts):
@@ -87,6 +98,9 @@ def kalshi_type_from_ticker(event_ticker, ticker):
         return "total", None
     if "SPREAD" in hay or "WINMARGIN" in hay or "HANDICAP" in hay or "MARGIN" in hay or "HDCP" in hay:
         return "spread", None
+    if "SET" in hay:
+        m = re.search(r"-(\d{1,2})(?:-|$)", et) or re.search(r"-(\d{1,2})(?:-|$)", tk)
+        return "set_winner", (int(m.group(1)) if m else None)
     if "MAP" in hay:
         m = re.search(r"-(\d{1,2})(?:-|$)", et) or re.search(r"-(\d{1,2})(?:-|$)", tk)
         if m:
@@ -187,7 +201,14 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
     rules = market.rules_text or ""
 
     map_number = _map_number(title, question, rules)
+    set_number = _set_number(title, question)
     market_type = detect_market_type(" ".join([title, question]), map_number)
+
+    # "Set N winner" is a distinct partial market (tennis) — must not match a full
+    # match_winner. Reuse map_number slot to carry the set number.
+    if set_number and market_type in ("match_winner", "map_winner", "unknown"):
+        market_type = "set_winner"
+        map_number = set_number
 
     # Kalshi: prefer ticker-encoded type (far more reliable than title text)
     if market.venue == VENUE_KALSHI:

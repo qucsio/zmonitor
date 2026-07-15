@@ -7,8 +7,8 @@
   {{ market.title|default:market.question }}
 </h1>
 <p>
-  {% if market.external_url %}<a href="{{ market.external_url }}" target="_blank" rel="noopener">{{ market.venue }}.com ↗</a>{% endif %}
-  {% if market.api_url %}· <a href="{{ market.api_url }}" target="_blank" rel="noopener">api ↗</a>{% endif %}
+  {% if market.external_url %}<a href="{{ market.external_url }}" target="_blank" rel="noopener">{% if market.venue == 'kalshi' %}series{% else %}{{ market.venue }}.com{% endif %} ↗</a>{% endif %}
+  {% if market.api_url %}· <a href="{{ market.api_url }}" target="_blank" rel="noopener">{% if market.venue == 'kalshi' %}event api{% else %}api{% endif %} ↗</a>{% endif %}
 </p>
 
 <div class="row">

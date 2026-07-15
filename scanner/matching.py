@@ -35,7 +35,7 @@ def _team_alignment(pm, k):
 
 logger = logging.getLogger("scanner")
 
-WINNER_TYPES = {"match_winner", "map_winner", "series_winner"}
+WINNER_TYPES = {"match_winner", "map_winner", "series_winner", "set_winner"}
 HARD_FLAGS = {"different_market_type", "different_map_number",
               "outcome_mapping_uncertain", "market_closed_or_paused"}
 
