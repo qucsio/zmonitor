@@ -82,7 +82,8 @@ def _set_number(*texts):
 def detect_game(*texts):
     hay = " ".join(t for t in texts if t).lower()
     for kw, game in GAME_KEYWORDS.items():
-        if kw in hay:
+        # word-boundary match so short keys (lol/f1/mma/nba) don't hit inside names
+        if re.search(r"(?<![a-z0-9])" + re.escape(kw) + r"(?![a-z0-9])", hay):
             return game
     return None
 
