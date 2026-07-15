@@ -6,6 +6,10 @@
   <span class="badge bg-secondary">{{ market.venue }}</span>
   {{ market.title|default:market.question }}
 </h1>
+<p>
+  {% if market.external_url %}<a href="{{ market.external_url }}" target="_blank" rel="noopener">{{ market.venue }}.com ↗</a>{% endif %}
+  {% if market.api_url %}· <a href="{{ market.api_url }}" target="_blank" rel="noopener">api ↗</a>{% endif %}
+</p>
 
 <div class="row">
   <div class="col-md-6">

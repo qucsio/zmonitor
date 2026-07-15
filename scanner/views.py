@@ -118,19 +118,27 @@ def pairs(request):
         "polymarket_market", "kalshi_market").order_by("-match_score", "-updated_at")
     status = request.GET.get("status") or ""
     game = request.GET.get("game") or ""
+    active = request.GET.get("active") or ""
     if status:
         qs = qs.filter(status=status)
     if game:
         qs = qs.filter(game=game)
+    if active == "1":
+        from django.db.models import Q
+        from django.utils import timezone
+        now = timezone.now()
+        qs = qs.filter(kalshi_market__closed=False, polymarket_market__closed=False).filter(
+            Q(start_time_utc__gte=now) | Q(start_time_utc__isnull=True))
 
     paginator = Paginator(qs, 50)
     page = paginator.get_page(request.GET.get("page"))
     counts = {s: models.MatchedPair.objects.filter(status=s).count()
               for s in ["matched", "candidate", "needs_review", "rejected", "disabled"]}
     return render(request, "scanner/pairs.html", {
-        "page": page, "filters": {"status": status, "game": game},
+        "page": page,
         "counts": counts, "total": paginator.count,
         "statuses": ["candidate", "matched", "needs_review", "rejected", "disabled"],
+        "filters": {"status": status, "game": game, "active": active},
     })
 
 

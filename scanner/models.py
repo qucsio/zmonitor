@@ -70,6 +70,35 @@ class RawMarket(models.Model):
     def __str__(self):
         return f"{self.venue}:{self.venue_market_id}"
 
+    @property
+    def external_url(self):
+        """Best-effort human web page for this market/event."""
+        rj = self.raw_json or {}
+        if self.venue == VENUE_POLYMARKET:
+            events = rj.get("events") or []
+            slug = (events[0].get("slug") if events and isinstance(events[0], dict) else None) \
+                or rj.get("slug")
+            if slug:
+                return f"https://polymarket.com/event/{slug}"
+        elif self.venue == VENUE_KALSHI:
+            et = self.venue_event_id or ""
+            series = et.split("-", 1)[0].lower()
+            if series:
+                return f"https://kalshi.com/markets/{series}"
+        return None
+
+    @property
+    def api_url(self):
+        """Guaranteed-valid API endpoint (JSON) for verification."""
+        rj = self.raw_json or {}
+        if self.venue == VENUE_POLYMARKET:
+            if rj.get("id"):
+                return f"https://gamma-api.polymarket.com/markets/{rj['id']}"
+        elif self.venue == VENUE_KALSHI and self.venue_event_id:
+            return ("https://api.elections.kalshi.com/trade-api/v2/events/"
+                    f"{self.venue_event_id}")
+        return None
+
 
 class MarketOutcome(models.Model):
     market = models.ForeignKey(RawMarket, on_delete=models.CASCADE, related_name="outcomes")

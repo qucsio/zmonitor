@@ -13,6 +13,8 @@
     <a href="?status={{ s }}" class="badge bg-secondary text-decoration-none">{{ s }}: {{ c }}</a>
   {% endfor %}
   <a href="/pairs/" class="badge bg-dark text-decoration-none">all</a>
+  <a href="?active=1{% if filters.status %}&status={{ filters.status }}{% endif %}"
+     class="badge {% if filters.active == '1' %}bg-primary{% else %}bg-outline-primary border border-primary text-primary{% endif %} text-decoration-none">active only</a>
 </div>
 
 <table class="table table-sm table-striped bg-white align-middle">
