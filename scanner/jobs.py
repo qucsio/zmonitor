@@ -56,7 +56,9 @@ def all_jobs():
     }
     out = []
     for name in JOB_NAMES:
-        job = get_job(name) or {}
+        job = {"state": None, "started": None, "finished": None,
+               "result": None, "error": None}
+        job.update(get_job(name) or {})
         job["name"] = name
         job["interval_sec"] = intervals.get(name)
         out.append(job)
