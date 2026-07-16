@@ -7,6 +7,11 @@ from django.conf import settings
 
 _WINDOW_MIN = 5  # rolling window for the summary
 
+# Conservative per-minute reference limits (docs-based, lowest tier / single-query).
+# Kalshi Basic: 200 read tokens/s ÷ 10 = 20 req/s = 1200/min.
+# Polymarket /book: 1500 per 10s = ~9000/min (per-IP, Cloudflare).
+LIMIT_PER_MIN = {"kalshi": 1200, "polymarket": 9000}
+
 
 def _redis():
     return redis.from_url(settings.REDIS_URL, decode_responses=True)
@@ -42,10 +47,17 @@ def rate_summary():
                 b = now_bucket - i
                 window += int(client.get(f"rate:{venue}:{b}") or 0)
                 errs += int(client.get(f"rate429:{venue}:{b}") or 0)
+            limit = LIMIT_PER_MIN.get(venue, 0)
+            usage = max(last_min, window / _WINDOW_MIN)
+            ratio = (usage / limit) if limit else 0
+            level = "danger" if (errs or ratio >= 0.8) else "warn" if ratio >= 0.5 else "ok"
             out[venue] = {
                 "last_min": last_min,
                 "per_min_avg": round(window / _WINDOW_MIN, 1),
                 "err429_window": errs,
+                "limit_per_min": limit,
+                "pct": round(ratio * 100, 1),
+                "level": level,
             }
     except Exception:  # noqa: BLE001
         pass

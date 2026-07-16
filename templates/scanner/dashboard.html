@@ -22,19 +22,21 @@
   {% endfor %}
 </div>
 <div class="card mt-4">
-  <div class="card-header">API request rate <span class="small text-muted">(watch for rate limits)</span></div>
+  <div class="card-header">API request rate <span class="small text-muted">(green &lt;50% · yellow ≥50% · red ≥80% or any 429)</span></div>
   <table class="table table-sm mb-0">
-    <thead><tr><th>Venue</th><th>Last minute</th><th>Avg/min (5m)</th><th>429s (5m)</th></tr></thead>
+    <thead><tr><th>Venue</th><th>Last minute</th><th>Avg/min (5m)</th><th>Limit/min</th><th>Usage</th><th>429s (5m)</th></tr></thead>
     <tbody>
     {% for venue, r in rates.items %}
-      <tr>
+      <tr class="{% if r.level == 'danger' %}table-danger{% elif r.level == 'warn' %}table-warning{% endif %}">
         <td>{{ venue }}</td>
         <td>{{ r.last_min }}</td>
         <td>{{ r.per_min_avg }}</td>
+        <td class="text-muted">{{ r.limit_per_min }}</td>
+        <td><strong>{{ r.pct }}%</strong></td>
         <td class="{% if r.err429_window %}text-danger fw-bold{% else %}text-muted{% endif %}">{{ r.err429_window }}</td>
       </tr>
     {% empty %}
-      <tr><td colspan="4" class="text-muted">No traffic recorded yet.</td></tr>
+      <tr><td colspan="6" class="text-muted">No traffic recorded yet.</td></tr>
     {% endfor %}
     </tbody>
   </table>
