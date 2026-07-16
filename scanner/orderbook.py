@@ -195,13 +195,17 @@ def compute_forks(pair: MatchedPair, books, fee=None, slip=None):
 # ---------------------------------------------------------------- orchestration
 def _risk_flags(books):
     flags = []
-    stale = settings.SCANNER["STALE_BOOK_MS"]
     if not books["pm_ok"]:
         flags.append("pm_book_unavailable")
     if not books["kalshi_ok"]:
         flags.append("kalshi_book_unavailable")
-    if books["pm_book_age_ms"] and books["pm_book_age_ms"] > stale:
-        flags.append("stale_pm_book")
+    # NB: PM book "timestamp" is the book's last-change time, not our fetch time.
+    # In REST mode the snapshot is always current, so we do NOT flag stale from it.
+    # Real staleness (missed WS updates / resync gaps) is handled in ws/hybrid mode.
+    if settings.SCANNER["ORDERBOOK_MODE"] != "rest":
+        stale = settings.SCANNER["STALE_BOOK_MS"]
+        if books["pm_book_age_ms"] and books["pm_book_age_ms"] > stale:
+            flags.append("stale_pm_book")
     return flags
 
 
