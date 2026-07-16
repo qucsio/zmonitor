@@ -50,7 +50,7 @@ def get_job(name):
 def all_jobs():
     intervals = {
         "discovery": settings.SCANNER["DISCOVERY_INTERVAL_SEC"],
-        "matching": settings.SCANNER["MATCHING_INTERVAL_SEC"] * 10,
+        "matching": settings.SCANNER["MATCHING_INTERVAL_SEC"] * 30,
         "orderbook": settings.SCANNER["ORDERBOOK_REFRESH_SEC"],
         "reaper": settings.SCANNER.get("REAP_INTERVAL_SEC", 300),
     }
