@@ -160,6 +160,9 @@ def pair_detail(request, pk):
         models.MatchedPair.objects.select_related("polymarket_market", "kalshi_market"), pk=pk)
     pm = pair.polymarket_market
     k = pair.kalshi_market
+    from .orderbook import get_pair_state
+    state = get_pair_state(pk)
+    forks = [("A", state["fork_a"]), ("B", state["fork_b"])] if state else []
     return render(request, "scanner/pair_detail.html", {
         "pair": pair,
         "pm": pm, "kalshi": k,
@@ -167,6 +170,7 @@ def pair_detail(request, pk):
         "k_norm": getattr(k, "normalized", None),
         "pm_outcomes": pm.outcomes.all(),
         "k_outcomes": k.outcomes.all(),
+        "state": state, "forks": forks,
     })
 
 

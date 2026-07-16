@@ -1,12 +1,26 @@
+import logging
 import time
 
+from django.conf import settings
 from django.core.management.base import BaseCommand
+
+from scanner.orderbook import process_matched_pairs
+
+logger = logging.getLogger("scanner")
 
 
 class Command(BaseCommand):
-    help = "Orderbook worker loop (placeholder until Stage 5)."
+    help = "Continuously refresh orderbooks + forks for matched pairs (REST mode)."
 
     def handle(self, *args, **opts):
-        self.stdout.write("orderbook worker started (stub) — idle until Stage 5 is implemented")
+        interval = settings.SCANNER["ORDERBOOK_REFRESH_SEC"]
+        self.stdout.write(f"orderbook loop started (refresh {interval}s, REST mode)")
         while True:
-            time.sleep(5)
+            t0 = time.time()
+            try:
+                n = process_matched_pairs()
+                logger.info("orderbook cycle: %d pairs in %.1fs", n, time.time() - t0)
+            except Exception:  # noqa: BLE001
+                logger.exception("orderbook cycle failed")
+            elapsed = time.time() - t0
+            time.sleep(max(0.0, interval - elapsed))

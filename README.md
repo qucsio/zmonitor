@@ -14,8 +14,8 @@ PostgreSQL is **not** a realtime message bus.
 - [x] Stage 2 — Discovery (Polymarket + Kalshi, idempotent upsert, markets UI)
 - [x] Stage 3 — Normalization (market_type/teams/map, team aliases)
 - [x] Stage 4 — Matching (team blocking + scoring + optional OpenAI gray-zone, pairs UI)
-- [ ] Stage 5 — Orderbook REST polling
-- [ ] Stage 6 — Fork calculation
+- [x] Stage 5 — Orderbook REST polling (PM books + Kalshi ask reconstruction, Decimal, Redis)
+- [x] Stage 6 — Fork calculation (buy/buy A/B, VWAP ladder, fee/slippage, stale-book flags)
 - [ ] Stage 7 — Opportunity lifecycle + edge dynamics
 - [ ] Stage 8 — Live dashboard (SSE)
 - [ ] Stage 9 — Hybrid WS mode

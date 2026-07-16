@@ -52,5 +52,50 @@
     </table>
   </div>
 </div>
-<p class="text-muted small">Orderbooks & fork table appear here in Stage 5–6.</p>
+<hr class="my-4">
+<h2 class="h5">Live orderbook & forks</h2>
+{% if state %}
+<p class="small text-muted">Updated {{ state.updated_at }} · PM age {{ state.pm_book_age_ms|default:"?" }}ms · risk: {{ state.risk_flags|join:", "|default:"—" }}</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3 class="h6">Polymarket</h3>
+    <table class="table table-sm bg-white w-auto">
+      <tr><th></th><th>bid</th><th>ask</th></tr>
+      <tr><th>YES</th><td>{{ state.pm_yes_bid }}</td><td>{{ state.pm_yes_ask }}</td></tr>
+      <tr><th>NO</th><td>{{ state.pm_no_bid }}</td><td>{{ state.pm_no_ask }}</td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3 class="h6">Kalshi <span class="small text-muted">(asks = 1 − opposite bid)</span></h3>
+    <table class="table table-sm bg-white w-auto">
+      <tr><th></th><th>bid</th><th>ask</th></tr>
+      <tr><th>YES</th><td>{{ state.kalshi_yes_bid }}</td><td>{{ state.kalshi_yes_ask }}</td></tr>
+      <tr><th>NO</th><td>{{ state.kalshi_no_bid }}</td><td>{{ state.kalshi_no_ask }}</td></tr>
+    </table>
+  </div>
+</div>
+
+{% for label, fork in forks %}
+<h3 class="h6 mt-3">Fork {{ label }} <span class="text-muted small">{{ fork.direction }}</span>
+  · best net <strong class="{% if fork.best_net_edge and fork.best_net_edge.0 != '-' %}text-success{% else %}text-danger{% endif %}">{{ fork.best_net_edge|default:"—" }}</strong>
+  · max size {{ fork.max_size_usd }}</h3>
+<table class="table table-sm table-bordered bg-white">
+  <thead><tr><th>Size</th><th>PM vwap</th><th>Kalshi vwap</th><th>Cost</th><th>Gross</th><th>Net</th><th>Fillable</th></tr></thead>
+  <tbody>
+  {% for row in fork.ladder %}
+    <tr>
+      <td>{{ row.size }}</td><td>{{ row.pm_vwap|default:"—" }}</td><td>{{ row.kalshi_vwap|default:"—" }}</td>
+      <td>{{ row.cost|default:"—" }}</td><td>{{ row.gross|default:"—" }}</td>
+      <td class="{% if row.net and row.net.0 != '-' %}text-success fw-bold{% endif %}">{{ row.net|default:"—" }}</td>
+      <td>{{ row.fillable }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+{% else %}
+<p class="text-muted">No live orderbook state yet. Run
+  <code>run_orderbook_once</code> or the orderbook worker.</p>
+{% endif %}
 {% endblock %}
