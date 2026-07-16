@@ -110,6 +110,12 @@ def fetch_pair_books(pair: MatchedPair):
     now_ms = int(time.time() * 1000)
     ry = pm_client.get_book(yes_token)
     rn = pm_client.get_book(no_token)
+    # Both books 404 -> market resolved/removed; self-prune so it stops being active.
+    if ry.status_code == 404 and rn.status_code == 404:
+        if pm.closed is not True:
+            pm.closed = True
+            pm.save(update_fields=["closed"])
+        return None
     pm_yes_bids, pm_yes_asks = _pm_levels(ry.data if ry.ok else {})
     pm_no_bids, pm_no_asks = _pm_levels(rn.data if rn.ok else {})
     pm_ts = _dec((ry.data or {}).get("timestamp")) if ry.ok else None
@@ -246,8 +252,9 @@ def process_matched_pairs(limit=None):
     qs = (MatchedPair.objects.filter(
         status="matched", kalshi_market__closed=False, polymarket_market__closed=False)
         .filter(Q(kalshi_market__close_time__gte=now) | Q(kalshi_market__close_time__isnull=True))
+        .filter(Q(polymarket_market__close_time__gte=now) | Q(polymarket_market__close_time__isnull=True))
         .select_related("polymarket_market", "kalshi_market")
-        .order_by("id"))
+        .order_by("polymarket_market__close_time"))
     if limit:
         qs = qs[:limit]
     done = 0
