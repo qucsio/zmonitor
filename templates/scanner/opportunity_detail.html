@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Opportunity {{ opp.id }}{% endblock %}
+{% block content %}
+<a href="/opportunities/" class="small">&larr; Opportunities</a>
+<h1 class="h4 my-3">Opportunity {{ opp.id }}
+  <span class="badge bg-{% if opp.status == 'open' %}success{% else %}secondary{% endif %}">{{ opp.status }}</span>
+</h1>
+
+<table class="table table-sm bg-white w-auto">
+  <tr><th>Pair</th><td><a href="/pairs/{{ opp.pair_id }}/">#{{ opp.pair_id }}</a></td>
+      <th>Direction</th><td>{{ opp.direction }}</td></tr>
+  <tr><th>Started</th><td>{{ opp.ts_start }}</td><th>Ended</th><td>{{ opp.ts_end|default:"—" }}</td></tr>
+  <tr><th>Duration</th><td>{% if opp.ts_end %}{{ opp.ts_end|timesince:opp.ts_start }}{% else %}ongoing{% endif %}</td>
+      <th>Close reason</th><td>{{ opp.close_reason|default:"—" }}</td></tr>
+  <tr><th>First / Last net</th><td>{{ opp.first_net_edge }} / {{ opp.last_net_edge }}</td>
+      <th>Max net / size</th><td>{{ opp.max_net_edge }} / {{ opp.max_size_usd }}</td></tr>
+  <tr><th>Risk flags</th><td colspan="3" class="text-danger">{{ opp.risk_flags|join:", "|default:"—" }}</td></tr>
+</table>
+
+<h2 class="h6 mt-4">Edge dynamics</h2>
+{% if chart %}
+<svg viewBox="0 0 {{ chart.w }} {{ chart.h }}" style="max-width:100%;background:#fff;border:1px solid #dee2e6">
+  {% if chart.zero_y %}<line x1="{{ chart.pad }}" y1="{{ chart.zero_y }}" x2="{{ chart.w|add:'-30' }}" y2="{{ chart.zero_y }}" stroke="#adb5bd" stroke-dasharray="4"/>{% endif %}
+  <polyline points="{{ chart.points }}" fill="none" stroke="#198754" stroke-width="2"/>
+  <text x="5" y="15" font-size="11" fill="#666">net edge — max {{ chart.ymax }} / min {{ chart.ymin }}</text>
+</svg>
+{% else %}
+<p class="text-muted">Not enough edge points to chart yet.</p>
+{% endif %}
+
+<h2 class="h6 mt-4">Edge points ({{ points|length }})</h2>
+<table class="table table-sm table-striped bg-white">
+  <thead><tr><th>Time</th><th>Gross</th><th>Net</th><th>Size</th><th>PM vwap</th><th>Kalshi vwap</th><th>Risk</th></tr></thead>
+  <tbody>
+  {% for p in points %}
+    <tr><td class="small">{{ p.ts|date:"H:i:s.u" }}</td><td>{{ p.gross_edge }}</td>
+        <td class="fw-bold">{{ p.net_edge }}</td><td>{{ p.size_usd }}</td>
+        <td>{{ p.pm_vwap|default:"—" }}</td><td>{{ p.kalshi_vwap|default:"—" }}</td>
+        <td class="small text-muted">{{ p.risk_flags|join:", " }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

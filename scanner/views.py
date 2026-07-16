@@ -66,6 +66,7 @@ def dashboard(request):
             "needs_review_pairs": models.MatchedPair.objects.filter(status="needs_review").count(),
             "rejected_pairs": models.MatchedPair.objects.filter(status="rejected").count(),
             "open_opportunities": models.OpportunityEvent.objects.filter(status="open").count(),
+            "total_opportunities": models.OpportunityEvent.objects.count(),
         },
         "last_discovery": models.DiscoveryRun.objects.order_by("-started_at").first(),
         "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:8],
@@ -202,6 +203,55 @@ def pair_action(request, pk, action):
         pair.save(update_fields=["status", "reject_reason", "updated_at"])
         messages.success(request, f"Pair {pk} -> {mapping[action]}")
     return redirect(request.META.get("HTTP_REFERER", "/pairs/"))
+
+
+def opportunities(request):
+    qs = models.OpportunityEvent.objects.select_related(
+        "pair", "pair__polymarket_market", "pair__kalshi_market").order_by("-ts_start")
+    status = request.GET.get("status") or ""
+    if status:
+        qs = qs.filter(status=status)
+    paginator = Paginator(qs, 50)
+    page = paginator.get_page(request.GET.get("page"))
+    counts = {s: models.OpportunityEvent.objects.filter(status=s).count()
+              for s in ["open", "closed", "stale", "invalidated"]}
+    return render(request, "scanner/opportunities.html", {
+        "page": page, "counts": counts, "filters": {"status": status},
+        "total": paginator.count,
+    })
+
+
+def _edge_chart(points):
+    """Build an inline-SVG polyline (no external libs) of net_edge over time."""
+    vals = [(p.ts, float(p.net_edge)) for p in points]
+    if len(vals) < 2:
+        return None
+    w, h, pad = 700, 220, 30
+    t0, t1 = vals[0][0].timestamp(), vals[-1][0].timestamp()
+    ys = [v for _, v in vals]
+    ymin, ymax = min(ys), max(ys)
+    span_t = (t1 - t0) or 1
+    span_y = (ymax - ymin) or 1
+
+    def sx(t):
+        return pad + (t.timestamp() - t0) / span_t * (w - 2 * pad)
+
+    def sy(v):
+        return h - pad - (v - ymin) / span_y * (h - 2 * pad)
+
+    pts = " ".join(f"{sx(t):.1f},{sy(v):.1f}" for t, v in vals)
+    zero_y = sy(0) if ymin <= 0 <= ymax else None
+    return {"points": pts, "w": w, "h": h, "pad": pad,
+            "ymin": ymin, "ymax": ymax, "zero_y": zero_y}
+
+
+def opportunity_detail(request, pk):
+    opp = get_object_or_404(
+        models.OpportunityEvent.objects.select_related("pair"), pk=pk)
+    points = list(opp.edge_points.order_by("ts"))
+    return render(request, "scanner/opportunity_detail.html", {
+        "opp": opp, "points": points, "chart": _edge_chart(points),
+    })
 
 
 @require_POST

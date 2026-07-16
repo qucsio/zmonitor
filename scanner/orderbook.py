@@ -140,7 +140,7 @@ def fetch_pair_books(pair: MatchedPair):
 def _fork(pm_leg_asks, kalshi_leg_asks, sizes, fee, slip):
     """Compute a buy/buy fork over the size ladder. Returns dict."""
     ladder = []
-    best_net = None
+    best_net = best_gross = best_pm = best_kalshi = None
     max_size = Decimal("0")
     for size in sizes:
         pm_p, pm_f = vwap_buy(pm_leg_asks, size)
@@ -161,9 +161,13 @@ def _fork(pm_leg_asks, kalshi_leg_asks, sizes, fee, slip):
         if fillable >= size:
             max_size = size
         if best_net is None:
-            best_net = net  # smallest size = top of book best edge
+            best_net, best_gross = net, gross           # smallest size = top of book
+            best_pm, best_kalshi = pm_p, k_p
     return {
         "best_net_edge": str(best_net) if best_net is not None else None,
+        "best_gross_edge": str(best_gross) if best_gross is not None else None,
+        "best_pm_vwap": str(best_pm) if best_pm is not None else None,
+        "best_kalshi_vwap": str(best_kalshi) if best_kalshi is not None else None,
         "max_size_usd": str(max_size),
         "ladder": ladder,
         "pm_depth": str(_depth(pm_leg_asks)),
@@ -238,6 +242,12 @@ def process_pair(pair: MatchedPair):
         _redis().set(f"latest_pair_state:{pair.id}", json.dumps(state), ex=3600)
     except Exception:  # noqa: BLE001
         logger.exception("failed writing latest_pair_state")
+
+    try:
+        from scanner import opportunities
+        opportunities.process(pair, state)
+    except Exception:  # noqa: BLE001
+        logger.exception("opportunity processing failed for %s", pair.id)
     return state
 
 
