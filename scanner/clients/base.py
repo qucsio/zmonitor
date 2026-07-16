@@ -49,7 +49,15 @@ def request(method, url, *, venue, log=True, expected_ok=(), **kwargs):
         ok = False
     latency_ms = int((time.time() - t0) * 1000)
 
-    if log:
+    # cheap rolling rate counter for every request
+    try:
+        from scanner import metrics
+        metrics.record_request(venue, status_code)
+    except Exception:  # noqa: BLE001
+        pass
+
+    # only persist ERRORS to ApiHealthLog (every-request logging bloats the DB)
+    if log and not ok:
         try:
             ApiHealthLog.objects.create(
                 venue=venue,

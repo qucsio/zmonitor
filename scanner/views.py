@@ -72,8 +72,17 @@ def dashboard(request):
         "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:8],
         "jobs": _jobs(),
         "archived_pairs": models.MatchedPair.objects.filter(status="archived").count(),
+        "rates": _rates(),
     }
     return render(request, "scanner/dashboard.html", ctx)
+
+
+def _rates():
+    try:
+        from .metrics import rate_summary
+        return rate_summary()
+    except Exception:  # noqa: BLE001
+        return {}
 
 
 def _jobs():
