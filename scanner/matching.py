@@ -249,9 +249,38 @@ def run_matching(limit=None, max_event_fetches=200):
         stats["pairs"] += 1
         stats[status] = stats.get(status, 0) + 1
 
+    stats["rechecked"] = _recheck_existing_pairs()
     stats["deduped"] = _dedupe_by_kalshi()
     _set_status(state="done", finished=timezone.now().isoformat(), stats=stats)
     return stats
+
+
+def _recheck_existing_pairs():
+    """Re-score existing matched/needs_review pairs against CURRENT normalization and
+    flip stale ones (e.g. PM now set_winner vs Kalshi match_winner -> rejected).
+    Without this, pairs that stop matching are never updated (weak+hard are skipped)."""
+    changed = 0
+    qs = MatchedPair.objects.filter(status__in=["matched", "needs_review"]).select_related(
+        "polymarket_market", "kalshi_market")
+    for p in qs.iterator():
+        pmn = getattr(p.polymarket_market, "normalized", None)
+        kn = getattr(p.kalshi_market, "normalized", None)
+        if not pmn or not kn:
+            continue
+        sc, hard, soft, mapping = score_pair(pmn, kn)
+        new_status = _status_for(sc, hard)
+        if new_status != p.status or p.market_type != pmn.market_type:
+            p.status = new_status
+            p.match_score = sc
+            p.confidence = sc
+            p.market_type = pmn.market_type
+            p.map_number = pmn.map_number
+            p.outcome_mapping = mapping or {}
+            p.risk_flags = hard
+            p.save(update_fields=["status", "match_score", "confidence", "market_type",
+                                  "map_number", "outcome_mapping", "risk_flags", "updated_at"])
+            changed += 1
+    return changed
 
 
 def _dedupe_by_kalshi():
