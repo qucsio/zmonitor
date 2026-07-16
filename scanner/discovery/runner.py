@@ -18,6 +18,8 @@ def run_discovery(venue):
     if venue not in _VENUES:
         raise ValueError(f"unknown venue: {venue}")
 
+    from scanner import jobs
+    jobs.job_started("discovery")
     run = DiscoveryRun.objects.create(venue=venue, status="running")
     try:
         counts = _VENUES[venue]()
@@ -32,4 +34,7 @@ def run_discovery(venue):
     finally:
         run.finished_at = timezone.now()
         run.save()
+        jobs.job_finished("discovery", result={
+            "venue": venue, "status": run.status,
+            "seen": run.markets_seen, "new": run.markets_new, "updated": run.markets_updated})
     return run

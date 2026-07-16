@@ -69,17 +69,18 @@ def dashboard(request):
         },
         "last_discovery": models.DiscoveryRun.objects.order_by("-started_at").first(),
         "recent_runs": models.DiscoveryRun.objects.order_by("-started_at")[:8],
-        "matching_status": _matching_status(),
+        "jobs": _jobs(),
+        "archived_pairs": models.MatchedPair.objects.filter(status="archived").count(),
     }
     return render(request, "scanner/dashboard.html", ctx)
 
 
-def _matching_status():
+def _jobs():
     try:
-        from .matching import get_matching_status
-        return get_matching_status()
+        from .jobs import all_jobs
+        return all_jobs()
     except Exception:  # noqa: BLE001
-        return None
+        return []
 
 
 def markets(request):
@@ -127,7 +128,10 @@ def pairs(request):
         "polymarket_market", "kalshi_market").order_by("-match_score", "-updated_at")
     status = request.GET.get("status") or ""
     game = request.GET.get("game") or ""
-    active = request.GET.get("active") or ""
+    # default: show live matched pairs unless a specific status/active is requested
+    active = request.GET.get("active")
+    if active is None:
+        active = "0" if status in ("archived", "rejected", "disabled") else "1"
     if status:
         qs = qs.filter(status=status)
     if game:
@@ -158,7 +162,7 @@ def pairs(request):
             p.best_net = None
 
     counts = {s: models.MatchedPair.objects.filter(status=s).count()
-              for s in ["matched", "candidate", "needs_review", "rejected", "disabled"]}
+              for s in ["matched", "candidate", "needs_review", "rejected", "disabled", "archived"]}
     return render(request, "scanner/pairs.html", {
         "page": page,
         "counts": counts, "total": paginator.count,

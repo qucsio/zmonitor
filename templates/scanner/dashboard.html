@@ -21,12 +21,38 @@
   </div>
   {% endfor %}
 </div>
+<div class="card mt-4">
+  <div class="card-header d-flex justify-content-between">
+    <span>Background jobs</span>
+    <span class="small text-muted">auto-refresh 10s</span>
+  </div>
+  <table class="table table-sm mb-0">
+    <thead><tr><th>Job</th><th>State</th><th>Every</th><th>Last started</th><th>Last finished</th><th>Result</th></tr></thead>
+    <tbody>
+    {% for j in jobs %}
+      <tr>
+        <td><strong>{{ j.name }}</strong></td>
+        <td>
+          {% if j.state == 'running' %}<span class="badge bg-primary">running…</span>
+          {% elif j.state == 'error' %}<span class="badge bg-danger">error</span>
+          {% elif j.state %}<span class="badge bg-success">idle</span>
+          {% else %}<span class="badge bg-secondary">—</span>{% endif %}
+        </td>
+        <td class="small">{{ j.interval_sec }}s</td>
+        <td class="small">{{ j.started|default:"—" }}</td>
+        <td class="small">{{ j.finished|default:"—" }}</td>
+        <td class="small"><code>{{ j.result|default:j.error|default:"—" }}</code></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
 <div class="row mt-4 g-3">
   <div class="col-md-6">
     <div class="card">
-      <div class="card-header d-flex justify-content-between">
-        <span>Discovery runs</span>
-        <span class="small text-muted">auto-refresh 10s</span>
+      <div class="card-header">
+        <span>Discovery run history</span>
       </div>
       <table class="table table-sm mb-0">
         <thead><tr><th>Venue</th><th>Status</th><th>Started</th><th>Dur</th><th>seen/new/upd</th></tr></thead>
@@ -51,19 +77,12 @@
   </div>
   <div class="col-md-6">
     <div class="card">
-      <div class="card-header">Matching</div>
+      <div class="card-header">Pairs</div>
       <div class="card-body">
-        {% if matching_status %}
-          <p class="mb-1">State:
-            {% if matching_status.state == 'running' %}<span class="badge bg-primary">running…</span>
-            {% else %}<span class="badge bg-success">done</span>{% endif %}
-          </p>
-          <p class="small mb-1">Started: {{ matching_status.started }}</p>
-          {% if matching_status.finished %}<p class="small mb-1">Finished: {{ matching_status.finished }}</p>{% endif %}
-          {% if matching_status.stats %}<p class="small mb-0"><code>{{ matching_status.stats }}</code></p>{% endif %}
-        {% else %}
-          <p class="text-muted mb-0">No matching run recorded yet.</p>
-        {% endif %}
+        <p class="mb-1"><a href="/pairs/?status=matched&active=1">Live matched pairs</a></p>
+        <p class="mb-1"><a href="/pairs/?status=archived">Archived pairs</a>: {{ archived_pairs }}
+          <span class="text-muted small">(resolved matches — kept for analysis)</span></p>
+        <p class="text-muted small mb-0">Reaper archives pairs once a match's markets close.</p>
       </div>
     </div>
   </div>

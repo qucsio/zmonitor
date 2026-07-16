@@ -43,7 +43,17 @@ def match_markets_task():
         if not acquired:
             return {"skipped": "matching already running"}
         normalize_pending(venue=VENUE_POLYMARKET)
-        return run_matching()
+        return run_matching(incremental=True)
+
+
+@shared_task(queue="matching")
+def reap_stale_task():
+    from scanner.maintenance import reap_stale
+
+    with _redis_lock("lock:reap", 300) as acquired:
+        if not acquired:
+            return {"skipped": "reaper already running"}
+        return reap_stale()
 
 
 @shared_task(queue="discovery")

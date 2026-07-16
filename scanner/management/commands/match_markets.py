@@ -13,12 +13,15 @@ class Command(BaseCommand):
                             help="limit number of PM markets considered")
         parser.add_argument("--skip-normalize", action="store_true")
         parser.add_argument("--max-event-fetches", type=int, default=200)
+        parser.add_argument("--full", action="store_true",
+                            help="re-scan all PM markets (default: only unmatched)")
 
     def handle(self, *args, **opts):
         if not opts["skip_normalize"]:
             n = normalize_pending(venue=VENUE_POLYMARKET, limit=opts["limit"])
             self.stdout.write(f"Normalized {n} Polymarket markets")
         stats = run_matching(limit=opts["limit"],
-                             max_event_fetches=opts["max_event_fetches"])
+                             max_event_fetches=opts["max_event_fetches"],
+                             incremental=not opts["full"])
         self.stdout.write(self.style.SUCCESS(
             "matching: " + " ".join(f"{k}={v}" for k, v in stats.items())))

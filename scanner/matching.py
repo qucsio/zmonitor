@@ -197,8 +197,12 @@ def get_matching_status():
         return None
 
 
-def run_matching(limit=None, max_event_fetches=200):
-    """Match normalized Polymarket winner-markets against Kalshi via team blocking."""
+def run_matching(limit=None, max_event_fetches=200, incremental=True):
+    """Match normalized Polymarket winner-markets against Kalshi via team blocking.
+    incremental=True (routine) only scans PM markets not yet matched — matched ones
+    are handled by the recheck pass — which keeps each run fast."""
+    from scanner import jobs
+    jobs.job_started("matching")
     _set_status(state="running", started=timezone.now().isoformat(),
                 finished=None, stats=None)
     index = build_kalshi_event_index()
@@ -210,7 +214,10 @@ def run_matching(limit=None, max_event_fetches=200):
         market__closed=False,
     ).exclude(canonical_team_a=None).exclude(canonical_team_b=None).filter(
         models.Q(market__close_time__gte=now) | models.Q(market__close_time__isnull=True)
-    ).order_by("-market_id")
+    )
+    if incremental:
+        pm_qs = pm_qs.exclude(market__matching_status="matched")
+    pm_qs = pm_qs.order_by("-market_id")
     if limit:
         pm_qs = pm_qs[:limit]
 
@@ -252,6 +259,8 @@ def run_matching(limit=None, max_event_fetches=200):
     stats["rechecked"] = _recheck_existing_pairs()
     stats["deduped"] = _dedupe_pairs()
     _set_status(state="done", finished=timezone.now().isoformat(), stats=stats)
+    from scanner import jobs
+    jobs.job_finished("matching", result=stats)
     return stats
 
 

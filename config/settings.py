@@ -102,17 +102,22 @@ CELERY_TIMEZONE = "UTC"
 CELERY_BEAT_SCHEDULE = {
     "discovery-all": {
         "task": "scanner.tasks.discover_all",
-        "schedule": float(env_int("DISCOVERY_INTERVAL_SEC", 600)),
+        "schedule": float(env_int("DISCOVERY_INTERVAL_SEC", 900)),
     },
     "match-all": {
         "task": "scanner.tasks.match_markets_task",
-        "schedule": float(env_int("MATCHING_INTERVAL_SEC", 30) * 10),
+        "schedule": float(env_int("MATCHING_INTERVAL_SEC", 30) * 30),  # ~15 min
+    },
+    "reap-stale": {
+        "task": "scanner.tasks.reap_stale_task",
+        "schedule": float(env_int("REAP_INTERVAL_SEC", 300)),
     },
 }
 
 # ---- Scanner config ----
 SCANNER = {
-    "DISCOVERY_INTERVAL_SEC": env_int("DISCOVERY_INTERVAL_SEC", 300),
+    "DISCOVERY_INTERVAL_SEC": env_int("DISCOVERY_INTERVAL_SEC", 900),
+    "REAP_INTERVAL_SEC": env_int("REAP_INTERVAL_SEC", 300),
     "DISCOVERY_MAX_PAGES": env_int("DISCOVERY_MAX_PAGES", 40),
     "DISCOVERY_PAGE_THROTTLE_MS": env_int("DISCOVERY_PAGE_THROTTLE_MS", 250),
     # Polymarket tag slugs to keep (substring match against event tag slugs/labels)
