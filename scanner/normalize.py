@@ -57,11 +57,38 @@ GAME_KEYWORDS = {
     "league of legends": "lol", "lol": "lol", "lck": "lol", "lec": "lol",
     "valorant": "valorant", "vct": "valorant",
     "overwatch": "overwatch", "rocket league": "rocket_league",
+    "rainbow six": "r6", "r6": "r6", "siege": "r6",
     "nba": "nba", "nfl": "nfl", "nhl": "nhl", "mlb": "mlb",
     "soccer": "soccer", "premier league": "soccer", "la liga": "soccer",
     "tennis": "tennis", "ufc": "ufc", "mma": "mma", "boxing": "boxing",
     "formula 1": "f1", "f1": "f1",
 }
+
+# games where "Game N" means an individual map/game within a series (not a full match)
+ESPORTS_GAMES = {"cs2", "dota2", "lol", "valorant", "overwatch", "rocket_league", "r6"}
+
+_SEGMENT_RE = re.compile(r"\b(map|set|game)\s*(\d+)\b", re.IGNORECASE)
+
+
+def detect_segment(game, *texts):
+    """Detect a numbered sub-market. Returns (market_type, number) or (None, None).
+    A numbered segment is NEVER a full match_winner, so sub-markets can't glob onto
+    the whole-match market on the other venue."""
+    for text in texts:
+        if not text:
+            continue
+        m = _SEGMENT_RE.search(text)
+        if not m:
+            continue
+        unit, num = m.group(1).lower(), int(m.group(2))
+        if unit == "set":
+            return "set_winner", num
+        if unit == "map":
+            return "map_winner", num
+        if unit == "game":
+            # "Game N" is a map only in esports; in NBA/MLB it's a full series game.
+            return ("map_winner", num) if game in ESPORTS_GAMES else (None, None)
+    return None, None
 
 _VS_SPLIT = re.compile(r"\s+(?:vs\.?|v\.?|@|versus)\s+", re.IGNORECASE)
 _MAP_RE = re.compile(r"\bmap\s*(\d+)\b", re.IGNORECASE)
@@ -201,15 +228,17 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
     question = market.question or ""
     rules = market.rules_text or ""
 
+    game = detect_game(title, question, rules, market.venue_event_id or "")
+
     map_number = _map_number(title, question, rules)
-    set_number = _set_number(title, question)
     market_type = detect_market_type(" ".join([title, question]), map_number)
 
-    # "Set N winner" is a distinct partial market (tennis) — must not match a full
-    # match_winner. Reuse map_number slot to carry the set number.
-    if set_number and market_type in ("match_winner", "map_winner", "unknown"):
-        market_type = "set_winner"
-        map_number = set_number
+    # Numbered sub-markets (Map N / Set N / Game N in esports) are never a full
+    # match_winner — this stops them globbing onto the whole-match market.
+    seg_type, seg_num = detect_segment(game, title, question)
+    if seg_type and market_type in ("match_winner", "map_winner", "unknown"):
+        market_type = seg_type
+        map_number = seg_num
 
     # Kalshi: prefer ticker-encoded type (far more reliable than title text)
     if market.venue == VENUE_KALSHI:
@@ -218,8 +247,6 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
             market_type = kt
         if kmap is not None:
             map_number = kmap
-
-    game = detect_game(title, question, rules, market.venue_event_id or "")
 
     # teams
     team_a, team_b = None, None

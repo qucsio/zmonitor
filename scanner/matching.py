@@ -249,5 +249,28 @@ def run_matching(limit=None, max_event_fetches=200):
         stats["pairs"] += 1
         stats[status] = stats.get(status, 0) + 1
 
+    stats["deduped"] = _dedupe_by_kalshi()
     _set_status(state="done", finished=timezone.now().isoformat(), stats=stats)
     return stats
+
+
+def _dedupe_by_kalshi():
+    """One Kalshi match market can't be two matched PM markets. Keep the best-scoring
+    matched pair per kalshi market; demote the rest to needs_review."""
+    from django.db.models import Count
+
+    demoted = 0
+    dupes = (MatchedPair.objects.filter(status="matched")
+             .values("kalshi_market").annotate(n=Count("id")).filter(n__gt=1))
+    for d in dupes:
+        pairs = list(MatchedPair.objects.filter(
+            status="matched", kalshi_market_id=d["kalshi_market"]
+        ).order_by("-match_score", "-id"))
+        for extra in pairs[1:]:
+            extra.status = "needs_review"
+            extra.reject_reason = "duplicate_pm_for_kalshi"
+            if "duplicate_pm_for_kalshi" not in extra.risk_flags:
+                extra.risk_flags = extra.risk_flags + ["duplicate_pm_for_kalshi"]
+            extra.save(update_fields=["status", "reject_reason", "risk_flags", "updated_at"])
+            demoted += 1
+    return demoted
