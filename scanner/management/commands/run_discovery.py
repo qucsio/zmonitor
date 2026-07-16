@@ -10,12 +10,14 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--venue", default="all",
                             choices=["polymarket", "kalshi", "all"])
+        parser.add_argument("--full", action="store_true",
+                            help="full re-scan (default: incremental, stop at known)")
 
     def handle(self, *args, **opts):
         venue = opts["venue"]
         venues = [VENUE_POLYMARKET, VENUE_KALSHI] if venue == "all" else [venue]
         for v in venues:
-            run = run_discovery(v)
+            run = run_discovery(v, incremental=not opts["full"])
             self.stdout.write(self.style.SUCCESS(
                 f"[{v}] status={run.status} seen={run.markets_seen} "
                 f"new={run.markets_new} updated={run.markets_updated}"

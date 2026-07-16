@@ -12,7 +12,7 @@ class Command(BaseCommand):
                             help="(compat flag; forks are always calculated)")
 
     def handle(self, *args, **opts):
-        results = process_matched_pairs(limit=opts["limit"])
+        results = process_matched_pairs(limit=opts["limit"], respect_tiers=False)
         results.sort(key=lambda r: max(
             float(r["fork_a_net"] or -9), float(r["fork_b_net"] or -9)), reverse=True)
         for r in results:

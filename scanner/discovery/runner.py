@@ -14,7 +14,7 @@ _VENUES = {
 }
 
 
-def run_discovery(venue):
+def run_discovery(venue, incremental=True):
     if venue not in _VENUES:
         raise ValueError(f"unknown venue: {venue}")
 
@@ -22,7 +22,7 @@ def run_discovery(venue):
     jobs.job_started("discovery")
     run = DiscoveryRun.objects.create(venue=venue, status="running")
     try:
-        counts = _VENUES[venue]()
+        counts = _VENUES[venue](incremental=incremental)
         run.status = "ok"
         run.markets_seen = counts["markets_seen"]
         run.markets_new = counts["markets_new"]

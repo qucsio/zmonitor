@@ -98,9 +98,10 @@ def _save_market(m, event_ticker):
     return created
 
 
-def discover(page_size=200):
-    """Events-only discovery (lightweight). Markets are fetched lazily at matching time
-    via fetch_markets_for_event(). Counters count EVENTS, not markets."""
+def discover(page_size=200, incremental=True):
+    """Events-only discovery (lightweight). Markets are fetched lazily at matching time.
+    incremental=True stops after a few consecutive pages with no NEW matched events
+    (events are newest-first, so new ones cluster at the front)."""
     max_pages = max(settings.SCANNER["DISCOVERY_MAX_PAGES"], 200)
     throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
     wanted = settings.SCANNER["DISCOVERY_KALSHI_CATEGORIES"]
@@ -110,6 +111,7 @@ def discover(page_size=200):
     logger.info("kalshi: %d series in wanted categories", len(selected))
 
     cursor = None
+    empty_streak = 0
     for _ in range(max_pages):
         r = kalshi_client.get_events(limit=page_size, cursor=cursor, status="open")
         if not r.ok or not isinstance(r.data, dict):
@@ -118,6 +120,7 @@ def discover(page_size=200):
         events = r.data.get("events", [])
         if not events:
             break
+        page_new = 0
         for ev in events:
             if not isinstance(ev, dict) or not ev.get("event_ticker"):
                 continue
@@ -133,8 +136,12 @@ def discover(page_size=200):
             })
             if created:
                 counters["markets_new"] += 1
+                page_new += 1
             else:
                 counters["markets_updated"] += 1
+        empty_streak = empty_streak + 1 if page_new == 0 else 0
+        if incremental and empty_streak >= 3:
+            break
         cursor = r.data.get("cursor")
         if not cursor:
             break

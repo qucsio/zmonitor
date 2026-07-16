@@ -91,11 +91,12 @@ def _save_market(m, venue_event_id):
     return created
 
 
-def _discover_tag(tag_slug, page_size, max_pages, throttle, counters):
+def _discover_tag(tag_slug, page_size, max_pages, throttle, counters, incremental):
     offset = 0
     for _ in range(max_pages):
         r = pm_client.get_events(limit=page_size, offset=offset, closed=False, params={
             "tag_slug": tag_slug, "active": "true", "related_tags": "true",
+            "order": "id", "ascending": "false",  # newest first for incremental stop
         })
         if not r.ok:
             if r.status_code != 422:  # 422 = offset too deep; just stop this tag
@@ -104,6 +105,7 @@ def _discover_tag(tag_slug, page_size, max_pages, throttle, counters):
         events = r.data if isinstance(r.data, list) else r.data.get("data", [])
         if not events:
             break
+        page_new = 0
         for ev in events:
             if not isinstance(ev, dict):
                 continue
@@ -114,8 +116,13 @@ def _discover_tag(tag_slug, page_size, max_pages, throttle, counters):
                 counters["markets_seen"] += 1
                 if _save_market(m, ev.get("id")):
                     counters["markets_new"] += 1
+                    page_new += 1
                 else:
                     counters["markets_updated"] += 1
+        # incremental: newest-first, so a page with no new markets means the rest are
+        # already known -> stop this tag.
+        if incremental and page_new == 0:
+            break
         if len(events) < page_size:
             break
         offset += page_size
@@ -123,12 +130,13 @@ def _discover_tag(tag_slug, page_size, max_pages, throttle, counters):
             time.sleep(throttle)
 
 
-def discover(page_size=100):
-    """Server-side filtered discovery: one pass per configured tag_slug."""
+def discover(page_size=100, incremental=True):
+    """Server-side filtered discovery: one pass per configured tag_slug.
+    incremental=True stops each tag once it reaches already-known markets."""
     max_pages = settings.SCANNER["DISCOVERY_MAX_PAGES"]
     throttle = settings.SCANNER["DISCOVERY_PAGE_THROTTLE_MS"] / 1000.0
     tags = settings.SCANNER["DISCOVERY_PM_TAGS"]
     counters = {"markets_seen": 0, "markets_new": 0, "markets_updated": 0}
     for tag in tags:
-        _discover_tag(tag, page_size, max_pages, throttle, counters)
+        _discover_tag(tag, page_size, max_pages, throttle, counters, incremental)
     return counters

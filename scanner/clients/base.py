@@ -28,7 +28,12 @@ def request(method, url, *, venue, log=True, expected_ok=(), **kwargs):
     try:
         timeout = kwargs.pop("timeout", 30.0)
         proxy = kwargs.pop("proxy", None) or None
-        resp = httpx.request(method, url, timeout=timeout, proxy=proxy, **kwargs)
+        # simple 429 backoff: retry a couple times with growing delay
+        for attempt in range(3):
+            resp = httpx.request(method, url, timeout=timeout, proxy=proxy, **kwargs)
+            if resp.status_code != 429:
+                break
+            time.sleep(0.5 * (attempt + 1))
         status_code = resp.status_code
         ok = resp.is_success
         try:

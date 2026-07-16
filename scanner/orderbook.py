@@ -249,7 +249,49 @@ def get_pair_state(pair_id):
         return None
 
 
-def process_matched_pairs(limit=None):
+def _best_net(state):
+    if not state:
+        return None
+    vals = []
+    for f in ("fork_a", "fork_b"):
+        v = state.get(f, {}).get("best_net_edge")
+        if v is not None:
+            try:
+                vals.append(float(v))
+            except (TypeError, ValueError):
+                pass
+    return max(vals) if vals else None
+
+
+def _poll_interval(state):
+    """Tiered polling: near-arb pairs fast, deeply-negative pairs slow. Keeps the
+    request rate sane (163 pairs * 1s would blow past venue rate limits)."""
+    if state is None:
+        return 0  # never polled -> poll now
+    best = _best_net(state)
+    thr = float(settings.SCANNER["OPPORTUNITY_NET_EDGE_THRESHOLD"])
+    if best is None:
+        return 30
+    if best >= thr - 0.02:       # hot: at/near an opportunity
+        return settings.SCANNER["ORDERBOOK_REFRESH_SEC"]
+    if best >= thr - 0.10:       # warm
+        return 15
+    return 60                    # cold
+
+
+def _is_due(state):
+    if state is None:
+        return True
+    interval = _poll_interval(state)
+    try:
+        from django.utils.dateparse import parse_datetime
+        age = (timezone.now() - parse_datetime(state["updated_at"])).total_seconds()
+        return age >= interval
+    except Exception:  # noqa: BLE001
+        return True
+
+
+def process_matched_pairs(limit=None, respect_tiers=True):
     from django.db.models import Q
 
     now = timezone.now()
@@ -264,6 +306,8 @@ def process_matched_pairs(limit=None):
     results = []
     for pair in qs:
         try:
+            if respect_tiers and not _is_due(get_pair_state(pair.id)):
+                continue
             state = process_pair(pair)
             if state:
                 results.append({
