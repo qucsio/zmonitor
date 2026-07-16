@@ -145,6 +145,18 @@ def pairs(request):
 
     paginator = Paginator(qs, 50)
     page = paginator.get_page(request.GET.get("page"))
+
+    # attach live best net-edge (from Redis) to each pair on this page
+    from .orderbook import get_pair_state
+    for p in page:
+        st = get_pair_state(p.id)
+        if st:
+            a = st["fork_a"].get("best_net_edge")
+            b = st["fork_b"].get("best_net_edge")
+            p.best_net = max([x for x in (a, b) if x is not None], default=None, key=lambda v: float(v))
+        else:
+            p.best_net = None
+
     counts = {s: models.MatchedPair.objects.filter(status=s).count()
               for s in ["matched", "candidate", "needs_review", "rejected", "disabled"]}
     return render(request, "scanner/pairs.html", {

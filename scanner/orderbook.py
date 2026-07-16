@@ -257,11 +257,16 @@ def process_matched_pairs(limit=None):
         .order_by("polymarket_market__close_time"))
     if limit:
         qs = qs[:limit]
-    done = 0
+    results = []
     for pair in qs:
         try:
-            if process_pair(pair):
-                done += 1
+            state = process_pair(pair)
+            if state:
+                results.append({
+                    "id": pair.id,
+                    "fork_a_net": state["fork_a"].get("best_net_edge"),
+                    "fork_b_net": state["fork_b"].get("best_net_edge"),
+                })
         except Exception:  # noqa: BLE001
             logger.exception("process_pair failed for %s", pair.id)
-    return done
+    return results

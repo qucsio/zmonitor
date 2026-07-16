@@ -20,7 +20,7 @@
 <table class="table table-sm table-striped bg-white align-middle">
   <thead><tr>
     <th>ID</th><th>Status</th><th>Score</th><th>Game</th><th>Teams</th>
-    <th>Type</th><th>Map</th><th>PM</th><th>Kalshi</th><th>Risk</th><th>Actions</th>
+    <th>Type</th><th>Map</th><th>Net edge</th><th>PM</th><th>Kalshi</th><th>Risk</th><th>Actions</th>
   </tr></thead>
   <tbody>
   {% for p in page %}
@@ -32,6 +32,7 @@
       <td class="small">{{ p.canonical_team_a }} vs {{ p.canonical_team_b }}</td>
       <td>{{ p.market_type }}</td>
       <td>{{ p.map_number|default:"—" }}</td>
+      <td class="{% if p.best_net and p.best_net.0 != '-' %}text-success fw-bold{% elif p.best_net %}text-muted{% endif %}">{{ p.best_net|default:"—" }}</td>
       <td class="small">{{ p.polymarket_market.title|truncatechars:28 }}</td>
       <td class="small">{{ p.kalshi_market.title|truncatechars:28 }}</td>
       <td class="small text-danger">{{ p.risk_flags|join:", " }}</td>

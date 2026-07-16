@@ -18,8 +18,8 @@ class Command(BaseCommand):
         while True:
             t0 = time.time()
             try:
-                n = process_matched_pairs()
-                logger.info("orderbook cycle: %d pairs in %.1fs", n, time.time() - t0)
+                res = process_matched_pairs()
+                logger.info("orderbook cycle: %d pairs in %.1fs", len(res), time.time() - t0)
             except Exception:  # noqa: BLE001
                 logger.exception("orderbook cycle failed")
             elapsed = time.time() - t0
