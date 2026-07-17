@@ -223,7 +223,7 @@ def opportunities(request):
     paginator = Paginator(qs, 50)
     page = paginator.get_page(request.GET.get("page"))
     counts = {s: models.OpportunityEvent.objects.filter(status=s).count()
-              for s in ["open", "closed", "stale", "invalidated"]}
+              for s in ["open", "closed", "expired", "stale", "invalidated"]}
     return render(request, "scanner/opportunities.html", {
         "page": page, "counts": counts, "filters": {"status": status},
         "total": paginator.count,
@@ -252,6 +252,44 @@ def _edge_chart(points):
     zero_y = sy(0) if ymin <= 0 <= ymax else None
     return {"points": pts, "w": w, "h": h, "pad": pad,
             "ymin": ymin, "ymax": ymax, "zero_y": zero_y}
+
+
+def opportunity_analytics(request):
+    """Aggregate analytics over finished (archived) opportunities. Reads only the precomputed
+    per-opportunity aggregate fields, so this stays cheap even over a large history."""
+    from django.db.models import Avg, Count, Max, Sum
+
+    finished = models.OpportunityEvent.objects.exclude(status="open")
+    market_type = request.GET.get("market_type") or ""
+    if market_type:
+        finished = finished.filter(pair__market_type=market_type)
+
+    overall = finished.aggregate(
+        n=Count("id"),
+        avg_duration=Avg("duration_sec"),
+        avg_net=Avg("avg_net_edge"),
+        avg_max_net=Avg("max_net_edge"),
+        avg_profit=Avg("avg_profit_usd"),
+        avg_max_profit=Avg("max_profit_usd"),
+        total_max_profit=Sum("max_profit_usd"),
+        avg_time_above=Avg("time_above_threshold_sec"),
+        best_profit=Max("max_profit_usd"),
+    )
+    # Breakdown by market_type (cheap, grouped aggregate).
+    by_type = list(finished.values("pair__market_type").annotate(
+        n=Count("id"), avg_duration=Avg("duration_sec"),
+        avg_net=Avg("avg_net_edge"), avg_profit=Avg("avg_profit_usd"),
+        total_profit=Sum("max_profit_usd")).order_by("-n"))
+    top = list(finished.order_by("-max_profit_usd").select_related(
+        "pair")[:20])
+    reasons = list(finished.values("close_reason").annotate(
+        n=Count("id")).order_by("-n"))
+    market_types = [t for t in models.OpportunityEvent.objects.exclude(status="open")
+                    .values_list("pair__market_type", flat=True).distinct() if t]
+    return render(request, "scanner/opportunity_analytics.html", {
+        "overall": overall, "by_type": by_type, "top": top, "reasons": reasons,
+        "market_types": market_types, "filters": {"market_type": market_type},
+    })
 
 
 def opportunity_detail(request, pk):

@@ -4,7 +4,7 @@ from datetime import timedelta
 
 from django.utils import timezone
 
-from scanner import jobs
+from scanner import jobs, opportunities
 from scanner.models import DiscoveryRun, MatchedPair, RawMarket
 
 logger = logging.getLogger("scanner")
@@ -31,8 +31,11 @@ def reap_stale():
             finished_at__isnull=True, started_at__lt=now - timedelta(minutes=30)
         ).update(status="error", finished_at=now, error_text="orphaned (no finish)")
 
+        # Force-close opportunities orphaned by pairs that left the live set.
+        opps_closed = opportunities.sweep_stale()
+
         result = {"markets_closed": closed_by_time, "pairs_archived": archived,
-                  "stale_runs_cleared": stale_runs}
+                  "stale_runs_cleared": stale_runs, "opportunities_closed": opps_closed}
         jobs.job_finished("reaper", result=result)
         return result
     except Exception as exc:  # noqa: BLE001

@@ -78,8 +78,9 @@
 
 {% for label, fork in forks %}
 <h3 class="h6 mt-3">Fork {{ label }} <span class="text-muted small">{{ fork.direction }}</span>
-  · best net <strong class="{% if fork.best_net_edge and fork.best_net_edge.0 != '-' %}text-success{% else %}text-danger{% endif %}">{{ fork.best_net_edge|default:"—" }}</strong>
-  · max size {{ fork.max_size_usd }}</h3>
+  · top net <strong class="{% if fork.top_net_edge and fork.top_net_edge.0 != '-' %}text-success{% else %}text-danger{% endif %}">{{ fork.top_net_edge|default:"—" }}</strong>
+  · exec {{ fork.exec_contracts|default:"—" }} ctr / ${{ fork.exec_size_usd|default:"—" }}
+  · <strong class="text-success">profit ${{ fork.profit_usd|default:"—" }}</strong></h3>
 <table class="table table-sm table-bordered bg-white">
   <thead><tr><th>Size</th><th>PM vwap</th><th>Kalshi vwap</th><th>Cost</th><th>Gross</th><th>Net</th><th>Fillable</th></tr></thead>
   <tbody>

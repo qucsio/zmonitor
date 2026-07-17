@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Opportunity analytics{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Opportunity analytics <span class="text-muted fs-6">(finished / archived)</span></h1>
+
+<form method="get" class="mb-3">
+  <select name="market_type" class="form-select form-select-sm d-inline-block w-auto" onchange="this.form.submit()">
+    <option value="">all market types</option>
+    {% for mt in market_types %}
+      <option value="{{ mt }}" {% if mt == filters.market_type %}selected{% endif %}>{{ mt }}</option>
+    {% endfor %}
+  </select>
+  <a href="/opportunities/" class="btn btn-sm btn-outline-secondary">← list</a>
+</form>
+
+<div class="row g-2 mb-4">
+  {% with o=overall %}
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Opportunities</div><div class="h4 mb-0">{{ o.n }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg duration</div><div class="h4 mb-0">{{ o.avg_duration|floatformat:1|default:"—" }}s</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg net edge (time-wt)</div><div class="h4 mb-0">{{ o.avg_net|floatformat:4|default:"—" }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg max net</div><div class="h4 mb-0">{{ o.avg_max_net|floatformat:4|default:"—" }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg profit$ (time-wt)</div><div class="h4 mb-0">{{ o.avg_profit|floatformat:2|default:"—" }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg peak profit$</div><div class="h4 mb-0">{{ o.avg_max_profit|floatformat:2|default:"—" }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Σ peak profit$</div><div class="h4 mb-0">{{ o.total_max_profit|floatformat:2|default:"—" }}</div></div></div></div>
+  <div class="col-6 col-md-3"><div class="card bg-white"><div class="card-body py-2">
+    <div class="small text-muted">Avg time above thr</div><div class="h4 mb-0">{{ o.avg_time_above|floatformat:1|default:"—" }}s</div></div></div></div>
+  {% endwith %}
+</div>
+
+<h2 class="h5">By market type</h2>
+<table class="table table-sm table-striped bg-white">
+  <thead><tr><th>Market type</th><th>N</th><th>Avg duration</th><th>Avg net</th><th>Avg profit$</th><th>Σ peak profit$</th></tr></thead>
+  <tbody>
+  {% for r in by_type %}
+    <tr><td>{{ r.pair__market_type|default:"—" }}</td><td>{{ r.n }}</td>
+      <td>{{ r.avg_duration|floatformat:1 }}s</td><td>{{ r.avg_net|floatformat:4 }}</td>
+      <td>{{ r.avg_profit|floatformat:2 }}</td><td>{{ r.total_profit|floatformat:2 }}</td></tr>
+  {% empty %}<tr><td colspan="6" class="text-muted">No data.</td></tr>{% endfor %}
+  </tbody>
+</table>
+
+<div class="row">
+<div class="col-md-7">
+<h2 class="h5">Top by peak profit$</h2>
+<table class="table table-sm table-striped bg-white">
+  <thead><tr><th>ID</th><th>Pair</th><th>Peak profit$</th><th>Max net</th><th>Duration</th></tr></thead>
+  <tbody>
+  {% for o in top %}
+    <tr><td><a href="/opportunities/{{ o.id }}/">{{ o.id }}</a></td>
+      <td class="small">{{ o.pair.canonical_team_a }} v {{ o.pair.canonical_team_b }}</td>
+      <td class="fw-bold">{{ o.max_profit_usd|default:"—" }}</td>
+      <td class="text-success">{{ o.max_net_edge }}</td>
+      <td>{% if o.duration_sec != None %}{{ o.duration_sec }}s{% else %}—{% endif %}</td></tr>
+  {% empty %}<tr><td colspan="5" class="text-muted">No data.</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="col-md-5">
+<h2 class="h5">Close reasons</h2>
+<table class="table table-sm table-striped bg-white">
+  <thead><tr><th>Reason</th><th>N</th></tr></thead>
+  <tbody>
+  {% for r in reasons %}
+    <tr><td>{{ r.close_reason|default:"—" }}</td><td>{{ r.n }}</td></tr>
+  {% empty %}<tr><td colspan="2" class="text-muted">No data.</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+{% endblock %}

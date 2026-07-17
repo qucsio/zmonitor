@@ -220,6 +220,22 @@ class OpportunityEvent(models.Model):
 
     max_size_usd = models.DecimalField(max_digits=18, decimal_places=2, null=True, blank=True)
 
+    # Executable depth / captured profit (market-side, no capital cap). profit_usd = Σ marginal net.
+    first_profit_usd = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
+    last_profit_usd = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
+    max_profit_usd = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
+
+    # Compact ladder snapshots for later depth analysis (only at open and at peak profit).
+    ladder_open = models.JSONField(null=True, blank=True)
+    ladder_max = models.JSONField(null=True, blank=True)
+
+    # Lifetime aggregates, computed once at close from edge_points (cheap, no hot writes).
+    duration_sec = models.IntegerField(null=True, blank=True)
+    avg_net_edge = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    avg_profit_usd = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
+    time_above_threshold_sec = models.IntegerField(null=True, blank=True)
+    edge_point_count = models.IntegerField(null=True, blank=True)
+
     close_reason = models.CharField(max_length=255, null=True, blank=True)
     risk_flags = models.JSONField(default=list)
 
@@ -238,6 +254,11 @@ class OpportunityEdgePoint(models.Model):
     net_edge = models.DecimalField(max_digits=18, decimal_places=8)
 
     size_usd = models.DecimalField(max_digits=18, decimal_places=2, null=True, blank=True)
+
+    # Execution-correct snapshot at this tick (marginal walk over the book).
+    exec_edge = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    exec_size_usd = models.DecimalField(max_digits=18, decimal_places=2, null=True, blank=True)
+    profit_usd = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
 
     pm_price = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
     kalshi_price = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)

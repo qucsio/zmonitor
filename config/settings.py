@@ -140,6 +140,11 @@ SCANNER = {
     "EDGE_POINT_DELTA_THRESHOLD": env_decimal("EDGE_POINT_DELTA_THRESHOLD", "0.001"),
     "DEFAULT_FEE_BUFFER": env_decimal("DEFAULT_FEE_BUFFER", "0.005"),
     "DEFAULT_SLIPPAGE_BUFFER": env_decimal("DEFAULT_SLIPPAGE_BUFFER", "0.005"),
+    # Kalshi trading fee: ceil_cents(rate * contracts * P * (1-P)); rate ~0.07. PM CLOB is 0%.
+    "KALSHI_FEE_RATE": env_decimal("KALSHI_FEE_RATE", "0.07"),
+    "PM_FEE_RATE": env_decimal("PM_FEE_RATE", "0"),
+    # Per-contract slippage buffer applied to the marginal edge when walking the book.
+    "SLIPPAGE_PER_CONTRACT": env_decimal("SLIPPAGE_PER_CONTRACT", "0.002"),
     "VWAP_SIZES_USD": [Decimal(x) for x in os.getenv("VWAP_SIZES_USD", "10,25,50,100,250,500,1000").split(",") if x.strip()],
     "POLYMARKET_ENABLED": env_bool("POLYMARKET_ENABLED", True),
     "POLYMARKET_GAMMA_BASE": os.getenv("POLYMARKET_GAMMA_BASE", "https://gamma-api.polymarket.com"),

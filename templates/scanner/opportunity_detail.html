@@ -14,6 +14,12 @@
       <th>Close reason</th><td>{{ opp.close_reason|default:"—" }}</td></tr>
   <tr><th>First / Last net</th><td>{{ opp.first_net_edge }} / {{ opp.last_net_edge }}</td>
       <th>Max net / size</th><td>{{ opp.max_net_edge }} / {{ opp.max_size_usd }}</td></tr>
+  <tr><th>First / Last / Max profit$</th><td>{{ opp.first_profit_usd|default:"—" }} / {{ opp.last_profit_usd|default:"—" }} / <strong>{{ opp.max_profit_usd|default:"—" }}</strong></td>
+      <th>Avg profit$ (time-wt)</th><td>{{ opp.avg_profit_usd|default:"—" }}</td></tr>
+  <tr><th>Avg net (time-wt)</th><td>{{ opp.avg_net_edge|default:"—" }}</td>
+      <th>Time above thr</th><td>{% if opp.time_above_threshold_sec != None %}{{ opp.time_above_threshold_sec }}s{% else %}—{% endif %}</td></tr>
+  <tr><th>Duration (exact)</th><td>{% if opp.duration_sec != None %}{{ opp.duration_sec }}s{% else %}—{% endif %}</td>
+      <th>Edge points</th><td>{{ opp.edge_point_count|default:"—" }}</td></tr>
   <tr><th>Risk flags</th><td colspan="3" class="text-danger">{{ opp.risk_flags|join:", "|default:"—" }}</td></tr>
 </table>
 
@@ -30,11 +36,13 @@
 
 <h2 class="h6 mt-4">Edge points ({{ points|length }})</h2>
 <table class="table table-sm table-striped bg-white">
-  <thead><tr><th>Time</th><th>Gross</th><th>Net</th><th>Size</th><th>PM vwap</th><th>Kalshi vwap</th><th>Risk</th></tr></thead>
+  <thead><tr><th>Time</th><th>Net (marginal)</th><th>Exec edge</th><th>Exec size$</th><th>Profit$</th><th>PM px</th><th>Kalshi px</th><th>Risk</th></tr></thead>
   <tbody>
   {% for p in points %}
-    <tr><td class="small">{{ p.ts|date:"H:i:s.u" }}</td><td>{{ p.gross_edge }}</td>
-        <td class="fw-bold">{{ p.net_edge }}</td><td>{{ p.size_usd }}</td>
+    <tr><td class="small">{{ p.ts|date:"H:i:s.u" }}</td>
+        <td class="fw-bold">{{ p.net_edge }}</td>
+        <td>{{ p.exec_edge|default:"—" }}</td><td>{{ p.exec_size_usd|default:"—" }}</td>
+        <td class="fw-bold text-success">{{ p.profit_usd|default:"—" }}</td>
         <td>{{ p.pm_vwap|default:"—" }}</td><td>{{ p.kalshi_vwap|default:"—" }}</td>
         <td class="small text-muted">{{ p.risk_flags|join:", " }}</td></tr>
   {% endfor %}

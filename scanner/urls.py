@@ -11,6 +11,7 @@ urlpatterns = [
     path("pairs/<int:pk>/", views.pair_detail, name="pair_detail"),
     path("pairs/<int:pk>/<str:action>/", views.pair_action, name="pair_action"),
     path("opportunities/", views.opportunities, name="opportunities"),
+    path("opportunities/analytics/", views.opportunity_analytics, name="opportunity_analytics"),
     path("opportunities/<int:pk>/", views.opportunity_detail, name="opportunity_detail"),
     path("health/", views.health, name="health"),
     path("discovery/run/", views.run_discovery_view, name="discovery_run"),

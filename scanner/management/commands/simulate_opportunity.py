@@ -10,15 +10,18 @@ from scanner.models import MatchedPair, RawMarket, VENUE_KALSHI, VENUE_POLYMARKE
 def _fake_state(net):
     """Build a minimal live-state dict with a given net edge on fork A."""
     net = Decimal(str(net))
-    gross = net + Decimal("0.01")
+    size = Decimal("150.00")
     fork_a = {
         "direction": "pm_yes_kalshi_no",
-        "best_net_edge": str(net), "best_gross_edge": str(gross),
+        "top_net_edge": str(net),
+        "exec_edge": str(net), "exec_size_usd": str(size), "exec_contracts": "150",
+        "profit_usd": str((net * size).quantize(Decimal("0.0001"))),
         "best_pm_vwap": "0.50", "best_kalshi_vwap": str(Decimal("0.49") - net),
-        "max_size_usd": "150.00", "ladder": [],
+        "max_size_usd": str(size),
+        "ladder": [{"size": "150", "net": str(net), "fillable": "150"}],
     }
-    fork_b = {"direction": "pm_no_kalshi_yes", "best_net_edge": "-0.05",
-              "best_gross_edge": "-0.04", "max_size_usd": "0.00", "ladder": []}
+    fork_b = {"direction": "pm_no_kalshi_yes", "top_net_edge": "-0.05",
+              "exec_size_usd": "0.00", "profit_usd": "0", "max_size_usd": "0.00", "ladder": []}
     return {"fork_a": fork_a, "fork_b": fork_b, "risk_flags": [],
             "pm_book_age_ms": 100, "kalshi_book_age_ms": 120}
 

@@ -6,7 +6,7 @@ asks are reconstructed as (1 - opposite_side_bid).
 import json
 import logging
 import time
-from decimal import Decimal, getcontext
+from decimal import ROUND_CEILING, Decimal, getcontext
 
 import redis
 from django.conf import settings
@@ -136,12 +136,82 @@ def fetch_pair_books(pair: MatchedPair):
     }
 
 
+# ---------------------------------------------------------------- fees
+def _kalshi_fee_rate(price):
+    """Kalshi per-contract fee *rate* (unrounded): rate * P * (1-P). The venue rounds the
+    aggregate up to the cent; we integrate the raw rate and round the total in the walk."""
+    if price is None:
+        return Decimal("0")
+    rate = settings.SCANNER["KALSHI_FEE_RATE"]
+    return rate * price * (ONE - price)
+
+
+def _round_up_cent(x):
+    return (x * 100).to_integral_value(rounding=ROUND_CEILING) / 100 if x > 0 else Decimal("0")
+
+
+# ---------------------------------------------------------------- executable walk
+def _walk_executable(pm_asks, kalshi_asks, slip_per_contract):
+    """Walk both ask ladders contract-by-contract (in constant-price level chunks) and add
+    contracts while the *marginal* net edge stays >= 0. This is the execution-correct notion
+    of arb size: blended VWAP would keep averaging in losing contracts, this stops at the
+    real boundary. Kalshi fee is price-dependent (applied per level); PM CLOB is 0%.
+    Returns market-side numbers (no capital cap; balance is applied later at entry)."""
+    i = j = 0
+    pm_rem = pm_asks[0][1] if pm_asks else Decimal("0")
+    k_rem = kalshi_asks[0][1] if kalshi_asks else Decimal("0")
+    contracts = Decimal("0")
+    gross_sum = Decimal("0")          # Σ (1 - pm - k) over profitable contracts
+    fee_raw = Decimal("0")            # Σ raw kalshi fee (rounded once at the end)
+    pm_cost = k_cost = Decimal("0")
+    top_net = None
+
+    while i < len(pm_asks) and j < len(kalshi_asks):
+        pm_p, k_p = pm_asks[i][0], kalshi_asks[j][0]
+        marg_gross = ONE - pm_p - k_p
+        marg_fee = _kalshi_fee_rate(k_p)
+        marg_net = marg_gross - marg_fee - slip_per_contract
+        if marg_net <= 0:
+            break
+        if top_net is None:
+            top_net = marg_net
+        chunk = min(pm_rem, k_rem)
+        if chunk <= 0:
+            break
+        contracts += chunk
+        gross_sum += marg_gross * chunk
+        fee_raw += marg_fee * chunk
+        pm_cost += pm_p * chunk
+        k_cost += k_p * chunk
+        pm_rem -= chunk
+        k_rem -= chunk
+        if pm_rem <= 0:
+            i += 1
+            pm_rem = pm_asks[i][1] if i < len(pm_asks) else Decimal("0")
+        if k_rem <= 0:
+            j += 1
+            k_rem = kalshi_asks[j][1] if j < len(kalshi_asks) else Decimal("0")
+
+    fee_total = _round_up_cent(fee_raw)
+    slip_total = slip_per_contract * contracts
+    profit = gross_sum - fee_total - slip_total
+    exec_edge = (profit / contracts) if contracts > 0 else None
+    return {
+        "top_net_edge": top_net,          # marginal edge at top of book (best achievable)
+        "exec_contracts": contracts,      # profitable depth in contracts
+        "exec_size_usd": pm_cost + k_cost,  # capital deployed to take that depth
+        "exec_edge": exec_edge,           # blended net over the profitable region
+        "profit_usd": profit,             # Σ marginal net = max extractable $ (market-side)
+        "top_pm_price": pm_asks[0][0] if pm_asks else None,
+        "top_kalshi_price": kalshi_asks[0][0] if kalshi_asks else None,
+    }
+
+
 # ---------------------------------------------------------------- forks
-def _fork(pm_leg_asks, kalshi_leg_asks, sizes, fee, slip):
-    """Compute a buy/buy fork over the size ladder. Returns dict."""
+def _fork(pm_leg_asks, kalshi_leg_asks, sizes, slip_per_contract):
+    """Compute a buy/buy fork. `ladder` (blended VWAP per $-rung) is for display only;
+    the headline exec_* / profit numbers come from the marginal book walk."""
     ladder = []
-    best_net = best_gross = best_pm = best_kalshi = None
-    max_size = Decimal("0")
     for size in sizes:
         pm_p, pm_f = vwap_buy(pm_leg_asks, size)
         k_p, k_f = vwap_buy(kalshi_leg_asks, size)
@@ -149,48 +219,55 @@ def _fork(pm_leg_asks, kalshi_leg_asks, sizes, fee, slip):
             ladder.append({"size": str(size), "cost": None, "gross": None, "net": None,
                            "fillable": str(min(pm_f, k_f))})
             continue
-        fillable = min(pm_f, k_f)
         cost = pm_p + k_p
         gross = ONE - cost
-        net = gross - fee - slip
+        # blended net incl. price-dependent kalshi fee at the blended kalshi price
+        net = gross - _kalshi_fee_rate(k_p) - slip_per_contract
         ladder.append({
             "size": str(size), "pm_vwap": str(pm_p), "kalshi_vwap": str(k_p),
             "cost": str(cost), "gross": str(gross), "net": str(net),
-            "fillable": str(fillable),
+            "fillable": str(min(pm_f, k_f)),
         })
-        if fillable >= size:
-            max_size = size
-        if best_net is None:
-            best_net, best_gross = net, gross           # smallest size = top of book
-            best_pm, best_kalshi = pm_p, k_p
+
+    ex = _walk_executable(pm_leg_asks, kalshi_leg_asks, slip_per_contract)
+
+    def s(v):
+        return str(v) if v is not None else None
+
     return {
-        "best_net_edge": str(best_net) if best_net is not None else None,
-        "best_gross_edge": str(best_gross) if best_gross is not None else None,
-        "best_pm_vwap": str(best_pm) if best_pm is not None else None,
-        "best_kalshi_vwap": str(best_kalshi) if best_kalshi is not None else None,
-        "max_size_usd": str(max_size),
+        # headline: marginal top-of-book edge + executable depth/profit
+        "top_net_edge": s(ex["top_net_edge"]),
+        "exec_contracts": s(ex["exec_contracts"]),
+        "exec_size_usd": s(ex["exec_size_usd"]),
+        "exec_edge": s(ex["exec_edge"]),
+        "profit_usd": s(ex["profit_usd"]),
+        "best_pm_vwap": s(ex["top_pm_price"]),
+        "best_kalshi_vwap": s(ex["top_kalshi_price"]),
+        # compat: keep old keys pointing at the execution-correct values
+        "best_net_edge": s(ex["top_net_edge"]),
+        "best_gross_edge": s(ex["top_net_edge"]),
+        "max_size_usd": s(ex["exec_size_usd"]),
         "ladder": ladder,
         "pm_depth": str(_depth(pm_leg_asks)),
         "kalshi_depth": str(_depth(kalshi_leg_asks)),
     }
 
 
-def compute_forks(pair: MatchedPair, books, fee=None, slip=None):
+def compute_forks(pair: MatchedPair, books, slip=None):
     """Fork A: PM-yes + Kalshi-otherside ; Fork B: PM-no + Kalshi-otherside.
     Direction respects outcome_mapping (which Kalshi side is the same team as pm_yes)."""
-    fee = fee if fee is not None else settings.SCANNER["DEFAULT_FEE_BUFFER"]
-    slip = slip if slip is not None else settings.SCANNER["DEFAULT_SLIPPAGE_BUFFER"]
+    slip = slip if slip is not None else settings.SCANNER["SLIPPAGE_PER_CONTRACT"]
     sizes = settings.SCANNER["VWAP_SIZES_USD"]
 
     direct = pair.outcome_mapping.get("pm_yes") == "kalshi_yes"
 
     # Fork A covers team_a via PM-yes; the complementary Kalshi leg pays if team_b wins.
     a_kalshi = books["k_no_asks"] if direct else books["k_yes_asks"]
-    fork_a = _fork(books["pm_yes_asks"], a_kalshi, sizes, fee, slip)
+    fork_a = _fork(books["pm_yes_asks"], a_kalshi, sizes, slip)
     fork_a["direction"] = "pm_yes_kalshi_" + ("no" if direct else "yes")
 
     b_kalshi = books["k_yes_asks"] if direct else books["k_no_asks"]
-    fork_b = _fork(books["pm_no_asks"], b_kalshi, sizes, fee, slip)
+    fork_b = _fork(books["pm_no_asks"], b_kalshi, sizes, slip)
     fork_b["direction"] = "pm_no_kalshi_" + ("yes" if direct else "no")
 
     return fork_a, fork_b
