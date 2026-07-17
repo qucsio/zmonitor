@@ -157,16 +157,45 @@ def detect_market_type(text, map_number=None):
     return "unknown"
 
 
+# tournament prefix like "ITF Louisville: " / "Iasi Open: " before "A vs B"
+_TOURNEY_PREFIX_RE = re.compile(r"^[^:]{1,40}:\s+")
+# trailing segment/qualifier: "Set 1 Winner", "Map 2", "Game 3 Winner", bare "Winner"/"to win"
+_SEG_SUFFIX_RE = re.compile(r"\s+(?:set|map|game)\s*\d+\s*(?:winner)?\s*$", re.IGNORECASE)
+_QUAL_SUFFIX_RE = re.compile(r"\s+(?:winner|to win|wins?|moneyline)\s*$", re.IGNORECASE)
+# over/under outcome names ("o 3.5", "Over 3.5", "u 2.5", "Under 2.5")
+_OU_RE = re.compile(r"^\s*(?:o|u|over|under)\b", re.IGNORECASE)
+
+
+def is_over_under(a, b):
+    """True when the two outcome names are an over/under pair (a totals market, not teams)."""
+    return bool(a and b and _OU_RE.match(a) and _OU_RE.match(b))
+
+
+def _clean_team(s, is_left):
+    if not s:
+        return None
+    s = re.sub(r"[?.!]+$", "", s).strip()
+    s = re.sub(r"^(will|who wins|does)\s+", "", s, flags=re.IGNORECASE).strip()
+    if is_left:
+        # drop tournament prefix ("ITF Louisville: ") only on the left side
+        s = _TOURNEY_PREFIX_RE.sub("", s).strip()
+    # drop trailing "Set/Map/Game N [Winner]" and bare qualifiers, repeatedly
+    prev = None
+    while prev != s:
+        prev = s
+        s = _SEG_SUFFIX_RE.sub("", s).strip()
+        s = _QUAL_SUFFIX_RE.sub("", s).strip()
+    return s or None
+
+
 def parse_teams(*texts):
     for text in texts:
         if not text:
             continue
         parts = _VS_SPLIT.split(text.strip())
         if len(parts) == 2:
-            a = re.sub(r"[?.!]+$", "", parts[0]).strip()
-            b = re.sub(r"[?.!]+$", "", parts[1]).strip()
-            # drop leading "Will "/"Who wins " noise
-            a = re.sub(r"^(will|who wins|does)\s+", "", a, flags=re.IGNORECASE).strip()
+            a = _clean_team(parts[0], is_left=True)
+            b = _clean_team(parts[1], is_left=False)
             if a and b and len(a) < 60 and len(b) < 60:
                 return a, b
     return None, None
@@ -248,14 +277,20 @@ def normalize_market(market: RawMarket) -> NormalizedMarket:
         if kmap is not None:
             map_number = kmap
 
+    # Over/under outcomes ("o 3.5"/"u 3.5") are a totals market, not a winner — reclassify
+    # so the thresholds don't get mistaken for team names and pollute the winner universe.
+    if market.venue == VENUE_POLYMARKET and is_over_under(yes_name, no_name):
+        market_type = "total"
+
     # teams
     team_a, team_b = None, None
     if market.venue == VENUE_KALSHI:
         team_a, team_b = _kalshi_teams(market, yes_name, title, question)
     else:
-        # Polymarket: outcome names ARE the teams for winner markets
-        if market_type in ("match_winner", "map_winner", "series_winner"):
-            if yes_name and no_name and yes_name.lower() not in ("yes", "no"):
+        # Polymarket: outcome names ARE the teams for winner markets (incl. set_winner)
+        if market_type in ("match_winner", "map_winner", "series_winner", "set_winner"):
+            if (yes_name and no_name and yes_name.lower() not in ("yes", "no")
+                    and not is_over_under(yes_name, no_name)):
                 team_a, team_b = yes_name, no_name
         if not team_a:
             team_a, team_b = parse_teams(title, question)
