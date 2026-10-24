@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:16
+    restart: unless-stopped
     environment:
       POSTGRES_USER: arb
       POSTGRES_PASSWORD: arb
@@ -8,7 +9,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "5435:5432"
+      - "127.0.0.1:5435:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U arb -d arbscanner"]
       interval: 5s
@@ -17,8 +18,9 @@ services:
 
   redis:
     image: redis:7
+    restart: unless-stopped
     ports:
-      - "6382:6379"
+      - "127.0.0.1:6382:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -27,6 +29,7 @@ services:
 
   web:
     build: .
+    restart: unless-stopped
     command: >
       sh -c "python manage.py makemigrations scanner &&
              python manage.py migrate &&
@@ -45,6 +48,7 @@ services:
 
   worker-discovery:
     build: .
+    restart: unless-stopped
     command: celery -A config worker -Q discovery -n discovery@%h --concurrency=2
     volumes:
       - .:/app
@@ -55,6 +59,7 @@ services:
 
   worker-matching:
     build: .
+    restart: unless-stopped
     command: celery -A config worker -Q matching -n matching@%h --concurrency=2
     volumes:
       - .:/app
@@ -65,6 +70,7 @@ services:
 
   worker-orderbook:
     build: .
+    restart: unless-stopped
     command: python manage.py run_orderbook_loop
     volumes:
       - .:/app
@@ -75,6 +81,7 @@ services:
 
   celery-beat:
     build: .
+    restart: unless-stopped
     command: celery -A config beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
     volumes:
       - .:/app
